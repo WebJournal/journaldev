@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.multipart.maxSize" value="104857600" />
+	<package name="user" namespace="/" extends="struts-default">
+		<action name="upload">
+			<result>/UploadFile.jsp</result>
+		</action>
+		<action name="UploadFile" class="com.journaldev.struts2.actions.UploadFileAction">
+			<param name="filesPath">myfiles</param>
+			<result name="success">/UploadFileSuccess.jsp</result>
+			<result name="input">/UploadFile.jsp</result>
+
+			<interceptor-ref name="defaultStack">
+				<param name="fileUpload.maximumSize">10485760</param>
+				<param name="fileUpload.allowedTypes">text/plain,image/jpeg</param>
+			</interceptor-ref>
+
+		</action>
+
+		<action name="uploadMultiple">
+			<result>/UploadMultipleFile.jsp</result>
+		</action>
+
+		<action name="UploadMultipleFile"
+			class="com.journaldev.struts2.actions.UploadMultipleFileAction">
+			<param name="filesPath">myfiles</param>
+			<result name="success">/UploadMultipleFileSuccess.jsp</result>
+			<result name="input">/UploadMultipleFile.jsp</result>
+
+			<interceptor-ref name="defaultStack">
+				<param name="fileUpload.maximumSize">10485760</param>
+				<param name="fileUpload.allowedTypes">text/plain,image/jpeg</param>
+			</interceptor-ref>
+
+		</action>
+	</package>
+
+</struts>

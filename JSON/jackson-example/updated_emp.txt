@@ -1,0 +1,13 @@
+{
+  "id" : 500,
+  "name" : "Pankaj",
+  "permanent" : true,
+  "address" : {
+    "street" : "Albany Dr",
+    "city" : "San Jose",
+    "zipcode" : 95129
+  },
+  "phoneNumbers" : [ 123456, 987654 ],
+  "cities" : [ "Los Angeles", "New York" ],
+  "test" : "test value"
+}

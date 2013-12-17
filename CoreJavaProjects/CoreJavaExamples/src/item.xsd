@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.apple.com/ist/retail/pos/item/common/data"
+	xmlns:itemns="http://www.apple.com/ist/retail/pos/item/common/data">
+
+	<!--<annotation> <documentation> With out the following appinfo processing 
+		instruction the xjc code generator will not correctly generate the @XmlRootElement 
+		annotation required for JAXB marshal / unmarshal to work correctly. Note 
+		you will have to pass the "-extension" command line argument to xjc </documentation> 
+		<appinfo> <jaxb:globalBindings> <xjc:simple /> <xjc:serializable uid="-1" 
+		/> <jaxb:javaType name="java.util.Calendar" xmlType="dateTime" parseMethod="javax.xml.bind.DatatypeConverter.parseDateTime" 
+		printMethod="javax.xml.bind.DatatypeConverter.printDateTime" /> </jaxb:globalBindings> 
+		</appinfo> </annotation> -->
+	<annotation>
+		<documentation>
+			itemRequest and itemResponse define the interface
+			between the client and the server
+		</documentation>
+	</annotation>
+	<element name="itemRequest" type="itemns:ItemRequest" />
+	<element name="itemByIdRequest" type="itemns:ItemByIdRequest" />
+
+
+	<element name="itemResponse" type="itemns:ItemResponse" />
+	<element name="item" type="itemns:Item" />
+	<element name="cpgDiscountData" type="itemns:CpgDiscountData" />
+
+	<complexType name="APPAutoAttach">
+
+		<sequence>
+			<element name="APPDesc" type="string" minOccurs="0" />
+			<element name="APPPrice" type="decimal" minOccurs="0" />
+			<element name="APPFinalPrice" type="decimal" minOccurs="0" />
+			<element name="APPSeqId" type="int" minOccurs="0" />
+			<element name="APPUpc" type="string" minOccurs="0" />
+			<element name="appDescMap">
+				<complexType>
+					<sequence>
+						<element name="entry" minOccurs="0" maxOccurs="unbounded">
+							<complexType>
+								<sequence>
+									<element name="key" minOccurs="0" type="string" />
+									<element name="value" minOccurs="0" type="string" />
+								</sequence>
+							</complexType>
+						</element>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="coverageFlag" type="string" minOccurs="0" />
+			<element name="duration" type="int" minOccurs="0" />
+			<element name="itemIdApp" type="string" minOccurs="0" />
+			<element name="itemIdPrimary" type="string" minOccurs="0" />
+			<element name="itemIdSecondary" type="string" minOccurs="0" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="rowStatusFlag" type="string" minOccurs="0" />
+			<element name="salesOrgId" type="int" minOccurs="0" />
+			<element name="vatRate" type="string" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="Fee">
+		<sequence>
+			<element name="amount" type="decimal" minOccurs="0" />
+			<element name="amountPercentFlag" type="unsignedShort" />
+			<element name="description" type="string" minOccurs="0" />
+			<element name="percent" type="decimal" />
+			<element name="subType" type="string" minOccurs="0" />
+			<element name="taxable" type="boolean" />
+		</sequence>
+	</complexType>
+
+
+	<complexType name="Item">
+		<sequence>
+			<element name="allowCouponMultiplyFlag" type="string"
+				minOccurs="0" />
+			<element name="alternateItemDescription" type="string"
+				minOccurs="0" />
+			<element name="alternateLangCodeItemDescription" type="string"
+				minOccurs="0" />
+			<element name="alternateLangCodeSupportOrgName" type="string"
+				minOccurs="0" />
+			<element name="alternateMerchandiseDescription" type="string"
+				minOccurs="0" />
+			<element name="alternateSupportOrgName" type="string"
+				minOccurs="0" />
+			<element name="alternateSupportOrgPhone" type="string"
+				minOccurs="0" />
+			<element name="appAutoAttachPojoArr" type="itemns:APPAutoAttach"
+				minOccurs="0" maxOccurs="unbounded" />
+			<element name="currentSaleUnitRetailPriceAmt" type="decimal"
+				minOccurs="0" />
+			<element name="effectivityDate" type="dateTime" minOccurs="0" />
+			<element name="gstHstTaxRate" type="decimal" minOccurs="0" />
+			<element name="itemAuthorizedForSaleFlag" type="string"
+				minOccurs="0" />
+			<element name="itemClassificationCode0" type="string"
+				minOccurs="0" />
+			<element name="itemClassificationCode1" type="string"
+				minOccurs="0" />
+			<element name="itemClassificationCode2" type="string"
+				minOccurs="0" />
+			<element name="itemClassificationCode3" type="string"
+				minOccurs="0" />
+			<element name="itemClassificationCode4" type="string"
+				minOccurs="0" />
+			<element name="itemClassificationCode5" type="string"
+				minOccurs="0" />
+			<element name="itemClassificationCode6" type="string"
+				minOccurs="0" />
+			<element name="itemClassificationCode7" type="string"
+				minOccurs="0" />
+			<element name="itemClassificationCode8" type="string"
+				minOccurs="0" />
+			<element name="itemClassificationCode9" type="string"
+				minOccurs="0" />
+			<element name="itemCouponRestrictedFlag" type="string"
+				minOccurs="0" />
+			<element name="itemDesc" type="string" minOccurs="0" />
+			<element name="itemDiscountFlag" type="string" minOccurs="0" />
+			<element name="itemElectronicCouponFlag" type="string"
+				minOccurs="0" />
+			<element name="itemId" type="string" minOccurs="0" />
+			<element name="itemKitSetCode" type="string" minOccurs="0" />
+			<element name="itemOpenBoxReturnAllowed" type="string"
+				minOccurs="0" />
+			<element name="itemPriceEntryReqdFlag" type="string"
+				minOccurs="0" />
+			<element name="itemPriceModifiableFlag" type="string"
+				minOccurs="0" />
+			<element name="itemProhibitReturnFlag" type="string"
+				minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="string"
+				minOccurs="0" />
+			<element name="itemRegistoryFlag" type="string" minOccurs="0" />
+			<element name="itemReturnDays" type="string" minOccurs="0" />
+			<element name="itemSpecialOrderEligible" type="string"
+				minOccurs="0" />
+			<element name="itemSubstituteIdentifiedFlag" type="string"
+				minOccurs="0" />
+			<element name="itemSupportOrgName" type="string" minOccurs="0" />
+			<element name="itemSupportOrgPhone" type="string" minOccurs="0" />
+			<element name="itemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="itemType" type="string" minOccurs="0" />
+			<element name="itemWarrantyDays" type="string" minOccurs="0" />
+			<element name="levy" type="itemns:Levy" minOccurs="0"
+				maxOccurs="unbounded" />
+			<element name="maximumSaleUnitCount" type="decimal"
+				minOccurs="0" />
+			<element name="merchStatus" type="int" minOccurs="0" />
+			<element name="merchandiseHierarchyLevelCode" type="string"
+				minOccurs="0" />
+			<element name="minimumSaleUnitCount" type="decimal"
+				minOccurs="0" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="nxsItemAccFlag" type="string" minOccurs="0" />
+			<element name="nxsItemClassificationDesc" type="string"
+				minOccurs="0" />
+			<element name="nxsItemSerializesFlag" type="string"
+				minOccurs="0" />
+			<element name="nxsItemStatusFlag" type="string" minOccurs="0" />
+			<element name="nxsItemUPCCode2" type="string" minOccurs="0" />
+			<element name="posDeptd" type="int" minOccurs="0" />
+			<element name="taxOnOrginalPrice" type="boolean" minOccurs="0" />
+			<element name="mercCodes" type="string" minOccurs="0" />
+			<element name="posItemId" type="string" minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="posTaxGroupId" type="int" minOccurs="0" />
+			<element name="primaryLangCode" type="string" minOccurs="0" />
+			<element name="primaryLangCodeSupportOrg" type="string"
+				minOccurs="0" />
+			<element name="properties">
+				<complexType>
+					<sequence>
+						<element name="entry" minOccurs="0" maxOccurs="unbounded">
+							<complexType>
+								<sequence>
+									<annotation>
+										<documentation>FIXME</documentation>
+									</annotation>
+									<element name="key" minOccurs="0" type="string" />
+									<element name="value" minOccurs="0" type="string" />
+								</sequence>
+							</complexType>
+						</element>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="pstQstExemptFlag" type="string" minOccurs="0" />
+			<element name="pstQstItemExemptFlag" type="string" minOccurs="0" />
+			<element name="pstQstTaxRate" type="decimal" minOccurs="0" />
+			<element name="storePstQstTaxRate" type="decimal" minOccurs="0" />
+			<element name="quantityKeyProhibitFlag" type="string"
+				minOccurs="0" />
+			<element name="storeId" type="string" minOccurs="0" />
+			<element name="salesOrg" type="string" minOccurs="0" />
+			<element name="taxGroupId" type="int" minOccurs="0" />
+			<element name="translations" type="itemns:ItemTranslation"
+				minOccurs="0" maxOccurs="unbounded" />
+			<element name="cpgDiscounts" type="itemns:CpgDiscounts"
+				minOccurs="0" />
+			<element name="vatRate" type="decimal" minOccurs="0" />
+			<element name="taxRate" type="decimal" minOccurs="0" />
+			<element name="exchangeRate" type="decimal" minOccurs="0" />
+			<!-- Added for CAN -->
+			<element name="pstQstItemExemptRate" type="string"
+				minOccurs="0" />
+			<element name="gstHstItemExemptRate" type="string"
+				minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="Levy">
+		<sequence>
+			<element name="levyAmount" type="decimal" minOccurs="0" />
+			<element name="levyItemId" type="string" minOccurs="0" />
+			<element name="levyName" type="string" minOccurs="0" />
+			<element name="levyPercent" type="decimal" minOccurs="0" />
+			<element name="levySalesOrgId" type="string" minOccurs="0" />
+			<element name="levyStoreId" type="string" minOccurs="0" />
+			<element name="levySubType" type="string" minOccurs="0" />
+			<element name="levyTaxPercent" type="string" minOccurs="0" />
+			<element name="levyTaxable" type="string" minOccurs="0" />
+			<element name="levyType" type="string" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ItemTranslation">
+		<sequence>
+			<element name="itemDescription" type="string" minOccurs="0" />
+			<element name="itemId" type="string" minOccurs="0" />
+			<element name="langCode" type="string" minOccurs="0" />
+			<element name="merchCatCd" type="string" minOccurs="0" />
+			<element name="merchCatDesc" type="string" minOccurs="0" />
+			<element name="salesOrgId" type="string" minOccurs="0" />
+			<element name="supportOrgName" type="string" minOccurs="0" />
+			<element name="supportOrgPhone" type="string" minOccurs="0" />
+			<element name="tncProdInfo" type="string" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+
+	<complexType name="ItemResponse">
+		<annotation>
+			<documentation>
+				AEDWIP TODO need to handle error condition. I.E. item
+				not found!
+				instead of string define a error type, maybe some sort of
+				enumeration for error
+				type, and a localized string to display to
+				user?
+			</documentation>
+		</annotation>
+		<choice>
+			<element name="error" type="string" />
+			<element name="lineItem" type="itemns:LineItem" minOccurs="0"
+				maxOccurs="unbounded" />
+			<element name="eptLineItem" type="itemns:EPTLineItem"
+				minOccurs="0" maxOccurs="unbounded" />
+			<element name="usTaxItems" type="itemns:USTaxItems"
+				minOccurs="0" />
+			<element name="fullItem" type="itemns:Item" minOccurs="0"
+				maxOccurs="unbounded" />
+			<element name="ukTaxItems" type="itemns:UKTaxItems"
+				minOccurs="0" />
+			<element name="ausTaxItems" type="itemns:AUSTaxItems"
+				minOccurs="0" />
+			<element name="nldTaxItems" type="itemns:NLDTaxItems"
+				minOccurs="0" />
+			<element name="jpnTaxItems" type="itemns:JPNTaxItems"
+				minOccurs="0" />
+			<element name="espTaxItems" type="itemns:ESPTaxItems"
+				minOccurs="0" />
+			<element name="sweTaxItems" type="itemns:SWETaxItems"
+				minOccurs="0" />
+			<element name="canTaxItems" type="itemns:CANTaxItems"
+				minOccurs="0" />
+			<element name="frTaxItems" type="itemns:FRTaxItems"
+				minOccurs="0" />
+			<element name="itaTaxItems" type="itemns:ITATaxItems"
+				minOccurs="0" />
+			<element name="deuTaxItems" type="itemns:DEUTaxItems"
+				minOccurs="0" />
+			<element name="cheTaxItems" type="itemns:CHETaxItems"
+				minOccurs="0" />
+			<element name="chnTaxItems" type="itemns:CHNTaxItems"
+				minOccurs="0" />
+			<element name="shaTaxItems" type="itemns:SHATaxItems"
+				minOccurs="0" />
+			<element name="hkgTaxItems" type="itemns:HKGTaxItems"
+				minOccurs="0" />
+			<element name="turTaxItems" type="itemns:TURTaxItems"
+				minOccurs="0" />
+			<element name="braTaxItems" type="itemns:BRATaxItems" minOccurs="0" />
+		</choice>
+	</complexType>
+
+	<element name="lineItem" type="itemns:LineItem" />
+
+	<complexType name="LineItem">
+
+		<sequence>
+			<element name="activationRequired" type="boolean" />
+			<element name="alternateItemDescription" type="string"
+				minOccurs="0" />
+			<element name="alternateLangCodeItemDescription" type="string"
+				minOccurs="0" />
+			<element name="appAutoAttachPojoArr" type="itemns:APPAutoAttach"
+				minOccurs="0" maxOccurs="unbounded" />
+			<element name="articleNo" type="string" minOccurs="0" />
+			<element name="authorizationNumber" type="string" minOccurs="0" />
+			<element name="contractNumber" type="string" minOccurs="0" />
+			<element name="description" type="string" minOccurs="0" />
+			<element name="discountAmount" type="decimal" minOccurs="0" />
+			<element name="discountApplied" type="boolean" />
+			<element name="discountPercentage" type="decimal" minOccurs="0" />
+			<element name="discountReasonCode" type="int" minOccurs="0"
+				maxOccurs="unbounded" />
+			<element name="discountRefID" type="string" minOccurs="0" />
+			<element name="discountedPrice" type="decimal" minOccurs="0" />
+			<element name="enteredReturnQuantity" type="int" />
+			<element name="expiryDate" type="string" minOccurs="0" />
+			<element name="extendedRestockingFee" type="decimal"
+				minOccurs="0" />
+			<element name="fees" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+			<element name="GCBalance" type="string" minOccurs="0" />
+			<element name="giftReceipt" type="string" minOccurs="0" />
+			<element name="giftReceiptReturn" type="boolean" />
+			<element name="iphoneDeviceOnly" type="boolean" />
+			<element name="itemClassificationCode" type="string"
+				minOccurs="0" />
+			<element name="itemDiscountable" type="boolean" />
+			<element name="itemId" type="string" minOccurs="0" />
+			<element name="itemOpenBoxReturnAllowed" type="string"
+				minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="string"
+				minOccurs="0" />
+			<element name="itemReturnDays" type="string" minOccurs="0" />
+			<element name="journalOnly" type="boolean" />
+			<element name="lineItemSeqNo" type="int" />
+			<element name="lineItemTypeCode" type="string" minOccurs="0" />
+			<element name="linkItemSerialNo" type="string" minOccurs="0" />
+			<element name="membershipNumber" type="string" minOccurs="0" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="openBoxIndicator" type="string" minOccurs="0" />
+			<element name="originalDate" type="string" minOccurs="0" />
+			<element name="originalLineItemSeqNo" type="int" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="originalTransactionNumber" type="string"
+				minOccurs="0" />
+			<element name="planEndDate" type="string" minOccurs="0" />
+			<element name="priceModDisAmtAndVATAmt" type="decimal"
+				minOccurs="0" />
+			<element name="priceModDisPerAndVATAmt" type="decimal"
+				minOccurs="0" />
+			<element name="printTaxInvoice" type="boolean" />
+			<element name="procare" type="boolean" />
+			<element name="quantity" type="int" />
+			<element name="retailerCost" type="decimal" minOccurs="0" />
+			<element name="returnReasonCode" type="int" />
+			<element name="returnedQuantity" type="int" />
+			<element name="serial" type="string" minOccurs="0" />
+			<element name="serialItem" type="boolean" />
+			<element name="serialNumberPrimary" type="string" minOccurs="0" />
+			<element name="serialNumberSecondary" type="string"
+				minOccurs="0" />
+			<element name="stringOriginalPrice" type="string" minOccurs="0" />
+			<element name="upc" type="string" minOccurs="0" />
+			<element name="userId" type="string" minOccurs="0" />
+			<element name="VATInclusivePrice" type="decimal" minOccurs="0" />
+			<element name="vatRate" type="decimal" minOccurs="0" />
+			<element name="wiFiAccessCardNumber" type="string" minOccurs="0" />
+		</sequence>
+
+	</complexType>
+
+	<complexType name="ItemRequest">
+		<sequence>
+			<element name="storeId" type="string" minOccurs="0" />
+			<element name="cpgCode" type="string" minOccurs="0" />
+			<element name="items" type="itemns:ItemUPC" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+
+
+
+	<complexType name="ItemUPC">
+		<sequence>
+			<element name="upc" type="string" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ItemByIdRequest">
+		<sequence>
+			<element name="storeId" type="string" minOccurs="0" />
+			<element name="cpgCode" type="string" minOccurs="0" />
+			<element name="items" type="itemns:ItemId" minOccurs="0" />
+		</sequence>
+	</complexType>
+	<complexType name="ItemId">
+		<sequence>
+			<element name="itemId" type="string" minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+
+
+	<complexType name="CpgDiscounts">
+		<sequence>
+			<element name="cpgDiscount" type="itemns:CpgDiscountData"
+				minOccurs="0" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<simpleType name="taxType">
+		<restriction base="string">
+			<enumeration value="TAX_MODE_STANDARD" />
+			<enumeration value="TAX_MODE_EXEMPT" />
+			<enumeration value="TAX_MODE_OVERRIDE_AMOUNT" />
+			<enumeration value="TAX_MODE_OVERRIDE_RATE" />
+			<enumeration value="TAX_MODE_TOGGLE_OFF" />
+			<enumeration value="TAX_MODE_TOGGLE_ON" />
+			<enumeration value="TAX_MODE_NON_TAXABLE" />
+			<enumeration value="TAX_MODE_USE_TRANSACTION_STANDARD" />
+			<enumeration value="TAX_MODE_RETURN_RATE" />
+			<enumeration value="TAX_MODE_EXTERNAL_RATE" />
+		</restriction>
+	</simpleType>
+
+	<complexType name="USTaxItems">
+		<sequence>
+			<element name="usTaxLineItem" type="itemns:USTaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+			<element name="deviceCodes" type="string" maxOccurs="unbounded"
+				minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="USTaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="taxOnOrginalPrice" type="boolean" minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="itemType" type="string" minOccurs="0" />
+			<element name="taxRate" type="decimal" minOccurs="0" />
+			<element name="feeList" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<!-- China lookup item -->
+	<complexType name="CHNTaxItems">
+		<sequence>
+			<element name="chnTaxLineItem" type="itemns:CHNTaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="CHNTaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="itemType" type="string" minOccurs="0" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="VATRate" type="decimal" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<!-- Shanghai lookup item -->
+	<complexType name="SHATaxItems">
+		<sequence>
+			<element name="shaTaxLineItem" type="itemns:SHATaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="SHATaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="itemType" type="string" minOccurs="0" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="VATRate" type="decimal" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<!-- UK lookup item -->
+	<complexType name="UKTaxItems">
+		<sequence>
+			<element name="ukTaxLineItem" type="itemns:UKTaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="UKTaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="itemType" type="string" minOccurs="0" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="VATRate" type="decimal" minOccurs="0" />
+			<element name="feeList" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+
+	<!-- TODO need to finalized this for lookup item -->
+	<complexType name="EPTLineItem">
+		<sequence>
+			<element name="itemDesc" type="string" minOccurs="0" />
+			<element name="itemDiscountFlag" type="boolean" minOccurs="0" />
+			<element name="upc" type="string" minOccurs="0" />
+			<element name="partNumber" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="itemReturnDays" type="string" minOccurs="0" />
+			<element name="itemWarrantyDays" type="string" minOccurs="0" />
+			<element name="feeList" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="NLDTaxItems">
+		<sequence>
+			<element name="nldTaxLineItem" type="itemns:NLDTaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="NLDTaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="VATInclusivePrice" type="decimal" minOccurs="0" />
+			<element name="VATRate" type="decimal" minOccurs="0" />
+			<element name="VATAmt" type="decimal" minOccurs="0" />
+			<element name="feeList" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+
+	<complexType name="AUSTaxItems">
+		<sequence>
+			<element name="ausTaxLineItem" type="itemns:AUSTaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+			<element name="exchangeRate" type="decimal" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="AUSTaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="VATInclusivePrice" type="decimal" minOccurs="0" />
+			<element name="VATRate" type="decimal" minOccurs="0" />
+			<element name="VATAmt" type="decimal" minOccurs="0" />
+			<element name="feeList" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+
+	<complexType name="JPNTaxItems">
+		<sequence>
+			<element name="jpnTaxLineItem" type="itemns:JPNTaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="JPNTaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="taxOnOrginalPrice" type="boolean" minOccurs="0" />
+			<element name="itemType" type="string" minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="taxRate" type="decimal" minOccurs="0" />
+			<element name="feeList" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ESPTaxItems">
+		<sequence>
+			<element name="espTaxLineItem" type="itemns:ESPTaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+			<element name="exchangeRate" type="decimal" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ESPTaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="feeList" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="VATInclusivePrice" type="decimal" minOccurs="0" />
+			<element name="VATRate" type="decimal" minOccurs="0" />
+			<element name="VATAmt" type="decimal" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+
+	<complexType name="CHETaxItems">
+		<sequence>
+			<element name="cheTaxLineItem" type="itemns:CHETaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+			<element name="exchangeRate" type="decimal" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="CHETaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="feeList" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="VATInclusivePrice" type="decimal" minOccurs="0" />
+			<element name="VATRate" type="decimal" minOccurs="0" />
+			<element name="VATAmt" type="decimal" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="HKGTaxItems">
+		<sequence>
+			<element name="hkgTaxLineItem" type="itemns:HKGTaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+			<element name="exchangeRate" type="decimal" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="HKGTaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="feeList" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="VATInclusivePrice" type="decimal" minOccurs="0" />
+			<element name="VATRate" type="decimal" minOccurs="0" />
+			<element name="VATAmt" type="decimal" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+
+	<complexType name="DEUTaxItems">
+		<sequence>
+			<element name="deuTaxLineItem" type="itemns:DEUTaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<complexType name="DEUTaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="feeList" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="VATInclusivePrice" type="decimal" minOccurs="0" />
+			<element name="VATRate" type="decimal" minOccurs="0" />
+			<element name="VATAmt" type="decimal" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="ITATaxItems">
+		<sequence>
+			<element name="itaTaxLineItem" type="itemns:ITATaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+	<complexType name="ITATaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="feeList" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="VATInclusivePrice" type="decimal" minOccurs="0" />
+			<element name="VATRate" type="decimal" minOccurs="0" />
+			<element name="VATAmt" type="decimal" minOccurs="0" />
+		</sequence>
+
+	</complexType>
+	<complexType name="CANTaxItems">
+		<sequence>
+			<element name="canTaxLineItem" type="itemns:CANTaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="CANTaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="taxOnOrginalPrice" type="boolean" minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="taxRateGSTHST" type="decimal" minOccurs="0" />
+			<element name="taxRatePSTQST" type="decimal" minOccurs="0" />
+			<element name="storeTaxRatePSTQST" type="decimal" minOccurs="0" />
+			<element name="feeList" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+			<element name="pstQstItemExemptFlag" type="string" minOccurs="0" />
+			<element name="gstHstItemExemptFlag" type="string" minOccurs="0" />
+			<element name="pstQstItemExemptRate" type="string" minOccurs="0" />
+			<element name="gstHstItemExemptRate" type="string" minOccurs="0" />
+			<element name="storeTaxRateGSTHST" type="decimal" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<complexType name="SWETaxItems">
+		<sequence>
+			<element name="sweTaxLineItem" type="itemns:SWETaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="SWETaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="VATInclusivePrice" type="decimal" minOccurs="0" />
+			<element name="VATRate" type="decimal" minOccurs="0" />
+			<element name="VATAmt" type="decimal" minOccurs="0" />
+			<element name="feeList" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="FRTaxItems">
+		<sequence>
+			<element name="frTaxLineItem" type="itemns:FRTaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="FRTaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="feeList" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="VATInclusivePrice" type="decimal" minOccurs="0" />
+			<element name="VATRate" type="decimal" minOccurs="0" />
+			<element name="VATAmt" type="decimal" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+
+	<complexType name="TURTaxItems">
+		<sequence>
+			<element name="turTaxLineItem" type="itemns:TURTaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="TURTaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="VATInclusivePrice" type="decimal" minOccurs="0" />
+			<element name="VATRate" type="decimal" minOccurs="0" />
+			<element name="VATAmt" type="decimal" minOccurs="0" />
+			<element name="feeList" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="BRATaxItems">
+		<sequence>
+			<element name="braTaxLineItem" type="itemns:BRATaxLineItem"
+				minOccurs="1" maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="BRATaxLineItem">
+		<sequence>
+			<element name="itemUPC" type="string" minOccurs="0" />
+			<element name="originalPrice" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+			<element name="posItemTaxExemptCode" type="string" minOccurs="0" />
+			<element name="itemReStockingFeeRate" type="decimal"
+				minOccurs="0" />
+			<element name="nicePrice" type="decimal" minOccurs="0" />
+			<element name="VATInclusivePrice" type="decimal" minOccurs="0" />
+			<element name="VATRate" type="decimal" minOccurs="0" />
+			<element name="VATAmt" type="decimal" minOccurs="0" />
+			<element name="feeList" type="itemns:Fee" minOccurs="0"
+				maxOccurs="unbounded" />
+		</sequence>
+	</complexType>
+
+	<complexType name="CpgDiscountData">
+		<sequence>
+			<!-- item_prom_disc_data -->
+			<!-- <element name="itemId" type="string" minOccurs="0" /> -->
+			<element name="itemDescription" type="string" minOccurs="0" />
+			<element name="discountAmount" type="decimal" minOccurs="0" />
+			<element name="finalPrice" type="decimal" minOccurs="0" />
+
+			<!-- cpg_discount_data -->
+			<element name="cpgCode" type="string" minOccurs="0" />
+			<element name="cpgCodeDescription" type="string" minOccurs="0" />
+			<element name="customerGroup" type="string" minOccurs="0" />
+			<element name="discountType" type="string" minOccurs="0" />
+			<element name="discountPercentage" type="decimal" minOccurs="0" />
+			<element name="discountReasonCode" type="string" minOccurs="0" />
+			<element name="discountReasonDesc" type="string" minOccurs="0" />
+			<element name="thirdPartyDefaultDisc" type="decimal"
+				minOccurs="0" />
+			<element name="stackable" type="string" minOccurs="0" />
+			<element name="startDate" type="dateTime" minOccurs="0" />
+			<element name="endDate" type="dateTime" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+
+
+</schema>

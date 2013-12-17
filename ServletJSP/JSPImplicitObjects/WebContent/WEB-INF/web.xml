@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>JSPImplicitObjects</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+  <param-name>User</param-name>
+  <param-value>Admin</param-value>
+  </context-param>
+  
+  <servlet>
+  <servlet-name>home</servlet-name>
+  <jsp-file>/index.jsp</jsp-file>
+  <init-param>
+  	<param-name>User</param-name>
+  	<param-value>Pankaj</param-value>
+  </init-param>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>home</servlet-name>
+  <url-pattern>/home.do</url-pattern>
+  <url-pattern>/home.jsp</url-pattern>
+  </servlet-mapping>
+</web-app>

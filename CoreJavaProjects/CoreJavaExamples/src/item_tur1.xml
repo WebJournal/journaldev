@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itemns:itemRequest xmlns:itemns="http://www.apple.com/ist/retail/pos/item/common/data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.apple.com/ist/retail/pos/item/common/data item.xsd ">
+  <storeId>R588</storeId>
+  <cpgCode></cpgCode>
+  <items>
+    <upc>718908521502</upc>
+  </items>
+</itemns:itemRequest>

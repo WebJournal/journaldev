@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- constant to define result path locations to project root directory -->
+	<constant name="struts.convention.result.path" value="/"></constant>
+	
+	<!-- constant to define global resource bundle -->
+	<constant name="struts.custom.i18n.resources" value="global"></constant>
+	
+	<package name="user" namespace="/" extends="struts-default">
+		<action name="home">
+			<result>/home.jsp</result>
+		</action>
+		<action name="welcome" class="com.journaldev.struts2.actions.WelcomeAction">
+			<interceptor-ref name="defaultStack">
+				<param name="i18n.parameterName">appLocale</param>
+			</interceptor-ref>
+			<result name="success">/welcome.jsp</result>
+		</action>
+	</package>
+
+</struts>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<empns:empResponse xmlns:empns="http://www.journaldev.com/Employee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.journaldev.com/Employee Employee.xsd ">
+  <empns:id>1</empns:id>
+  <empns:role>Developer</empns:role>
+  <empns:fullName>Pankaj Kumar</empns:fullName>
+</empns:empResponse>

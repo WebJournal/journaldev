@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<constant name="struts.devMode" value="false"></constant>
+<constant name="struts.convention.result.path" value="/"></constant>
+<constant name="struts.custom.i18n.resources" value="global" />
+
+<package name="user" namespace="/" extends="struts-default">
+	<action name="home" class="com.journaldev.struts2.actions.HomeAction">
+	<result name="success">/home.jsp</result>
+	</action>
+
+	<action name="footer" class="com.journaldev.struts2.actions.FooterAction">
+	<result name="success">/footer.jsp</result>
+	</action>
+</package>
+
+</struts>
