@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<constant name="struts.devMode" value="true"></constant>
+
+<constant name="struts.convention.result.path" value="/"></constant>
+
+<package name="user" namespace="/" extends="struts-default">
+
+<global-results>
+	<result name="exception">/exception.jsp</result>
+	<result name="runtime_exception">/runtime_exception.jsp</result>
+	<result name="error">/error.jsp</result>
+</global-results>
+
+<global-exception-mappings>
+	<exception-mapping exception="java.lang.Exception" result="exception"></exception-mapping>
+	<exception-mapping exception="java.lang.Error" result="error"></exception-mapping>
+	<exception-mapping exception="java.lang.RuntimeException" result="runtime_exception"></exception-mapping>
+</global-exception-mappings>
+
+	<action name="myaction" class="com.journaldev.struts2.exception.MyAction">
+	</action>
+	<action name="myspecialaction" class="com.journaldev.struts2.exception.MySpecialAction">
+	<exception-mapping exception="java.io.IOException" result="login"></exception-mapping>
+	<result name="login">/error.jsp</result>
+	</action>
+</package>
+
+
+</struts>
