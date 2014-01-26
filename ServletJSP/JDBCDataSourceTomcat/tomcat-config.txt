@@ -1,0 +1,38 @@
+-- For MySQL DataSource, put below code in server.xml GlobalNamingResources element
+
+<Resource name="jdbc/MyLocalDB" 
+      global="jdbc/MyLocalDB" 
+      auth="Container" 
+      type="javax.sql.DataSource" 
+      driverClassName="com.mysql.jdbc.Driver" 
+      url="jdbc:mysql://localhost:3306/UserDB" 
+      username="pankaj" 
+      password="pankaj123" 
+      
+      maxActive="100" 
+      maxIdle="20" 
+      minIdle="5" 
+      maxWait="10000"/>
+      
+-- For Oracle DataSource, put below code in server.xml GlobalNamingResources element
+
+<Resource name="jdbc/MyDB" 
+      global="jdbc/MyDB" 
+      auth="Container" 
+      type="javax.sql.DataSource" 
+      driverClassName="oracle.jdbc.driver.OracleDriver" 
+      url="jdbc:oracle:thin:@localhost:1521:orcl" 
+      username="hr" 
+      password="oracle" 
+      
+      maxActive="100" 
+      maxIdle="20" 
+      minIdle="5" 
+      maxWait="10000"/>
+      
+-- ResourceLink in context.xml of server
+
+<ResourceLink name="jdbc/MyLocalDB"
+                	global="jdbc/MyDB"
+                    auth="Container"
+                    type="javax.sql.DataSource" />
