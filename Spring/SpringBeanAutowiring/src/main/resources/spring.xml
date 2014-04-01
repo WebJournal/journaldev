@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"
+		
+		default-autowire="byName" default-autowire-candidates="*" >
+
+<bean name="employee" class="com.journaldev.spring.autowiring.model.Employee">
+	<property name="name" value="Pankaj"></property>
+</bean>
+
+<bean name="employee1" class="com.journaldev.spring.autowiring.model.Employee" autowire-candidate="false">
+	<property name="name" value="Dummy Name"></property>
+</bean>
+
+<!-- autowiring byName, bean name should be same as the property name -->
+<bean name="employeeServiceByName" class="com.journaldev.spring.autowiring.service.EmployeeService" autowire="byName" />
+
+<!-- autowiring byType, there should be only one bean definition for the mapping -->
+<bean name="employeeServiceByType" class="com.journaldev.spring.autowiring.service.EmployeeService" autowire="byType" />
+
+<!-- autowiring by constructor -->
+<bean name="employeeServiceConstructor" class="com.journaldev.spring.autowiring.service.EmployeeService" autowire="constructor" />
+
+<!-- Enable Annotation based configuration -->
+<context:annotation-config />
+
+<!-- using @Autowiring annotation in below beans, byType and constructor -->
+<bean name="employeeAutowiredByTypeService" class="com.journaldev.spring.autowiring.service.EmployeeAutowiredByTypeService" />
+<bean name="employeeAutowiredByConstructorService" class="com.journaldev.spring.autowiring.service.EmployeeAutowiredByConstructorService" />
+</beans>
