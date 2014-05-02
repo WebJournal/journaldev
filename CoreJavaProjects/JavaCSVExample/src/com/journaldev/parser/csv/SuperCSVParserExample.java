@@ -53,17 +53,18 @@ public class SuperCSVParserExample {
 		ICsvBeanReader beanReader = null;
 		List<Employee> emps = new ArrayList<Employee>();
 		try {
-			beanReader = new CsvBeanReader(new FileReader("emps.csv"),
+			beanReader = new CsvBeanReader(new FileReader("employees.csv"),
 					CsvPreference.STANDARD_PREFERENCE);
 
-			// the header elements are used to map the values to the bean 
-			// (names must match)
+			// the name mapping provide the basis for bean setters 
+			final String[] nameMapping = new String[]{"id","name","role","salary"};
+			//just read the header, so that it don't get mapped to Employee object
 			final String[] header = beanReader.getHeader(true);
 			final CellProcessor[] processors = getProcessors();
 
 			Employee emp;
 			
-			while ((emp = beanReader.read(Employee.class, header,
+			while ((emp = beanReader.read(Employee.class, nameMapping,
 					processors)) != null) {
 				emps.add(emp);
 			}
