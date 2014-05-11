@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.org/dtd/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+
+	<class name="com.journaldev.hibernate.model.Customer" table="CUSTOMER">
+		<id name="id" type="long">
+			<column name="txn_id" />
+			<generator class="foreign">
+				<param name="property">txn</param>
+			</generator>
+		</id>
+		<one-to-one name="txn" class="com.journaldev.hibernate.model.Txn"
+			constrained="true"></one-to-one>
+			
+		<property name="name" type="string">
+			<column name="cust_name"></column>
+		</property>
+		<property name="email" type="string">
+			<column name="cust_email"></column>
+		</property>
+		<property name="address" type="string">
+			<column name="cust_address"></column>
+		</property>
+	</class>
+
+</hibernate-mapping>
