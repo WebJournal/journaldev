@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h2>JournalDev Tutorials</h2>
+	<h2><p:outputLabel value="JournalDev - JSF2/Primefaces Tutorial"></p:outputLabel></h2>
+<p:dataTable value="#{viewEmployeesManagedBean.employees}" var="employee">
+	<p:column>
+		<f:facet name="header">
+			<h:outputText value="Employee ID"></h:outputText>
+		</f:facet>
+		<h:outputText value="#{employee.employeeId}"></h:outputText>
+	</p:column>
+	<p:column>
+		<f:facet name="header">
+			<h:outputText value="Employee Name"></h:outputText>
+		</f:facet>
+		<h:outputText value="#{employee.employeeName}"></h:outputText>
+	</p:column>	
+</p:dataTable>
+</html>
