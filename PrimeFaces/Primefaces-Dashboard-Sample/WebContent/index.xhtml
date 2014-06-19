@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<title>Dashboard</title>
+		<script name="jquery/jquery.js" library="primefaces"></script>
+	</h:head>
+	<h:body>
+	<div style="height:500px">
+		<h:form>
+			<p:growl id="msgs" showDetail="true" />
+			<h:panelGrid columns="2">
+				<p:dashboard id="board" model="#{dashboardManagedBean.model}">
+					<p:ajax event="reorder" listener="#{dashboardManagedBean.handleReorder}" update="msgs" />
+					<p:panel id="Finance" header="Finance" closable="true" toggleable="true">
+						<h:outputText value="Finance Content"></h:outputText>
+					</p:panel>
+					<p:panel id="Sports" header="Sports" closable="true" toggleable="true">
+						<h:outputText value="Sports Content"></h:outputText>
+					</p:panel>
+					<p:panel id="News" header="News" closable="true" toggleable="true">
+						<h:outputText value="News Content"></h:outputText>			
+					</p:panel>
+					<p:panel id="Cooking" header="Cooking" closable="true" toggleable="true">
+						<h:outputText value="Cooking Content"></h:outputText>			
+					</p:panel>
+					<p:panel id="Technology" header="Technology" closable="true" toggleable="true">
+						<h:outputText value="Technology Content"></h:outputText>			
+					</p:panel>												
+				</p:dashboard>
+				<p:panel id="draggable">
+					<h:outputLabel value="Drag Panel Into Your Dashboard"></h:outputLabel>
+				</p:panel>
+				<p:draggable for="draggable" helper="clone" dashboard="board"></p:draggable>						
+			</h:panelGrid>
+
+		</h:form>
+		</div>
+	</h:body>
+</html>
