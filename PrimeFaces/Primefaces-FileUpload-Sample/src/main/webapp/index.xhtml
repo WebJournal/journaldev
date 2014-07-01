@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<title>Journaldev Tutorial</title>
+	</h:head>
+	<h:body>
+		<h:form enctype="multipart/form-data" style="width:500px">
+				<p:growl id="msg"></p:growl>
+				<p:fileUpload value="#{fileUploadManagedBean.file}"
+								invalidSizeMessage="JournalDev: Invalid Size"
+								invalidFileMessage="JournalDev: Invalid File Type"
+								fileLimitMessage="JournalDev: Invalid File Limit" 
+								mode="advanced" multiple="true" fileLimit="3" sizeLimit="2048mb"
+								allowTypes="/(\.|\/)(gif|jpe?g|png)$/"
+								fileUploadListener="#{fileUploadManagedBean.fileUploadListener}" 
+								update="msg"></p:fileUpload>
+		</h:form>
+	</h:body>
+</html>
