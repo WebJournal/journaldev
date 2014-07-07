@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<title>Calendar</title>
+		<script name="jquery/jquery.js" library="primefaces"></script>
+	</h:head>
+	<h:body>
+	<div style="height:500px">
+		<h:form>
+			<p:calendar widgetVar="calendarVar" value="#{calendarManagedBean.date}"></p:calendar>
+			<br/>
+			<input type="button" value="Get Date" onclick="alert(PF('calendarVar').getDate())"/>
+			<input type="button" value="Set Date" onclick="PF('calendarVar').setDate('06/20/14')"/>
+			<input type="button" value="Disable" onclick="PF('calendarVar').disable()"/>
+			<input type="button" value="Enable" onclick="PF('calendarVar').enable()"/>
+		</h:form>
+	</div>
+	</h:body>	
+</html>
