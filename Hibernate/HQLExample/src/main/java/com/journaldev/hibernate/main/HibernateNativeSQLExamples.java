@@ -106,6 +106,13 @@ public class HibernateNativeSQLExamples {
 			}
 			System.out.println("\n");
 		}
+		//Above join returns both Employee and Address Objects in the array
+		for (Object[] row : rows) {
+			Employee e = (Employee) row[0];
+			System.out.println("Employee Info::"+e);
+			Address a = (Address) row[1];
+			System.out.println("Address Info::"+a);
+		}
 		System.out.println("**************");
 
 		// rolling back to save the test data
