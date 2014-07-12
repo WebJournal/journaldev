@@ -1,0 +1,21 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>BlocuUI</title>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<h:form>
+	<div style="width: 30%">
+		<p:panel id="messagePanel">
+			<h:outputText value="JouranlDev Message Blocked !!"></h:outputText>
+		</p:panel>
+		#{' '}
+		<p:commandButton id="action" value="Block Message"
+			action="#{blockUIManagedBean.someAction}"></p:commandButton>			
+		<p:blockUI trigger="action" block="messagePanel"></p:blockUI>
+	</div>
+</h:form>
+</html>
