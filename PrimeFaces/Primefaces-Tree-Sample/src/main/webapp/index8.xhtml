@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<h:form>			
+	<p:growl id="message">
+	</p:growl>				
+	<p:treeTable value="#{treeTableManagedBean.root}" var="node" selectionMode="single"
+		selection="#{treeTableManagedBean.singleSelectedNode}">
+		<p:column>
+			<f:facet name="header">
+				Name
+			</f:facet>
+			<h:outputText value="#{node.name}"></h:outputText>
+		</p:column>
+		<p:column>
+			<f:facet name="header">
+				Author
+			</f:facet>
+			<h:outputText value="#{node.author}"></h:outputText>
+		</p:column>
+		<p:column>
+			<f:facet name="header">
+				ID
+			</f:facet>
+			<h:outputText value="#{node.id}"></h:outputText>
+		</p:column>				
+	</p:treeTable>
+	<p:treeTable value="#{treeTableManagedBean.root}" var="node" selectionMode="multiple"
+		selection="#{treeTableManagedBean.multipleSelectedNodes}">
+		<p:column>
+			<f:facet name="header">
+				Name
+			</f:facet>
+			<h:outputText value="#{node.name}"></h:outputText>
+		</p:column>
+		<p:column>
+			<f:facet name="header">
+				Author
+			</f:facet>
+			<h:outputText value="#{node.author}"></h:outputText>
+		</p:column>
+		<p:column>
+			<f:facet name="header">
+				ID
+			</f:facet>
+			<h:outputText value="#{node.id}"></h:outputText>
+		</p:column>				
+	</p:treeTable>
+	<p:treeTable value="#{treeTableManagedBean.root}" var="node" selectionMode="checkbox"
+		selection="#{treeTableManagedBean.checkboxSelectedNodes}">
+		<p:column>
+			<f:facet name="header">
+				Name
+			</f:facet>
+			<h:outputText value="#{node.name}"></h:outputText>
+		</p:column>
+		<p:column>
+			<f:facet name="header">
+				Author
+			</f:facet>
+			<h:outputText value="#{node.author}"></h:outputText>
+		</p:column>
+		<p:column>
+			<f:facet name="header">
+				ID
+			</f:facet>
+			<h:outputText value="#{node.id}"></h:outputText>
+		</p:column>				
+	</p:treeTable>	
+	<p:commandButton value="Show Selected Documents" action="#{treeTableManagedBean.viewSelectedNodes}" process="@form" update="message">
+	</p:commandButton>	
+</h:form>
+</html>
