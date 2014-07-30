@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<p:tooltip/>
+<h:form style="width:50%">
+	Enter Username : <p:inputText id="username" title="Enter Username"></p:inputText>
+	<p:tooltip for="username" showEvent="focus" 
+					hideEvent="blur" showEffect="bounce" 
+						hideEffect="explode">
+		<h:graphicImage value="/resources/images/journaldev.jpg"></h:graphicImage>
+	</p:tooltip>
+	
+</h:form>
+</html>

@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<h:form style="width:50%">
+	<p:tooltip id="tooltip"/>
+	Enter Username : <p:inputText id="username" title="Enter Username"></p:inputText>
+	<p:separator/>
+	Enter Password : <p:inputText id="password" title="Enter Password"></p:inputText>
+	<p:separator/>
+	<p:commandButton value="Asynchrouns Action" 
+		action="#{tooltipManagedBean.changeTooltipValues}" 
+			title="Asynchrouns Action" 
+				update="username password tooltip"></p:commandButton>	
+</h:form>
+</html>
