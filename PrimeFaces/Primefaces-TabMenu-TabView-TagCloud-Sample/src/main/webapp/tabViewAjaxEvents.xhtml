@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<h:form id="form" style="width:500px;">
+	<p:growl id="message"></p:growl>
+	<p:tabView id="tabView" activeIndex="#{tabViewManagedBean.index}">
+		<p:ajax event="tabChange" listener="#{tabViewManagedBean.onTabChanged}" update="@previous"></p:ajax>
+		<p:ajax event="tabClose" listener="#{tabViewManagedBean.onTabClosed}" update="@form:message"></p:ajax>
+		<p:tab title="Tab#1" closable="true">
+			<p:outputLabel value="#{tabViewManagedBean.messageNum1}"></p:outputLabel>
+		</p:tab>
+		<p:tab title="Tab#2" closable="true">
+			<p:outputLabel value="#{tabViewManagedBean.messageNum2}"></p:outputLabel>
+		</p:tab>
+	</p:tabView>
+</h:form>
+</html>

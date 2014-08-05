@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+	<script>
+		function printAllTags(){
+			alert(PF('tagCloudModel').getTags());
+		}
+	</script>
+</h:head>
+<h:form style="width:500px;">
+	<p:growl id="message" ></p:growl>
+	<p:tagCloud widgetVar="tagCloudModel" model="#{tagCloudManagedBean.tagCloud}">
+		<p:ajax event="select" listener="#{tagCloudManagedBean.selectListener}" update="message">
+		</p:ajax>
+	</p:tagCloud>
+	<p:commandButton value="List All Tags"  action="#{tagCloudManagedBean.listAllTags}" update="message"></p:commandButton>
+</h:form>
+</html>

@@ -1,0 +1,16 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<h:form style="width:500px;">
+	<p:growl id="message"></p:growl>
+	<p:tabMenu id="tabMenu" activeIndex="#{tabMenuManagedBean.index}">
+		<p:menuitem value="GET Request" url="http://www.journaldev.com/dev/primefaces"></p:menuitem>
+		<p:menuitem value="Ajax Request" action="#{tabMenuManagedBean.doSomeWork}" update="tabMenu message"></p:menuitem>
+	</p:tabMenu>
+</h:form>
+</html>
