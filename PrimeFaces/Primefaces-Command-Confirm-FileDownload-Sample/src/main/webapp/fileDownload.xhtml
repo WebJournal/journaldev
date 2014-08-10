@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+	<script type="text/javascript">
+		function showStatus() {
+			PF('statusDialog').show();
+		}
+		function hideStatus() {
+			PF('statusDialog').hide();
+		}
+	</script>
+</h:head>
+<h:form>
+	<p:dialog modal="true" widgetVar="statusDialog" header="Status"
+		draggable="false" closable="false">
+		<p:graphicImage value="/resources/images/ajax-loader.gif" />
+	</p:dialog>
+	<p:commandButton value="Download Primefaces Tutorial - Version 5"
+		ajax="false" onclick="PrimeFaces.monitorDownload(showStatus, hideStatus)">
+		<p:fileDownload value="#{fileDownloadManagedBean.content}"></p:fileDownload>
+	</p:commandButton>
+</h:form>
+</html>

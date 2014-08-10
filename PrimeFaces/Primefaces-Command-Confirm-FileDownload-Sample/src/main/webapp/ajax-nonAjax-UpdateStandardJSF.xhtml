@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+	<script>
+		function justCall(){
+			alert('Push Action');
+		}
+	</script>
+</h:head>
+<h:form>
+	<p:growl id="primefacesMessage"></p:growl>
+	<h:messages id="standardMessage"></h:messages>
+	Enter your username: <p:inputText id="username" value="#{commandButtonManagedBean.username}"></p:inputText>
+	<br/>
+	Enter your username: <p:password id="password" value="#{commandButtonManagedBean.password}"></p:password>
+	<br/>
+	<p:commandButton value="Non Ajax Command - Refresh Whole Form" 
+		action="#{commandButtonManagedBean.doSomeAction}" ajax="false"></p:commandButton>
+	#{''}
+	<p:commandButton value="Ajax Command - Refresh Specific Form's Component(s)" 
+		action="#{commandButtonManagedBean.updateMessage}" update="primefacesMessage"></p:commandButton>
+</h:form>
+</html>
