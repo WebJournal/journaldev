@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<title>Panel, PanelGrid, PanelMenu</title>
+		<script name="jquery/jquery.js" library="primefaces"></script>
+	</h:head>
+	<h:form>
+		<p:panel id="Panel1" toggleable="true" closable="true">	
+			<p:ajax event="toggle" listener="#{panelManagedBean.toggleHandle}"></p:ajax>
+			<p:ajax event="close" listener="#{panelManagedBean.closeHandle}"></p:ajax>	
+			<f:facet name="header">
+				<p:outputLabel value="Tutorials Provided"></p:outputLabel>
+			</f:facet>
+			<p:outputLabel value="Name of tutorial you're looking for:"></p:outputLabel>
+			<p:inputText value="#{panelManagedBean.tutorial}"></p:inputText>
+			<p:commandButton value="Search" action="#{panelManagedBean.search}" update="result"></p:commandButton>
+			<p:dataTable value="#{panelManagedBean.tutorials}" var="tutorial" id="result">
+				<p:column>
+					<f:facet name="header">
+						<p:outputLabel value="Tutorial Name"></p:outputLabel>
+					</f:facet>
+					<p:outputLabel value="#{tutorial}"></p:outputLabel>
+				</p:column>
+				<f:facet name="footer">
+					<p:outputLabel value="Provided By Jouranldev.com"></p:outputLabel>
+				</f:facet>
+			</p:dataTable>
+		</p:panel>	
+	</h:form>
+</html>
