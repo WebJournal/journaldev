@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo-1.5.xsd">
+
+<mongo:mongo host="localhost" port="27017" id="mongo" />
+
+<mongo:mongo host="localhost" port="27017" id="test">
+    <mongo:options connections-per-host="8"
+                   threads-allowed-to-block-for-connection-multiplier="4"
+                   connect-timeout="1000"
+                   max-wait-time="1500}"
+                   auto-connect-retry="true"
+                   socket-keep-alive="true"
+                   socket-timeout="1500"
+                   slave-ok="true"
+                   write-number="1"
+                   write-timeout="0"
+                   write-fsync="true" />
+  </mongo:mongo>
+<mongo:db-factory dbname="journaldev" mongo-ref="mongo" id="mongoDbFactory" />
+
+<!-- <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+	<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+</bean>
+ -->
+<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+	<constructor-arg name="mongo" ref="mongo" />
+	<constructor-arg name="databaseName" value="journaldev"></constructor-arg>
+</bean>
+
+<bean id="personDAO" class="com.journaldev.spring.mongodb.dao.PersonDAOImpl">
+	<constructor-arg name="mongoOps" ref="mongoTemplate"/>
+</bean>
+</beans>
