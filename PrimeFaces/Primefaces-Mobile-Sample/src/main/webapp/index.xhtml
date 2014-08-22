@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pm="http://primefaces.org/mobile">
+<f:view renderKitId="PRIMEFACES_MOBILE" />
+<h:head>
+	<script>
+		function back(){
+			PrimeFaces.Mobile.navigate('#login',{
+				transition:'turn'
+			});
+			
+		}
+	</script>
+</h:head>
+<h:body>
+	<pm:page id="login">
+		<pm:header>
+			<p:outputLabel value="Login Into JournalDev"></p:outputLabel>
+		</pm:header>
+		<pm:content>
+			<h:form id="loginForm">
+				<pm:field>
+					<p:outputLabel value="Enter Username"></p:outputLabel>
+					<p:inputText id="username" value="#{mobileManagedBean.username}"></p:inputText>
+				</pm:field>
+				<pm:field>
+					<p:outputLabel value="Enter Password"></p:outputLabel>
+					<p:password id="password" value="#{mobileManagedBean.password}"></p:password>
+				</pm:field>
+				<p:commandButton value="Login" action="#{mobileManagedBean.login}"></p:commandButton>
+			</h:form>
+		</pm:content>
+		<pm:footer>
+			<p:outputLabel value="All copyrights @ reserved for Journaldev.com"></p:outputLabel>
+		</pm:footer>
+	</pm:page>
+	<pm:page id="success">
+		<pm:content>
+			<p:outputLabel value="You've logged in successfully"></p:outputLabel>
+			<p:button value="External Navigation - Same Domain View" outcome="/atTheSameDomainView.xhtml"></p:button>
+			<p:button value="External Navigation - Different Domain View" href="http://www.journaldev.com"></p:button>
+			<p:button value="Back" outcome="pm:login?transition=flow"></p:button>
+			<p:button value="Back By Client Side API" onclick="back()"></p:button>
+		</pm:content>
+	</pm:page>
+	<pm:page id="failure">
+		<pm:content>
+			<p:outputLabel value="You've failed to log in"></p:outputLabel>
+			<p:button value="Back" outcome="pm:login?transition=pop"></p:button>
+		</pm:content>
+	</pm:page>
+</h:body>
+</html>
