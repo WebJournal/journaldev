@@ -1,0 +1,26 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+	<persistence-unit name="eclipselink.mongodb.jpa" transaction-type="RESOURCE_LOCAL">
+		<class>com.journaldev.jpa.data.Employee</class>
+		<properties>
+			<property name="eclipselink.target-database" value="org.eclipse.persistence.nosql.adapters.mongo.MongoPlatform"/>
+            <property name="eclipselink.nosql.connection-spec" value="org.eclipse.persistence.nosql.adapters.mongo.MongoConnectionSpec"/>
+            <property name="eclipselink.nosql.property.mongo.port" value="27017"/>
+            <property name="eclipselink.nosql.property.mongo.host" value="localhost"/>
+            <property name="eclipselink.nosql.property.mongo.db" value="journaldev"/>
+            <property name="eclipselink.logging.level" value="FINEST"/>
+		</properties>
+	</persistence-unit>
+	<persistence-unit name="eclipselink.oraclenosql.jpa" transaction-type="RESOURCE_LOCAL">
+		 <class>com.journaldev.jpa.data.Employee</class>
+	     <properties>
+	         <property name="eclipselink.target-database" value="org.eclipse.persistence.nosql.adapters.nosql.OracleNoSQLPlatform"/>
+	         <property name="eclipselink.nosql.connection-spec" value="org.eclipse.persistence.nosql.adapters.nosql.OracleNoSQLConnectionSpec"/>
+	         <property name="eclipselink.nosql.property.nosql.host" value="mohammad-amr-lt:5000"/>
+	         <property name="eclipselink.nosql.property.nosql.store" value="kvstore"/>
+	         <property name="eclipselink.logging.level" value="FINEST"/>
+	     </properties>
+	</persistence-unit>	
+</persistence>
