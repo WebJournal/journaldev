@@ -1,0 +1,18 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<h:form id="form">
+	<p:growl id="growl" showDetail="true" showSummary="true"></p:growl>
+	<p:commandButton value="Show Dialog - Basic" action="#{dialogFrameworkManagedBean.showDialog}"></p:commandButton>
+	<p:commandButton value="Show Dialog - Additional Properties" action="#{dialogFrameworkManagedBean.showDialogWithAdditionalArg}"></p:commandButton>
+	<p:commandButton value="Show Employees Dialog" action="#{dialogFrameworkManagedBean.showEmployeesDialog}">
+		<p:ajax event="dialogReturn" listener="#{dialogFrameworkManagedBean.onEmployeeChosen}" update="growl" />
+	</p:commandButton>
+</h:form>
+</html>

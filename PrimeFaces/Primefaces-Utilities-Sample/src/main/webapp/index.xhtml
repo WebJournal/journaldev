@@ -1,0 +1,20 @@
+	<html xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<script name="jquery/jquery.js" library="primefaces"></script>
+		<script>
+			function handleComplete(xhr,status,args){
+				var isValid = args.isValid;
+				alert("isValid RequestContext Parameter Passed Is :: "+isValid);
+			}
+		</script>
+		<title>Register Employee</title>
+	</h:head>
+	<h:form>
+		<p:commandButton value="Validate" action="#{utilitiesManagedBean.validate}" 
+			oncomplete="handleComplete(xhr,status,args)"></p:commandButton>
+	</h:form>
+	</html>

@@ -1,0 +1,20 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<h:form prependId="false">
+	<p:commandButton value="Execute JavaScript"
+		action="#{utilitiesManagedBean.executeJavaScript}"></p:commandButton>
+	<p:dialog widgetVar="acceptedDialog">
+		<p:outputLabel value="Accepted"></p:outputLabel>
+	</p:dialog>
+	<p:dialog widgetVar="refusedDialog">
+		<p:outputLabel value="Refused"></p:outputLabel>
+	</p:dialog>
+</h:form>
+</html>
