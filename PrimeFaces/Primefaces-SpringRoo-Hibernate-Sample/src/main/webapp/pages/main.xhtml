@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="../templates/layout.xhtml">
+  <ui:define name="content">
+    <p:panel id="mainPanel" toggleable="true" toggleSpeed="250">
+      <f:facet name="header">
+        <h:outputFormat value="#{messages.label_welcome_titlepane}">
+          <f:param value="#{applicationBean.appName}" />
+        </h:outputFormat>
+      </f:facet>
+      <p />
+      <h:outputText id="welcomeText" value="#{messages.label_welcome_text}" />
+      <p />
+      <div id="media"></div>
+    </p:panel>
+  </ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,88 @@
+body,div,td {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    word-wrap: break-word;
+}
+
+body {
+    background-color: #fff;
+    text-align: left;
+}
+
+a img {
+    border: 0 none;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #456314;
+}
+
+a:active {
+    color: #7db223;
+}
+
+a:visited {
+    color: #7db223;
+}
+
+.wrapper {
+    width: 1024px;
+    min-width: 1024px;
+    max-width: 1024px;
+    margin-right: auto;
+    margin-left: auto; /* fix max-width incompatibility in IE6 */
+    width: expression(document.body.clientWidth > 1024 ? "1024px" : "auto");
+    overflow: hidden;
+    display: block;
+}
+
+.menu {
+    width: 230px;
+    vertical-align: top;
+    text-align: center;
+    margin-right: 5px;
+    word-wrap: break-word;
+}
+
+.content {
+    width: 770px;
+    height: auto;
+    vertical-align: top;
+    text-align: left;
+}
+
+.banner {
+    margin-bottom:5px;
+}
+
+.action-column {
+    text-align: center;
+    width: 120px !important;
+}
+
+.ui-selectmanymenu {
+    width: 155px !important;
+    height: 100px !important;
+}
+
+.dialog {
+    width: auto;
+}
+
+.col1 {
+    vertical-align: top;
+    font-weight: bold;
+}
+
+.col2 {
+    vertical-align: top;
+}
+
+.col3 {
+    vertical-align: top;
+}
