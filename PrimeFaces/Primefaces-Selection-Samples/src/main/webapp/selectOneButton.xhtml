@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<h:form style="width:400px">
+	<p:growl id="message" showDetail="true" showSummary="true"></p:growl>
+	<p:selectOneButton value="#{selectOneButton.selectedTutorial}">
+		<f:selectItems value="#{selectOneButton.tutorials}"></f:selectItems>
+	</p:selectOneButton>
+	<p:separator></p:separator>
+	<p:commandButton value="Register" action="#{selectOneButton.register}" update="message"></p:commandButton>	
+</h:form>
+</html>

@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<h:form style="width:400px">
+	<p:growl id="message" showDetail="true" showSummary="true"></p:growl>
+	<p:selectManyMenu value="#{selectManyMenu.selectedTutorials}" var="tutorial">
+		<f:selectItems value="#{selectManyMenu.tutorials}"/>
+		<p:column>
+			<p:graphicImage value="/resources/images/#{tutorial}.jpg" width="40"></p:graphicImage>
+		</p:column>	
+		<p:column>
+			<p:outputLabel value="#{tutorial}"></p:outputLabel>
+		</p:column>			
+	</p:selectManyMenu>
+	<p:separator></p:separator>
+	<p:commandButton value="Register" action="#{selectManyMenu.register}" update="message"></p:commandButton>	
+</h:form>
+</html>
