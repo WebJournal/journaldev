@@ -1,0 +1,83 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.journaldev</groupId>
+	<artifactId>HelloWorldPortlet</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>HelloWorldPortlet Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<deployFolder>/Users/pankaj/Downloads/pluto-2.0.3/webapps</deployFolder>
+	</properties>
+	<dependencies>
+		<!-- Java Portlet Specification V2.0 -->
+		<dependency>
+			<groupId>org.apache.portals</groupId>
+			<artifactId>portlet-api_2.0_spec</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<!-- bind 'pluto2:assemble' goal to 'process-resources' lifecycle -->
+			<!-- This plugin will read your portlet.xml and web.xml and injects required 
+				lines -->
+			<plugin>
+				<groupId>org.apache.portals.pluto</groupId>
+				<artifactId>maven-pluto-plugin</artifactId>
+				<version>2.1.0-M3</version>
+				<executions>
+					<execution>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>assemble</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- configure maven-war-plugin to use updated web.xml -->
+			<!-- This plugin will make sure your WAR will contain the updated web.xml -->
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+				<configuration>
+					<webXml>${project.build.directory}/pluto-resources/web.xml</webXml>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>integration-test</phase>
+						<configuration>
+							<tasks>
+								<!-- Use this to build and deploy the testsuite war. PORTLET_DEPLOY_DIR 
+									is an environmental variable pointing to the hot-deploy directory of your 
+									portal. You can also use -Ddeploy.dir=<path to deployment dir> on the command 
+									line when invoking maven: mvn -Ddeploy.dir=/pluto-1.1.4/webapps integration-test -->
+								<property environment="env" />
+								<property name="deploy.dir" value="${env.PORTLET_DEPLOY_DIR}" />
+								<copy file="target/${pom.build.finalName}.war" tofile="${deployFolder}/${pom.build.finalName}.war" />
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	<finalName>${project.artifactId}</finalName>
+	</build>
+</project>
