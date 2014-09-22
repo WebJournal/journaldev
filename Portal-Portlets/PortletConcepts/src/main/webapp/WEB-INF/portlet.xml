@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
+
+	<portlet>
+		<display-name>Request Attributes</display-name>
+		<portlet-name>requestAttributes</portlet-name>
+		<portlet-class>com.journaldev.portlet.RequestParameters
+		</portlet-class>
+		<description>Print out all attributes located at the PortletRequest
+		</description>
+		<portlet-info>
+			<title>Request Attributes</title>
+			<keywords>request, attributes</keywords>
+			<short-title>Request Attributes</short-title>
+		</portlet-info>
+	</portlet>
+
+	<portlet>
+		<display-name>Action Request Reader</display-name>
+		<portlet-name>actionRequestReader</portlet-name>
+		<portlet-class>com.journaldev.portlet.ActionRequestReader
+		</portlet-class>
+		<description>Print out all attributes located at the PortletRequest
+		</description>
+		<portlet-info>
+			<title>Action Request Reader</title>
+			<keywords>Action,Request, Reader</keywords>
+			<short-title>ActionRequestReader</short-title>
+		</portlet-info>
+	</portlet>
+
+	<portlet>
+		<display-name>RenderResponse Namespace One</display-name>
+		<portlet-name>RenderResponseNamespaceOne</portlet-name>
+		<portlet-class>com.journaldev.portlet.RenderResponseNamespaceOne
+		</portlet-class>
+		<portlet-info>
+			<title>Render Response One</title>
+			<keywords>Render,Response</keywords>
+			<short-title>RenderResponseOne</short-title>
+		</portlet-info>
+	</portlet>
+	
+	<portlet>
+		<display-name>RenderResponse Namespace Two</display-name>
+		<portlet-name>RenderResponseNamespaceTwo</portlet-name>
+		<portlet-class>com.journaldev.portlet.RenderResponseNamespaceTwo</portlet-class>
+		<portlet-info>
+			<title>Render Response Two</title>
+			<keywords>Render,Response</keywords>
+			<short-title>RenderResponseTwo</short-title>
+		</portlet-info>
+	</portlet>
+</portlet-app>
