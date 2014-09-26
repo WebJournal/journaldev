@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN"
+  "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<!-- 
+Licensed to the Apache Software Foundation (ASF) under one or more
+contributor license agreements.  See the NOTICE file distributed with
+this work for additional information regarding copyright ownership.
+The ASF licenses this file to You under the Apache License, Version 2.0
+(the "License"); you may not use this file except in compliance with
+the License.  You may obtain a copy of the License at 
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed  under the  License is distributed on an "AS IS" BASIS,
+WITHOUT  WARRANTIES OR CONDITIONS  OF ANY KIND, either  express  or
+implied.
+
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<taglib>
+    <tlibversion>1.0</tlibversion>
+    <jspversion>1.1</jspversion>
+    <shortname>portlet</shortname>
+    <uri>http://java.sun.com/portlet</uri>
+    <tag>
+        <name>defineObjects</name>
+        <tagclass>org.apache.pluto.tags.DefineObjectsTag</tagclass>
+        <teiclass>org.apache.pluto.tags.DefineObjectsTag$TEI</teiclass>
+        <bodycontent>empty</bodycontent>
+    </tag>
+    <tag>
+        <name>param</name>
+        <tagclass>org.apache.pluto.tags.ParamTag</tagclass>
+        <bodycontent>empty</bodycontent>
+        <attribute>
+            <name>name</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>value</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>actionURL</name>
+        <tagclass>org.apache.pluto.tags.ActionURLTag</tagclass>
+        <teiclass>org.apache.pluto.tags.BasicURLTag$TEI</teiclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>windowState</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>portletMode</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>secure</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>var</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>renderURL</name>
+        <tagclass>org.apache.pluto.tags.RenderURLTag</tagclass>
+        <teiclass>org.apache.pluto.tags.BasicURLTag$TEI</teiclass>
+        <bodycontent>JSP</bodycontent>
+        <attribute>
+            <name>windowState</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>portletMode</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>secure</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>var</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <name>namespace</name>
+        <tagclass>org.apache.pluto.tags.NamespaceTag</tagclass>
+        <bodycontent>empty</bodycontent>
+    </tag>
+</taglib>

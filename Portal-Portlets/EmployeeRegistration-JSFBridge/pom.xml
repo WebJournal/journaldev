@@ -1,0 +1,129 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.journaldev</groupId>
+	<artifactId>EmployeeRegistration-JSFBridge</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>EmployeeRegistration-JSFBridge</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<deployFolder>D:/Apache Pluto/pluto-2.0.3/webapps</deployFolder>
+	</properties>
+	<dependencies>
+		<!-- Java Portlet Specification V2.0 -->
+		<dependency>
+			<groupId>org.apache.portals</groupId>
+			<artifactId>portlet-api_2.0_spec</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.pluto</groupId>
+			<artifactId>pluto-taglib</artifactId>
+			<version>1.1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.32</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.myfaces.portlet-bridge</groupId>
+			<artifactId>portlet-bridge-api</artifactId>
+			<version>3.0.0-alpha</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.myfaces.portlet-bridge</groupId>
+			<artifactId>portlet-bridge-impl</artifactId>
+			<version>3.0.0-alpha</version>
+		</dependency>
+		<!-- Faces Implementation -->
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-impl</artifactId>
+			<version>2.1.15</version>
+		</dependency>
+		<!-- Faces Library -->
+		<dependency>
+			<groupId>com.sun.faces</groupId>
+			<artifactId>jsf-api</artifactId>
+			<version>2.1.15</version>
+		</dependency>	
+	</dependencies>
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<!-- bind 'pluto2:assemble' goal to 'process-resources' lifecycle -->
+			<!-- This plugin will read your portlet.xml and web.xml and injects required 
+				lines -->
+			<plugin>
+				<groupId>org.apache.portals.pluto</groupId>
+				<artifactId>maven-pluto-plugin</artifactId>
+				<version>2.1.0-M3</version>
+				<executions>
+					<execution>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>assemble</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- configure maven-war-plugin to use updated web.xml -->
+			<!-- This plugin will make sure your WAR will contain the updated web.xml -->
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+				<configuration>
+					<webXml>${project.build.directory}/pluto-resources/web.xml</webXml>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy</id>
+						<phase>integration-test</phase>
+						<configuration>
+							<tasks>
+								<copy file="target/${project.artifactId}.war" tofile="${deployFolder}/${project.artifactId}.war" />
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>delete</id>
+						<phase>clean</phase>
+						<configuration>
+							<tasks>
+								<delete file="${deployFolder}/${project.artifactId}.war" />
+								<delete dir="${deployFolder}/${project.artifactId}" />
+							</tasks>
+							<detail>true</detail>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
+	<portlet id="register">
+		<display-name>Register Employee</display-name>
+		<portlet-name>RegisterEmployee</portlet-name>
+		<portlet-class>javax.portlet.faces.GenericFacesPortlet</portlet-class>
+		<description>Employee Registration</description>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>VIEW</portlet-mode>
+		</supports>
+		<init-param>
+			<name>javax.portlet.faces.defaultViewId.view</name>
+			<value>/register/register.xhtml</value>
+		</init-param>
+		<portlet-info>
+			<title>Employee Registration</title>
+			<keywords>employee, registration</keywords>
+			<short-title>Employee Registration</short-title>
+		</portlet-info>
+	</portlet>
+</portlet-app>

@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<h:head>
+		<title>Register Employee</title>
+	</h:head>
+	<h:body>
+		<h:messages showSummary="true" errorStyle="color:red;" infoStyle="color:green;"/>
+		<h:form prependId="false">
+			<h:panelGrid columns="2" style="width:100%">
+					<h:outputLabel for="id" value="Identity"></h:outputLabel> 
+					<h:inputText id="id" value="#{registerEmployeeManagedBean.employee.id}" required="true" requiredMessage="ID is mandatory">
+						<f:validateRegex pattern="[0-9]*"></f:validateRegex>
+					</h:inputText>			
+					<h:outputLabel for="name" value="Name"></h:outputLabel> 
+					<h:inputText id="name" value="#{registerEmployeeManagedBean.employee.name}"></h:inputText>
+					<h:outputLabel for="job" value="Job"></h:outputLabel> 
+					<h:inputText id="job" value="#{registerEmployeeManagedBean.employee.job}"></h:inputText>
+					<h:outputLabel for="salary" value="Salary"></h:outputLabel> 
+					<h:inputText id="salary" value="#{registerEmployeeManagedBean.employee.salary}" requiredMessage="Salary is mandatory">
+						<f:validateRegex pattern="[0-9]*"></f:validateRegex>
+						<f:validateLength minimum="2" maximum="4"></f:validateLength>
+					</h:inputText>																								
+			</h:panelGrid>
+			<h:commandButton value="Register" actionListener="#{registerEmployeeManagedBean.registerListener}" style=""></h:commandButton>
+		</h:form>
+	</h:body>
+</html>
