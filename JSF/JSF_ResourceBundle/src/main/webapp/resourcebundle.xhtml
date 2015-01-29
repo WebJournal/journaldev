@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Resource Bundle</title>
+</h:head>
+<h:body>
+	<h3>Resource Bundle Example</h3>
+	<c:view>
+		<c:loadBundle basename="com.journaldev.messages.resourcebundle" var="res" />
+
+		<h:form>
+			<h:panelGrid columns="3">
+				<h:outputLabel value="#{res.name}"></h:outputLabel>
+				<h:inputText value="#{car.cname}" id="cname"></h:inputText>
+				<br />
+				<br />
+				<h:outputLabel value="#{res.Id}"></h:outputLabel>
+				<h:inputText value="#{car.id}" id="Id"></h:inputText>
+				<br />
+				<br />
+				<h:outputLabel value="#{res.color}"></h:outputLabel>
+				<h:inputText value="#{car.color}" id="color"></h:inputText>
+				<br />
+				<br />
+				<h:outputLabel value="#{res.model}"></h:outputLabel>
+				<h:inputText value="#{car.model}" id="model"></h:inputText>
+				<br />
+				<br />
+				<h:outputLabel value="#{res.regno}"></h:outputLabel>
+				<h:inputText value="#{car.regno}" id="regno"></h:inputText>
+				<br />
+				<br />
+
+				<h:commandButton action="#{car.clearAll()}" value="#{res.clear}"></h:commandButton>
+			</h:panelGrid>
+		</h:form>
+
+	</c:view>
+
+</h:body>
+</html>
+
+
