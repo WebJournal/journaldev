@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Facelet Title</title>
+</h:head>
+<h:body>
+
+	<h1>Standard Error messages</h1>
+
+
+	<h:form>
+		<h:panelGrid columns="3">
+			<h:outputLabel value="Car Id" for="Id"></h:outputLabel>
+			<h:inputText value="#{car.id}" id="Id" required="true" label="Car Id"></h:inputText>
+			<h:message for="Id" style="color: red"></h:message>
+
+
+			<h:outputLabel value="Car Name"></h:outputLabel>
+			<h:inputText value="#{car.cname}" id="cname" label="Car Name">
+				<c:validateLength minimum="5" maximum="10" for="cname" id="cname" />
+			</h:inputText>
+
+			<h:message for="cname" style="color: red"></h:message>
+			<h:outputLabel value="Mfd Date" for="mfddate"></h:outputLabel>
+			<h:inputText value="#{car.mfddate}" id="mfddate" label="Mfd Date">
+				<c:convertDateTime />
+			</h:inputText>
+
+			<h:message for="mfddate" style="color:red"></h:message>
+
+			<h:outputLabel value="Price" for="price"></h:outputLabel>
+			<h:inputText value="#{car.price}" id="price" label="Price">
+				<c:validateDoubleRange minimum="3.25" maximum="15.45" for="price"></c:validateDoubleRange>
+			</h:inputText>
+
+			<h:message for="price" style="color:red"></h:message>
+
+			<h:outputLabel value="Engine" for="engine"></h:outputLabel>
+			<h:selectOneRadio value="#{car.engine}" id="engine" required="true"
+				label="engine">
+				<c:selectItem itemValue="Petrol" itemLabel="Petrol" />
+				<c:selectItem itemValue="Diesel" itemLabel="Diesel" />
+			</h:selectOneRadio>
+			<h:message id="message" for="engine" style="color:red"></h:message>
+
+			<h:commandButton action="#{car.id}" value="Submit"></h:commandButton>
+			<br />
+			<br />
+		</h:panelGrid>
+
+
+
+	</h:form>
+
+</h:body>
+</html>
+
+
+
+
