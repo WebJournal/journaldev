@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+      <h:head>
+        <title>Page Navigation</title>
+    </h:head>
+    <h:body>
+        <h3>Page Navigation</h3>
+            
+            <h:form>
+                <h:panelGrid columns="3" >
+                    <h:outputLabel for="cname">Car Name:</h:outputLabel>
+                <h:inputText value="#{car.cname}" id="cname"></h:inputText>
+                <br /> <br />
+                
+                <h:outputLabel for="Id">Car Id:</h:outputLabel>
+                <h:inputText value="#{car.id}"></h:inputText>
+                <br /> <br />
+                
+                <h:outputLabel for="color">Color:</h:outputLabel>
+                <h:inputText value="#{car.color}"></h:inputText>
+                <br /> <br />
+                
+                <h:outputLabel for="model">Model:</h:outputLabel>
+                <h:inputText value="#{car.model}"></h:inputText>
+                <br />  <br />
+                
+                <h:outputLabel for="regno">Registration Number:</h:outputLabel>
+                <h:inputText value="#{car.regno}"></h:inputText>
+                <br /> <br />
+                <h:commandButton action="viewdetails" value="Submit"></h:commandButton>
+                
+                </h:panelGrid>
+            </h:form>
+                
+        
+       
+    </h:body>
+</html>
+
