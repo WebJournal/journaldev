@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsf/core">
+<h:head>
+	<title>DataTable tag Example</title>
+</h:head>
+<h:body>
+	<h3>Mobile Details</h3>
+	<h:form>
+		<h:dataTable value="#{mobilerecords.mobiles}" var="mobile" border="2"
+			cellspacing="1" cellpadding="1">
+			<h:column>
+				<c:facet name="header">Name</c:facet>
+                    #{mobile.companyname}
+                </h:column>
+			<h:column>
+				<c:facet name="header">Model Number</c:facet>
+                    #{mobile.modelnumber}
+                </h:column>
+			<h:column>
+				<c:facet name="header">Color</c:facet>
+                    #{mobile.color}
+                </h:column>
+			<h:column>
+				<c:facet name="header">Quantity</c:facet>
+                    #{mobile.quantity}
+                </h:column>
+			<h:column>
+				<c:facet name="header">Price</c:facet>
+                    #{mobile.price}
+                </h:column>
+
+		</h:dataTable>
+	</h:form>
+
+</h:body>
+</html>
+
