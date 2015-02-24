@@ -1,0 +1,27 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	>
+<h:head>
+	<title>Decorate</title>
+</h:head>
+<h:body>
+	
+	<ui:decorate template="decorate.xhtml">
+		<ui:define name="caption">
+                    <h:outputText value="Car Names List"/>
+		</ui:define>
+		
+		<h:outputText value="Zen"/>
+                <h:outputText value="Innova" />
+                <h:outputText value="Alto"/>
+                <h:outputText value="Qualis" />
+                <h:outputText value="Polo" />
+                <h:outputText value="Santro" />
+                
+	</ui:decorate>
+	
+</h:body>
+</html>
+
+
