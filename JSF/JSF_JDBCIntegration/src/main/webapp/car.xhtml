@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>JSF JDBC Integration</title>
+
+</h:head>
+<h:body>
+	<h2>Car Details</h2>
+	<h:dataTable value="#{carBean.cars}" var="car" border="2">
+		<h:column>
+			<f:facet name="header">Car ID</f:facet>
+         #{car.cid}
+      </h:column>
+		<h:column>
+			<f:facet name="header">Car Name</f:facet>
+         #{car.cname}
+      </h:column>
+		<h:column>
+			<f:facet name="header">Car Color</f:facet>
+           #{car.color}
+       </h:column>
+		<h:column>
+			<f:facet name="header">Car Speed</f:facet>
+           #{car.speed}
+       </h:column>
+		<h:column>
+			<f:facet name="header">Manufactured Country</f:facet>
+           #{car.mfdctry}
+       </h:column>
+	</h:dataTable>
+</h:body>
+</html>

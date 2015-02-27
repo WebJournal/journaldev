@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<title>Configuring navigation rules</title>
+</h:head>
+<h:body>
+	<h3>Add Mobile Details</h3>
+
+	<h:form>
+		<h:panelGrid columns="3">
+			<h:outputLabel for="mname">Mobile Name:</h:outputLabel>
+			<h:inputText value="#{mobile.mname}"></h:inputText>
+			<br />
+			<br />
+
+			<h:outputLabel for="color">Color:</h:outputLabel>
+			<h:inputText value="#{mobile.color}"></h:inputText>
+			<br />
+			<br />
+
+			<h:outputLabel for="model">Model Number:</h:outputLabel>
+			<h:inputText value="#{mobile.modelno}"></h:inputText>
+			<br />
+			<br />
+
+			<h:commandButton value="Submit" action="viewmob"></h:commandButton>
+
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>
