@@ -3,3 +3,9 @@ target/
 .classpath
 .project
 .settings
+.idea
+*.iml
+.gradle
+/build
+/captures
+.externalNativeBuild
