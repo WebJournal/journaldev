@@ -1,0 +1,7 @@
+<binding>
+	<mapping name="Employee" class="com.journaldev.jibx.bean.Employee" ordered="false">
+		<value style="attribute" name="id" field="id" usage="optional" />
+		<value name="name" field="name" />
+		<value name="hiredate" field="hireDate" usage="optional" />
+	</mapping>
+</binding>

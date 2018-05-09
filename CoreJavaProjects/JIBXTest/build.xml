@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<!-- ===================================================================
+
+Ant build file for JiBX data binding starter example.
+
+=================================================================== -->
+
+<project basedir="." default="bind">
+  
+  <!-- The following block is intended to set the jibx-home location. It first
+   checks the relative location of the JiBX libraries when this starter example
+   is run directly from the JiBX distribution, then (if that fails), looks for
+   an environmental variable JIBX_HOME with the installation path. If you prefer
+   to just set the path directly in this file, uncomment the following line and
+   set the value to the appropriate directory, then delete the rest of the Ant
+   commands down to the end of this block. -->
+ <property name="jibx-home" value="${basedir}"/> 
+
+  <!-- End of jibx-home location setting block. -->
+  
+  <!-- make sure required jars are present -->
+  <condition property="runtime-jars-found">
+    <available file="${basedir}/lib/jibx-run.jar"/>
+  </condition>
+  <condition property="binding-jars-found">
+    <and>
+      <available file="${basedir}/lib/bcel.jar"/>
+      <available file="${basedir}/lib/jibx-bind.jar"/>
+      <available file="${basedir}/lib/jibx-run.jar"/>
+    </and>
+  </condition>
+  
+  <!-- set classpath for compiling and running application with JiBX -->
+  <path id="classpath">
+    <fileset dir="${basedir}/lib" includes="*.jar"/>
+    <pathelement location="${basedir}/bin"/>
+  </path>
+  
+  <!-- make sure runtime jars are present -->
+  <target name="check-runtime">
+    <fail unless="jibx-home">JiBX home directory not found - define JIBX_HOME system property or set path directly in build.xml file.</fail>
+    <fail unless="runtime-jars-found">Required JiBX runtime jar jibx-run.jar was not found in JiBX home lib directory (${jibx-home}/lib)</fail>
+  </target>
+  
+  <!-- make sure binding jars are present -->
+  <target name="check-binding" depends="check-runtime">
+    <fail unless="binding-jars-found">Required JiBX binding jar jibx-bind.jar or bcel.jar was not found in JiBX home lib directory (${jibx-home}/lib)</fail>
+  </target>
+  
+  <!-- bind as a separate step -->
+  <target name="bind" depends="check-binding">
+    
+    <echo message="Running JiBX binding compiler"/>
+    <taskdef name="bind" classname="org.jibx.binding.ant.CompileTask">
+      <classpath>
+        <fileset dir="${jibx-home}/lib" includes="*.jar"/>
+      </classpath>
+    </taskdef>
+    <bind binding="${basedir}/binding.xml">
+      <classpath refid="classpath"/>
+    </bind>
+  </target>
+</project>
