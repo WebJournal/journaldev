@@ -4,4 +4,5 @@ This project contains all the code examples from JournalDev [Python Tutorials](h
 
 ## Python Tutorials Articles
 
+* [Python Collections Counter Class](https://www.journaldev.com/20806/python-counter-python-collections-counter)
 * [Python urllib](https://www.journaldev.com/20795/python-urllib-python-3-urllib)
