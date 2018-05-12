@@ -4,7 +4,7 @@
 
 1. Download Eclipse IDE Oxygen.3a (4.7.3a) Release
  
-2. Clone the repository from 
+2. Clone the repository 
 
 3. Import project in eclipse - Menu File –> Import –> Maven –> Existing Maven Projects
 
@@ -14,6 +14,6 @@
 
 ## Run the example
 
-1. Open the JUnit5SamplesTest.java 
+1. Open any test file for example, JUnit5SamplesTest.java 
 
 2. Right click -> Run As -> JUnit Test
