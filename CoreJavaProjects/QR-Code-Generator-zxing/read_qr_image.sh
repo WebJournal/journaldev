@@ -1,0 +1,1 @@
+java -cp $HOME/.m2/repository/com/google/zxing/javase/3.3.2/javase-3.3.2.jar:.:$HOME/.m2/repository/com/google/zxing/core/3.3.2/core-3.3.2.jar:$HOME/.m2/repository/com/beust/jcommander/1.72/jcommander-1.72.jar:$HOME/.m2/repository/com/github/jai-imageio/jai-imageio-core/1.3.1/jai-imageio-core-1.3.1.jar com.google.zxing.client.j2se.CommandLineRunner JD.png
