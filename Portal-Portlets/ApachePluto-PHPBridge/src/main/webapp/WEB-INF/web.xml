@@ -1,0 +1,27 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Employee Registration</display-name>
+	<servlet>
+		<servlet-class>com.journaldev.servlet.RegisterEmployeeServlet</servlet-class>
+		<servlet-name>RegisterEmployeeServlet</servlet-name>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterEmployeeServlet</servlet-name>
+		<url-pattern>/registerEmployeeServlet</url-pattern>
+	</servlet-mapping>
+	<taglib>
+		<taglib-uri>http://java.sun.com/portlet</taglib-uri>
+		<taglib-location>/WEB-INF/portlet.tld</taglib-location>
+	</taglib>
+	<servlet>
+		<servlet-name>Quercus Servlet</servlet-name>
+		<servlet-class>com.caucho.quercus.servlet.QuercusServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Quercus Servlet</servlet-name>
+		<url-pattern>*.php</url-pattern>
+	</servlet-mapping>
+</web-app>

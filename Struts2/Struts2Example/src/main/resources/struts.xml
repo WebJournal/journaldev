@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.convention.result.path" value="/"></constant>
+	<package name="user" namespace="/" extends="struts-default">
+		<action name="login">
+			<result>/login.jsp</result>
+		</action>
+		<action name="home" class="com.journaldev.struts2.actions.HomeAction">
+			<interceptor-ref name="cookie"></interceptor-ref>
+			<interceptor-ref name="cookieProvider"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/home.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

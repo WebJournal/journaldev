@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>jQuery addClass Example - Table Zebra Stripes</title>
+</head>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<!-- jQuery script to check if row is even, addClass is used to add CSS class to the row  -->
+<script type="text/javascript">
+      $(function() {
+        $("table tr:nth-child(even)").addClass("striped");
+      });
+    </script>
+<!-- Below CSS is used for configuring table display -->
+<style type="text/css">
+body,td {
+	font-size: 12px;
+}
+
+table {
+	background-color: black;
+	border: 1px black solid;
+	border-collapse: collapse;
+}
+
+th {
+	border: 1px outset silver;
+	background-color: blue;
+	color: white;
+}
+
+tr {
+	border: 1px outset silver;
+	background-color: white;
+	margin: 1px;
+}
+
+tr.striped {
+	border: 1px outset silver;
+	background-color: yellow;
+}
+
+td {
+	padding: 1px 10px;
+}
+</style>
+
+
+<body>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Role</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Pankaj</td>
+			<td>CEO</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Lisa</td>
+			<td>Manager</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Robin</td>
+			<td>Support</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>David</td>
+			<td>Editor</td>
+		</tr>
+	</table>
+</body>
+</html>

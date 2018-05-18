@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+     <h:head>
+        <title>Adding a Label</title>
+    </h:head>
+    <h:body>
+        <h3>Adding a label</h3>
+        <h:form>
+            <h:panelGrid columns="3">
+        <h:outputLabel for="cname">Car Name:</h:outputLabel>
+        <h:inputText id="cname" value="#{car.cname}"></h:inputText>
+        <br /> <br />
+        <h:outputLabel for="color">Car Color:</h:outputLabel>
+        <h:inputText id="color" value="#{car.color}"></h:inputText>
+        </h:panelGrid>
+        </h:form>
+        
+    </h:body>
+</html>
+
+

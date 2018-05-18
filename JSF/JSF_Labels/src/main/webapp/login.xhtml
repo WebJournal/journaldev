@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+   <h:head>
+        <title>Login </title>
+    </h:head>
+    <h:body>
+        <h3>Hiding Input text</h3>
+        <h:form id="login">
+            <h:panelGrid columns="3">
+            <h:outputLabel for="uname">UserName:</h:outputLabel>
+        <h:inputText id="uname" value="#{login.uname}" ></h:inputText>
+        <br /> <br />
+        <h:outputLabel for="password">Password</h:outputLabel>
+        <h:inputSecret id="password" value="#{login.password}"></h:inputSecret>
+        <br /> <br />
+        <h:commandButton value="Submit" action="#{login.UservalidOrnot}"></h:commandButton>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
+

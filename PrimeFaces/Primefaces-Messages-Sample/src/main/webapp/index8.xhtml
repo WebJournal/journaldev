@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<h:form id="form">
+	<p:growl id="message" life="2000"/>
+	<p:outputPanel>
+		<p:outputLabel value="Typing of your preferred technical site"></p:outputLabel>
+	</p:outputPanel>
+	<h:inputText id="input" value="#{messageManagedBean.message}"/>
+	<p:commandButton value="Execute JSF Lifecycle - Invoke Action One" 
+			action="#{messageManagedBean.doSomeAction}" update="message"></p:commandButton>	
+</h:form>
+</html>

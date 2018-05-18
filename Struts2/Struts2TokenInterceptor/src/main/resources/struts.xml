@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- constant to define result path locations to project root directory -->
+	<constant name="struts.convention.result.path" value="/"></constant>
+	
+	<package name="user" namespace="/" extends="struts-default">
+		<action name="update">
+			<result>/update.jsp</result>
+		</action>
+		<action name="UpdateUser" class="com.journaldev.struts2.actions.UpdateUserAction">
+			<interceptor-ref name="token"></interceptor-ref>
+			<!-- 
+			OR <interceptor-ref name="tokenSession"></interceptor-ref>
+			 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/update_success.jsp</result>
+			<result name="input">/update.jsp</result>
+			<result name="invalid.token">/invalid_token.jsp</result>
+		</action>
+	</package>
+
+</struts>

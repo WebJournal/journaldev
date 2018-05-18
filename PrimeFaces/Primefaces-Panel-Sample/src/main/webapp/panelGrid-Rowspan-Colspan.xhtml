@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<title>Panel, PanelGrid, PanelMenu</title>
+		<script name="jquery/jquery.js" library="primefaces"></script>
+	</h:head>
+	<h:form>
+		<p:panelGrid>
+			<p:row>
+				<p:column>
+					<p:outputLabel value="Enter Username:"></p:outputLabel>
+				</p:column>
+				<p:column>
+					<p:inputText></p:inputText>
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column>
+					<p:outputLabel value="Enter Password:"></p:outputLabel>
+				</p:column>
+				<p:column>
+					<p:inputText></p:inputText>
+				</p:column>			
+			</p:row>
+			<p:row>	
+				<p:column>		
+					<p:commandButton value="Login"></p:commandButton>
+				</p:column>
+				<p:column>
+				</p:column>
+			</p:row>
+		</p:panelGrid>	
+	</h:form>
+</html>

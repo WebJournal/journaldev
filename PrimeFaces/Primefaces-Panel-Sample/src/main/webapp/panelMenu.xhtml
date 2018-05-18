@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Panel, PanelGrid, PanelMenu</title>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<h:form>
+	<p:panelMenu style="width:200px">
+		<p:submenu label="JournalDev Tutorials">
+			<p:submenu label="Links" icon="ui-icon-extlink">
+				<p:submenu label="Tutorials" icon="ui-icon-heart">
+					<p:menuitem value="Primefaces Tutorials" url="http://www.journaldev.com/dev/primefaces" />
+					<p:menuitem value="Java EE Tutorials" url="http://www.journaldev.com/dev/java/j2ee" />
+				</p:submenu>
+			</p:submenu>
+			<p:menuitem value="Go To JournalDev" url="http://www.primefaces.org" />
+		</p:submenu>
+	</p:panelMenu>
+	</h:form>
+</html>

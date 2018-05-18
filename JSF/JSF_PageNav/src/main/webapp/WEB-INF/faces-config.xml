@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+   http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="2.0">
+	<navigation-rule>
+		<from-view-id>car.xhtml</from-view-id>
+		<navigation-case>
+			<from-action>#{car.add}</from-action>
+			<from-outcome>form</from-outcome>
+			<to-view-id>pagenav.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-action>#{car.view}</from-action>
+			<from-outcome>form</from-outcome>
+			<to-view-id>view.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+</faces-config>

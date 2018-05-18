@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	    xmlns:ui="http://java.sun.com/jsf/facelets"
+	    xmlns:h="http://java.sun.com/jsf/html"
+	    xmlns:f="http://java.sun.com/jsf/core">
+	    <h:head>
+	        <title>Decorate tag example</title>
+	    </h:head>
+	    <h:form>
+	       
+                <h:panelGrid columns="3" border="2" bgcolor="cyan" cellpadding="2" cellspacing="2" >
+	            <f:facet name="caption" >
+	                <ui:insert name="caption" />
+	            </f:facet>
+	            <ui:insert name="text"/>
+	            <ui:insert/>
+	        </h:panelGrid>
+	    </h:form>
+	</html>
+

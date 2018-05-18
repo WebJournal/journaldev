@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- constant to define result path locations to project root directory -->
+	<constant name="struts.convention.result.path" value="/"></constant>
+	<!-- constant to define global properties file for i18n messages -->
+	<constant name="struts.custom.i18n.resources" value="global"></constant>
+	
+	<package name="user" namespace="/" extends="struts-default">
+		<action name="login">
+			<result>/login.jsp</result>
+		</action>
+		<action name="Welcome" class="com.journaldev.struts2.actions.WelcomeAction">
+			<result name="success">/welcome.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+	</package>
+
+</struts>

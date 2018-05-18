@@ -1,0 +1,22 @@
+body {
+	background-color: #e7e7e7;
+	font-family: Helvetica;
+	font-size: 14px;
+	color: #666;
+	margin: 0px;
+	padding: 0px;
+}
+
+.wrapper {
+	width: 900px;
+	height: 500px;
+	margin: 0 auto;
+	background: white;
+	margin: 0 auto;
+}
+
+.container {
+	min-height: 400px;
+	border-top: 1px solid gray;
+	padding: 50px;
+}

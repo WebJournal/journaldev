@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+	<script>
+		function showMenu(){
+			PF('tieredMenu').show();
+		}
+		function hideMenu(){
+			PF('tieredMenu').hide();
+		}		
+	</script>
+</h:head>
+<h:form style="width:400px;">
+	<p:growl id="message"></p:growl>
+	<p:tieredMenu autoDisplay="false" trigger="triggerBtn" overlay="true" my="left top" at="right top" widgetVar="tieredMenu">
+		<p:submenu label="Ajax Menuitem">
+			<p:menuitem value="Ajax Action" action="#{tieredMenuManagedBean.ajaxAction}" update="message"></p:menuitem>
+		</p:submenu>
+		<p:submenu label="Non Ajax Menuitem">
+			<p:menuitem value="Non Ajax Action" action="#{tieredMenuManagedBean.nonAjaxAction}"></p:menuitem>
+		</p:submenu>		
+		<p:separator/>
+		<p:submenu label="Navigations">
+			<p:submenu label="Primefaces links">
+				<p:menuitem value="Prime" url="http://www.prime.com.tr"></p:menuitem>
+				<p:menuitem value="Primefaces" url="http://www.primefaces.org"></p:menuitem>
+			</p:submenu>
+			<p:submenu label="Prime Blogs">
+				<p:menuitem value="JournalDev" url="http://www.journaldev.com"></p:menuitem>
+			</p:submenu>
+		</p:submenu>
+	</p:tieredMenu>
+	<p:commandButton value="Show Menu - Normal Trigger" id="triggerBtn"></p:commandButton>
+	<p:commandButton value="Show Menu - JavaScript function" onclick="showMenu()"></p:commandButton>
+	<p:commandButton value="Hide Menu - JavaScript function" onclick="hideMenu()"></p:commandButton>
+</h:form>
+</html>

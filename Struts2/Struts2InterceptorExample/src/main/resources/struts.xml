@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.convention.result.path" value="/"></constant>
+
+	<package name="user" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="authentication"
+				class="com.journaldev.struts2.interceptors.AuthenticationInterceptor"></interceptor>
+			<interceptor-stack name="authStack">
+				<interceptor-ref name="authentication"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="authStack"></default-interceptor-ref>
+
+		<global-results>
+			<result name="login" type="redirect">/home.action</result>
+		</global-results>
+
+		<action name="home">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result>/login.jsp</result>
+		</action>
+
+		<action name="login" class="com.journaldev.struts2.actions.LoginAction">
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="success">/welcome.jsp</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<action name="welcome" class="com.journaldev.struts2.actions.WelcomeAction">
+			<result name="success">/welcome.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

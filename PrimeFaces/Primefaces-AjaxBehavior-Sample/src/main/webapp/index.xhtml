@@ -1,0 +1,18 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>AjaxBehavior</title>
+</h:head>
+<h:form>
+	<p:inputText id="input" value="#{ajaxBehaviorManagedBean.message}">
+		<p:ajax event="keyup" update="output1 output2" listener="#{ajaxBehaviorManagedBean.keyUpListener}"></p:ajax>
+	</p:inputText>
+	<br/>
+	<p:outputLabel id="output1" value="Output A :#{ajaxBehaviorManagedBean.message}"></p:outputLabel>
+	<br/>
+	<p:outputLabel id="output2" value="Output B :#{ajaxBehaviorManagedBean.message}"></p:outputLabel>	                            
+</h:form>
+</html>

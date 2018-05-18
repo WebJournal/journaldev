@@ -1,0 +1,36 @@
+<html>
+<head>
+<!-- import jQuery library -->
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<!-- jQuery functions for addClass example -->
+<script type="text/javascript">
+	$(function() {
+		$("p:last").addClass("selected highlight");
+	});
+	$(function() {
+		$("p:first").addClass("highlight");
+	});
+</script>
+<style>
+p {
+	margin: 10px;
+	font-size: 16px;
+}
+
+.selected {
+	color: maroon;
+}
+
+.highlight {
+	background: yellow;
+}
+</style>
+</head>
+
+<body>
+	<p>Pankaj</p>
+	<p>Kumar</p>
+	<p>Bye</p>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+	debug="false">
+
+	<!-- A time/date based rolling appender -->
+	<appender name="FILE" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="logs/system.log" />
+		<param name="Append" value="true" />
+		<param name="ImmediateFlush" value="true" />
+		<param name="MaxFileSize" value="200MB" />
+		<param name="MaxBackupIndex" value="100" />
+
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %d{Z} [%t] %-5p (%F:%L) - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="journaldev-hibernate" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="logs/project.log" />
+		<param name="Append" value="true" />
+		<param name="ImmediateFlush" value="true" />
+		<param name="MaxFileSize" value="200MB" />
+		<param name="MaxBackupIndex" value="50" />
+
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d %d{Z} [%t] %-5p (%F:%L) - %m%n" />
+		</layout>
+	</appender>
+
+	<logger name="com.journaldev.hibernate" additivity="false">
+		<level value="DEBUG" />
+		<appender-ref ref="journaldev-hibernate" />
+	</logger>
+
+	<logger name="org.hibernate" additivity="false">
+		<level value="INFO" />
+		<appender-ref ref="FILE" />
+	</logger>
+	<root>
+		<priority value="INFO"></priority>
+		<appender-ref ref="FILE" />
+	</root>
+
+</log4j:configuration>

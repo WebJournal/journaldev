@@ -1,0 +1,10 @@
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-08-27 23:07:03
+project --topLevelPackage com.journaldev --projectName Primefaces-SpringRoo-Hibernate-Sample --java 6 --packaging WAR
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2014-08-27 23:07:17
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-08-27 23:10:53
+persistence setup --database MYSQL --provider HIBERNATE --hostName localhost --userName root --password root --databaseName journaldev --persistenceUnit hibernate.jpa
+osgi install --url file:\\\D:\mysql-connector-java-5.1.18-bin.jar
+database reverse engineer --schema journaldev  --package ~.jpa.data --disableVersionFields --activeRecord true --disableGeneratedIdentifiers
+web jsf setup --implementation ORACLE_MOJARRA --library PRIMEFACES --theme BLUESKY
+web jsf all --package ~.web
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2014-08-28 00:11:38

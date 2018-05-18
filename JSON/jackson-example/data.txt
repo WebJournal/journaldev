@@ -1,0 +1,5 @@
+{
+  "name": "David",
+  "role": "Manager",
+  "city": "Los Angeles"
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.journaldev.hibernate.model.Employee" table="EMPLOYEE">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="increment" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="role" type="java.lang.String">
+            <column name="ROLE" />
+        </property>
+        <property name="insertTime" type="timestamp">
+        	<column name="insert_time" />
+        </property>
+    </class>
+</hibernate-mapping>

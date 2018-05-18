@@ -1,0 +1,1 @@
+{"id":100,"name":"David","permanent":false,"role":"Manager","phoneNumbers":[123456,987654],"address":{"street":"BTM 1st Stage","city":"Bangalore","zipcode":560100}}

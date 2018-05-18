@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+              http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <navigation-rule>
+        <from-view-id>/mobile.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{mobile.add}</from-action>
+            <from-outcome>addform</from-outcome>
+            <to-view-id>/addmob.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{mobile.view}</from-action>
+            <from-outcome>viewform</from-outcome>
+            <to-view-id>/viewdetails.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>

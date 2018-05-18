@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<script name="jquery/jquery.js" library="primefaces"></script>
+		<script>
+			alert(PF);
+			function doSelect(index){
+				PF('accordionPanel').select(index);
+			}
+			
+			function doUnSelect(index){
+				PF('accordionPanel').unselect(index);
+			}
+		</script>
+	</h:head>
+	<h:body>
+		<h:form>
+			<div style="width: 500px;">
+				<p:accordionPanel widgetVar="accordionPanel" activeIndex="0">
+					<p:ajax event="tabChange" listener="#{accordionPanelManagedBean.onChange}"></p:ajax>
+					<p:tab title="Welcome Tab">
+						<p:outputLabel value="#{accordionPanelManagedBean.journalMessage}"></p:outputLabel>
+					</p:tab>
+					<p:tab title="Component Tab">
+						<p:outputLabel value="#{accordionPanelManagedBean.componentMessage}"></p:outputLabel>
+					</p:tab>
+				</p:accordionPanel>
+				<input id="index" type="text"/>
+				<input id="Select" value="Select" type="button" onclick="doSelect(document.getElementById('index').value);false"/>
+				<input id="UnSelect" value="UnSelect" type="button" onclick="doUnSelect(document.getElementById('index').value);false"/>
+			</div>
+		</h:form>
+	</h:body>
+</html>

@@ -1,0 +1,24 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<h:form id="form">
+	<p:dataTable value="#{dialogFrameworkManagedBean.employees}" var="employee">
+		<p:column headerText="Employee ID">
+			<p:outputLabel value="#{employee.employeeId}"></p:outputLabel>
+		</p:column>
+		<p:column headerText="Employee Name">
+			<p:outputLabel value="#{employee.employeeName}"></p:outputLabel>
+		</p:column>	
+		<p:column headerText="Select Employee">
+			<p:commandButton icon="ui-icon-search" action="#{dialogFrameworkManagedBean.selectEmployeeFromDialog(employee)}" />
+       	</p:column>	
+	</p:dataTable>
+	<p:commandButton value="Show Message" action="#{dialogFrameworkManagedBean.showMessage}"></p:commandButton>
+</h:form>
+</html>

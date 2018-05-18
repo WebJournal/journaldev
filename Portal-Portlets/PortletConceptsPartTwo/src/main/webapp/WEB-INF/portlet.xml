@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd"
+	version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd">
+
+	<portlet>
+		<init-param>
+			<name>PortletParam</name>
+			<value>ParamValue</value>
+		</init-param>
+		<display-name>Hello Portlet One</display-name>
+		<portlet-name>HelloOne</portlet-name>
+		<portlet-class>com.journaldev.portlet.HelloPortlet</portlet-class>
+		<description>Hello Portlet One</description>
+		<portlet-info>
+			<title>Hello Portlet One</title>
+			<keywords>Hello, Portlet, One</keywords>
+			<short-title>Hello Portlet One</short-title>
+		</portlet-info>
+	</portlet>
+	
+	<portlet>
+		<init-param>
+			<name>PortletParam</name>
+			<value>ParamValue</value>
+		</init-param>
+		<display-name>Hello Portlet Two</display-name>
+		<portlet-name>HelloTwo</portlet-name>
+		<portlet-class>com.journaldev.portlet.HelloPortlet</portlet-class>
+		<description>Hello Portlet Two</description>
+		<portlet-info>
+			<title>Hello Portlet Two</title>
+			<keywords>Hello, Portlet, Two</keywords>
+			<short-title>Hello Portlet Two</short-title>
+		</portlet-info>
+	</portlet>	
+	
+</portlet-app>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<package name="default" extends="struts-portlet-default"
+		namespace="/employee">
+		<action name="index">
+			<result>/WEB-INF/jsp/employee/register.jsp</result>
+		</action>
+	</package>
+	
+	<package name="employee" namespace="/employee" extends="struts-portlet-default">
+		<action name="register" class="com.journaldev.action.RegisterAction">
+			<result name="SUCCESS">/WEB-INF/jsp/employee/success.jsp</result>
+			<result name="FAILURE">/WEB-INF/jsp/employee/failure.jsp</result>
+		</action>
+	</package>
+</struts>

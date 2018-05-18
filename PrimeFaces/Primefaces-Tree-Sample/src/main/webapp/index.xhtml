@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<h:form>
+	<p:tree value="#{treeManagedBean.root}" var="node" dynamic="true" 
+				selectionMode="single" selection="#{treeManagedBean.singleSelectedTreeNode}">
+		<p:treeNode expandedIcon="ui-icon ui-icon-folder-open"
+						collapsedIcon="ui-icon ui-icon-folder-collapsed">
+			<h:outputText value="#{node}"/>
+		</p:treeNode>
+		<p:treeNode type="document" icon="ui-icon ui-icon-document">
+			<h:outputText value="#{node}"/>
+		</p:treeNode>
+		<p:treeNode type="image" icon="ui-icon ui-icon-image">
+			<h:outputText value="#{node}"/>
+		</p:treeNode>					
+		<p:treeNode type="video" icon="ui-icon ui-icon-video">
+			<h:outputText value="#{node}"/>
+		</p:treeNode>
+		<p:ajax event="select" listener="#{treeManagedBean.onNodeSelect}"></p:ajax>
+		<p:ajax event="unselect" listener="#{treeManagedBean.onNodeUnSelect}"></p:ajax>
+		<p:ajax event="expand" listener="#{treeManagedBean.onNodeExpand}"></p:ajax>
+		<p:ajax event="collapse" listener="#{treeManagedBean.onNodeCollapse}"></p:ajax>									
+	</p:tree>
+</h:form>
+</html>

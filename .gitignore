@@ -1,0 +1,11 @@
+target/
+.DS_Store
+.classpath
+.project
+.settings
+.idea
+*.iml
+.gradle
+/build
+/captures
+.externalNativeBuild

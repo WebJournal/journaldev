@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+</h:head>
+<h:body>
+	<h3>Add Mobile Details</h3>
+	<h:form>
+		<h:panelGrid columns="3">
+			<h:outputLabel for="mname">Mobile Name:</h:outputLabel>
+			<h:inputText id="mname" required="true"
+				requiredMessage="Mobile Name is mandatory"></h:inputText>
+			<br />
+			<br />
+
+			<h:outputLabel for="color">Color:</h:outputLabel>
+			<h:inputText id="color" required="true"></h:inputText>
+			<br />
+			<br />
+
+			<h:outputLabel for="model">Model Number:</h:outputLabel>
+			<h:inputText id="model"></h:inputText>
+			<br />
+			<br />
+
+			<h:commandButton value="Submit"></h:commandButton>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+</html>

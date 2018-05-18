@@ -1,0 +1,28 @@
+<constraint-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://jboss.org/xml/ns/javax/validation/mapping validation-mapping-1.1.xsd"
+	xmlns="http://jboss.org/xml/ns/javax/validation/mapping" version="1.1">
+
+	<default-package>com.journaldev.validator.hibernate.model</default-package>
+
+	<bean class="EmployeeXMLValidation" ignore-annotations="true">
+		<field name="id">
+			<constraint annotation="javax.validation.constraints.Min">
+				<element name="value">1</element>
+			</constraint>
+		</field>
+		<field name="name">
+			<constraint annotation="javax.validation.constraints.NotNull" />
+			<constraint annotation="javax.validation.constraints.Size">
+				<element name="min">5</element>
+				<element name="max">30</element>
+			</constraint>
+		</field>
+		<field name="email">
+			<constraint annotation="org.hibernate.validator.constraints.Email" />
+		</field>
+		<field name="creditCardNumber">
+			<constraint annotation="org.hibernate.validator.constraints.CreditCardNumber" />
+		</field>
+	</bean>
+
+</constraint-mappings>

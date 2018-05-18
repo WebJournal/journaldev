@@ -1,0 +1,75 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<style type="text/css">
+.styled{
+	border:1px black solid;
+	background-color: read;
+	border-collapse: collapse;
+}
+</style>
+<script type="text/javascript">
+
+	function styleToggle(button) {
+		if (button.value == 'Add Style') {
+			//using add() we can apply css to all the elements at once
+			$('table').add('p').addClass('styled').add('li').css('background-color', 'red');
+			button.value = 'Remove Style';
+		} else {
+			//using removeAttr() to remove the styling
+			$('table').add('p').add('li').removeClass('styled').removeAttr('style');
+			button.value = 'Add Style';
+		}
+		$().add("<br /><strong>appending html</strong>").appendTo("p:last");
+	}
+</script>
+<title>jQuery add() Example</title>
+</head>
+<body>
+	<strong>Employee Table</strong>
+	<br /><br />
+	<table>
+		<tbody>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>ROLE</th>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>Pankaj</td>
+				<td>Developer</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Mike</td>
+				<td>Manager</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>David</td>
+				<td>CEO</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>Lisa</td>
+				<td>Support</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<ul>
+		<li>list item 1</li>
+		<li>list item 2</li>
+		<li>list item 3</li>
+	</ul>
+	<p>A Paragraph</p>
+	
+	<p>Last Paragraph</p>
+	<br />
+	<input type="button" value="Add Style" onclick="styleToggle(this)"></input>
+
+
+</body>
+
+</html>

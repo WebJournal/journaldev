@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<script name="jquery/jquery.js" library="primefaces"></script>
+</h:head>
+<h:form>
+	<p:growl id="messages"></p:growl>
+	<p:commandButton value="Download Source Code" type="button" onclick="PF('confirmDialog').show()" />	 
+ 	<p:confirmDialog message="Are you sure you want to install this source code?"
+ 						header="Initiating Download Process" 
+ 						severity="alert" widgetVar="confirmDialog">
+ 		<p:commandButton value="Yes Sure" action="#{confirmDialogManagedBean.yesAction}"
+ 				update="messages" oncomplete="PF('confirmDialog').hide()"/>
+ 		<p:commandButton value="Not Yet" onclick="PF('confirmDialog').hide();" type="button" />
+ 	</p:confirmDialog> 	 
+</h:form>
+</html>

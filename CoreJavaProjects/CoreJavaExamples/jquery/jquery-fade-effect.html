@@ -1,0 +1,55 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.8.3.min.js"></script>
+<title>jQuery fadeIn fadeOut Effect Example</TITLE>
+<style>
+body,input {
+	font-family: Helvetica, Arial;
+}
+
+#fade, #fadeTo {
+	width: 150px;
+	height: 50px;
+	padding: 10px;
+	border: 1px solid black;
+	background-color: yellow;
+}
+</style>
+</head>
+<body>
+
+	<input type="button" value="Fade Out" onclick="fadeToggle('fade', this)" />
+	<br /><br />
+	
+	<div id="fade">Demo Text in div for fadeIn, fadeOut example</div>
+	<br />
+	
+	<input type="button" value="FadeTo 50%" onclick="fadeToToggle('fadeTo', this)" />
+	<div id="fadeTo">Demo Text in div for fadeTo example</div>
+
+</body>
+<script>
+// javascript function for fade effect toggling
+	function fadeToggle(div_id, button) {
+
+		if (button.value == 'Fade Out') {
+			$('#' + div_id).fadeOut('slow');
+			button.value = 'Fade In';
+		} else {
+			$('#' + div_id).fadeIn(2000);
+			button.value = 'Fade Out';
+		}
+	}
+	
+	function fadeToToggle(div_id, button) {
+
+		if (button.value == 'FadeTo 50%') {
+			$('#' + div_id).fadeTo('slow' , 0.5);
+			button.value = 'FadeTo 100%';
+		} else {
+			$('#' + div_id).fadeTo(4000 , 1.0);
+			button.value = 'FadeTo 50%';
+		}
+	}
+</script>
+</html>

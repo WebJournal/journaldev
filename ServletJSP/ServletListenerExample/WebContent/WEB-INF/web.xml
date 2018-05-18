@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>ServletListenerExample</display-name>
+  
+  <context-param>
+    <param-name>DBUSER</param-name>
+    <param-value>pankaj</param-value>
+  </context-param>
+  <context-param>
+    <param-name>DBPWD</param-name>
+    <param-value>password</param-value>
+  </context-param>
+  <context-param>
+    <param-name>DBURL</param-name>
+    <param-value>jdbc:mysql://localhost/mysql_db</param-value>
+  </context-param>
+  
+  <listener>
+    <listener-class>com.journaldev.listener.AppContextListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.journaldev.listener.AppContextAttributeListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.journaldev.listener.MySessionListener</listener-class>
+  </listener>
+  <listener>
+    <listener-class>com.journaldev.listener.MyServletRequestListener</listener-class>
+  </listener>
+</web-app>

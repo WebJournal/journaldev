@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<title>Wizard</title>
+		<script name="jquery/jquery.js" library="primefaces"></script>
+		<script>
+			function next(){
+				PF('wizard').next();
+			}
+			
+			function back(){
+				PF('wizard').back();
+			}
+			
+			function onBack(){
+				alert('Back Client Side Callback');
+			}
+			
+			function onnext(){
+				alert('Next Client Side Callback');
+			}
+		</script>
+	</h:head>
+	<h:form>
+		<div style="width:500px">
+			<input value="Next" type="button" onclick="next();"/>
+			<input value="Prev" type="button" onclick="back();"/>
+			<p:wizard widgetVar="wizard" flowListener="#{tutorialRegistrationBean.flowListener}" showNavBar="false" onback="onBack();" onnext="onnext();">
+				<p:tab id="tutorialBasicInformation">
+					<p:panelGrid columns="2">
+						<p:outputLabel value="Tutorial Name:"/><h:inputText value="#{tutorialRegistrationBean.tutorial.tutorialName}"></h:inputText>
+						<p:outputLabel value="Tutorial Instructor:"/><h:inputText value="#{tutorialRegistrationBean.tutorial.tutorialInstructor}"></h:inputText>
+						<p:outputLabel value="Tutorial Period:"/><h:inputText value="#{tutorialRegistrationBean.tutorial.tutorialPeriod}"></h:inputText>
+					</p:panelGrid>
+				</p:tab>
+				<p:tab id="tutorialRegistration">
+					<p:panelGrid columns="2">
+						<p:outputLabel value="Tutorial Price:"/><h:inputText value="#{tutorialRegistrationBean.tutorial.tutorialPrice}"></h:inputText>
+						<p:outputLabel value="Tutorial Start Date:"/><h:inputText value="#{tutorialRegistrationBean.tutorial.tutorialStartDate}"></h:inputText>
+						<p:outputLabel value="Tutorial End Date:"/><h:inputText value="#{tutorialRegistrationBean.tutorial.tutorialEndDate}"></h:inputText>
+					</p:panelGrid>
+					<h:commandButton value="Register" action="#{tutorialRegistrationBean.register}"></h:commandButton>				
+				</p:tab>
+			</p:wizard>
+			<p:dataTable value="#{tutorialRegistrationBean.tutorials}" var="tutorial">
+				<f:facet name="header">
+					<p:outputLabel value="Tutorials List"/>
+				</f:facet>
+				<p:column>
+					<h:outputText value="#{tutorial.tutorialName}"/>
+				</p:column>
+				<p:column>
+					<h:outputText value="#{tutorial.tutorialInstructor}"/>
+				</p:column>
+				<p:column>
+					<h:outputText value="#{tutorial.tutorialStartDate}"/>
+				</p:column>
+				<p:column>
+					<h:outputText value="#{tutorial.tutorialEndDate}"/>
+				</p:column>																											
+			</p:dataTable>			
+		</div>
+	</h:form>
+</html>

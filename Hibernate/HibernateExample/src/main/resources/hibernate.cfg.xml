@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection properties - Driver, URL, user, password -->
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost/TestDB</property>
+		<property name="hibernate.connection.username">pankaj</property>
+		<property name="hibernate.connection.password">pankaj123</property>
+		<!-- Connection Pool Size -->
+		<property name="hibernate.connection.pool_size">1</property>
+		
+		<!-- org.hibernate.HibernateException: No CurrentSessionContext configured! -->
+		<property name="hibernate.current_session_context_class">thread</property>
+		
+		<!-- Disable the second-level cache -->
+		<property name="hibernate.cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+		<!-- Outputs the SQL queries, should be disabled in Production -->
+		<property name="hibernate.show_sql">true</property>
+		
+		<!-- Dialect is required to let Hibernate know the Database Type, MySQL, Oracle etc
+			Hibernate 4 automatically figure out Dialect from Database Connection Metadata -->
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property> 
+
+		<!-- mapping file, we can use Bean annotations too --> 
+		<mapping resource="employee.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>
