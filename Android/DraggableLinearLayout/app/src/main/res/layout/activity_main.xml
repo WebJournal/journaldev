@@ -1,0 +1,42 @@
+<com.jmedeisis.draglinearlayout.DragLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <TextView
+        android:text="Please Drag and Drop Me Somewhere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextViewStyle" />
+
+    <TextView
+        android:background="@android:color/holo_red_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextViewStyle" />
+
+    <TextView
+        android:text="This tutorial uses a third party library to drag LinearLayouts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextViewStyle" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_1"
+         />
+
+    <TextView
+        android:text="Ever thought how dragging songs in an application playlist works!"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/TextViewStyle" />
+
+
+
+</com.jmedeisis.draglinearlayout.DragLinearLayout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ViewPager</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="red">RED</string>
+    <string name="blue">BLUE</string>
+    <string name="green">GREEN</string>
+</resources>

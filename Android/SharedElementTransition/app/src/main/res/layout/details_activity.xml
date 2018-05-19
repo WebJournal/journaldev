@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:id="@+id/layout"
+    android:transitionName="@string/transition"
+    tools:context="com.journaldev.sharedelementtransition.MainActivity">
+
+    <TextView
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/language"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/heading"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/desc"
+        android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+         />
+
+</RelativeLayout>

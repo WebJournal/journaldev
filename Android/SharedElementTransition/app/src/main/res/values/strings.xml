@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SharedElementTransition</string>
+    <string name="transition">transit</string>
+    <string name="android"> Large parts of Android are written in Java and its APIs are designed to be called primarily from Java. It is possible to develop C and C++ app using the Android Native Development Kit (NDK), however it is not something that Google promotes.</string>
+    <string name="ios">The programming language of iOS(and Mac OS) is Objective-C and C. You have to use Xcode platform to develop iOS apps</string>
+    <string name="phonegap">PhoneGap is a software development framework by Adobe System, which is used to develop mobile applications. To develop apps using PhoneGap, the developer does not require to have knowledge of mobile programming language but only web-development languages like, HTML, CSS, and JScript.</string>
+    <string name="xamarin">Xamarin.Mac was created as a tool for Apple technology application development using the C# programming language. Xamarin.Mac, as with Xamarin.iOS and Xamarin.Android, gives developers up to 90% of code reuse across Android, iOS and Windows.</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="md_black_1000">#000000</color>
+    <color name="md_light_green_900">#33691E</color>
+    <color name="md_amber_A700">#FFAB00</color>
+    <color name="md_pink_A700">#C51162</color>
+    <color name="md_brown_800">#4E342E</color>
+</resources>

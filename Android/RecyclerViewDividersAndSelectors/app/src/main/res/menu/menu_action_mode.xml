@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_delete"
+        android:icon="@drawable/ic_delete"
+        android:orderInCategory="300"
+        android:title="Delete"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_color"
+        android:icon="@drawable/ic_color_mark"
+        android:orderInCategory="200"
+        android:title="Color"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/ic_refresh"
+        android:orderInCategory="100"
+        android:title="Refresh"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_select_all"
+        android:icon="@drawable/ic_select_all"
+        android:orderInCategory="400"
+        android:title="ALL"
+        app:showAsAction="always" />
+
+</menu>
