@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/viewGroup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
+
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorAccentTrans"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/llSign_in"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal"
+            app:layout_widthPercent="85%">
+
+            <com.journaldev.verticaltextviewandpercentlayout.VerticalTextView
+                android:id="@+id/txtSignIn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingTop="15dp"
+                android:rotation="180"
+                android:text="@string/sign_in"
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp"
+                android:visibility="gone" />
+
+            <include
+                layout="@layout/layout_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llRegister"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@color/colorYTrans"
+            android:orientation="horizontal"
+            app:layout_widthPercent="15%">
+
+            <com.journaldev.verticaltextviewandpercentlayout.VerticalTextView
+                android:id="@+id/txtRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="15dp"
+                android:rotation="180"
+                android:text="@string/register"
+                android:textAllCaps="true"
+                android:textColor="#FFFFFF"
+                android:textSize="26sp"
+                android:visibility="visible" />
+
+            <include
+                layout="@layout/layout_register"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center" />
+
+
+        </LinearLayout>
+    </android.support.percent.PercentRelativeLayout>
+
+</RelativeLayout>

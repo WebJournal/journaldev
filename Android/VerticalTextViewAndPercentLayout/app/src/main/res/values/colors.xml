@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#212121</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="colorPrimaryTrans">#A0673AB7</color>
+    <color name="colorAccentTrans">#A0009688</color>
+    <color name="colorRedTrans">#A0CF0026</color>
+    <color name="colorYTrans">#A0F4B400</color>
+    <color name="colorWTrans">#A0FFFFFF</color>
+    <color name="colorBlackTrans">#30000000</color>
+    <color name="colorBTrans">#A0000000</color>
+</resources>
