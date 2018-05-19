@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AndroidPictureInPicture</string>
+    <string name="title_activity_pi_p">PiPActivity</string>
+</resources>

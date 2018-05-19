@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.journaldev.androidmvvmbasics.viewmodels.LoginViewModel" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/inEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:padding="8dp"
+                app:addTextChangedListener="@{viewModel.getEmailTextWatcher}" />
+
+            <EditText
+                android:id="@+id/inPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                app:addTextChangedListener="@{viewModel.getPasswordTextWatcher}" />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:onClick="@{viewModel::onLoginClicked}"
+                android:text="LOGIN" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txtCoin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/txtCurrentPrice"
+        app:layout_constraintTop_toTopOf="parent"
+         />
+
+    <TextView
+        android:id="@+id/txtCurrentPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCoin"
+        />
+
+
+    <TextView
+        android:id="@+id/txtOneHourChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtOneHour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="1H"
+        app:layout_constraintEnd_toStartOf="@+id/txtOneHourChange"
+        app:layout_constraintTop_toTopOf="@+id/txtOneHourChange" />
+
+
+    <TextView
+        android:id="@+id/txt24HourChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtOneHourChange" />
+
+    <TextView
+        android:id="@+id/txt7Day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="7D"
+        app:layout_constraintEnd_toStartOf="@+id/txt7DayChange"
+        app:layout_constraintTop_toTopOf="@+id/txt7DayChange" />
+
+
+    <TextView
+        android:id="@+id/txt24Hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="24H"
+        app:layout_constraintBottom_toTopOf="@+id/txt7DayChange"
+        app:layout_constraintEnd_toStartOf="@+id/txt24HourChange"
+        app:layout_constraintTop_toTopOf="@+id/txt24HourChange" />
+
+    <TextView
+        android:id="@+id/txt7DayChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt24HourChange" />
+
+</android.support.constraint.ConstraintLayout>
