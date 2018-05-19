@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item
+        android:id="@+id/add" android:icon="@android:drawable/ic_menu_add" app:showAsAction="always" android:title="@string/add"/>
+    <item
+        android:id="@+id/reset" android:icon="@android:drawable/ic_menu_revert" app:showAsAction="always|withText" android:title="@string/reset"/>
+    <item
+        android:id="@+id/about" android:icon="@android:drawable/ic_dialog_info" app:showAsAction="never" android:title="@string/about">
+    </item>
+
+    <item
+        android:id="@+id/exit"  app:showAsAction="never" android:title="@string/exit">
+    </item>
+</menu>
