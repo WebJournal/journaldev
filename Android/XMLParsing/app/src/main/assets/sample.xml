@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<countries>
+    <country id="1">
+        <name>
+            India
+        </name>
+        <capital>
+            New Delhi
+        </capital>
+    </country>
+
+    <country id="2">
+        <name>
+            Australia
+        </name>
+        <capital>
+            Canberra
+        </capital>
+    </country>
+
+    <country id="3">
+        <name>
+            USA
+        </name>
+        <capital>
+            Washington, D.C.
+        </capital>
+    </country>
+
+</countries>
+
+

@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlertActivity" >
+
+    <Button
+        android:id="@+id/one_button_alert"
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="25dip"
+        android:layout_marginLeft="20dip"
+        android:text="Single Button Alert" />
+    <Button
+        android:id="@+id/two_button_alert"
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/one_button_alert"
+        android:layout_marginLeft="20dip"
+        android:text="Two Buttons Alert" />
+    <Button
+        android:id="@+id/three_button_alert"
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/two_button_alert"
+        android:layout_marginLeft="20dip"
+        android:text="Three Buttons Alert" />
+</RelativeLayout>

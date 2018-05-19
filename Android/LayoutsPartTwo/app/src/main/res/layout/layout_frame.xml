@@ -1,0 +1,17 @@
+<FrameLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:src="@android:drawable/alert_dark_frame"
+        android:scaleType="fitCenter"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"/>
+    <TextView
+        android:text="JournalDev.com"
+        android:textSize="24sp"
+        android:textColor="#ffff"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:gravity="center"/>
+</FrameLayout>

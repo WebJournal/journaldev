@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">EfficientSearch</string>
+    <string name="search_restaurants_and_cuisines">Search Restaurants and Cuisines</string>
+    <string name="no_results_found">No results found</string>
+</resources>

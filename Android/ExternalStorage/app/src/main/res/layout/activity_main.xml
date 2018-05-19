@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Reading and Writing to External Storage"
+        android:textSize="24sp"/>
+
+    <EditText android:id="@+id/myInputText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" android:lines="5"
+        android:minLines="3" android:gravity="top|left"
+        android:inputType="textMultiLine">
+
+        <requestFocus />
+    </EditText>
+
+    <LinearLayout
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal"
+        android:weightSum="1.0"
+        android:layout_marginTop="20dp">
+
+    <Button android:id="@+id/saveExternalStorage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        android:layout_weight="0.5"/>
+
+    <Button android:id="@+id/getExternalStorage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:text="READ" />
+
+    </LinearLayout>
+
+    <TextView android:id="@+id/response"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:padding="5dp"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</LinearLayout>
