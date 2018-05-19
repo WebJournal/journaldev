@@ -92,6 +92,7 @@ Gradle
 ## Android Material Design
 * [Android CardView RecyclerView](https://www.journaldev.com/10024/android-recyclerview-android-cardview-example-tutorial)
 * [Android RecyclerView with Dividers](https://www.journaldev.com/15035/recyclerview-android-dividers-contextual-toolbar)
+* [Android RecyclerView DiffUtil](https://www.journaldev.com/20873/android-recyclerview-diffutil)
 * [Android ViewPager](https://www.journaldev.com/10096/android-viewpager-example-tutorial)
 * [Android Drag Drop](https://www.journaldev.com/10200/android-drag-drop-draglinearlayout)
 * [Android Floating Action Button](https://www.journaldev.com/10318/android-floating-action-button-example-tutorial)
