@@ -1,0 +1,283 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+                android:id="@+id/btnFadeIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Fade In" />
+
+
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Fade In"
+                android:id="@+id/txt_fade_in"
+            android:layout_alignBottom="@+id/btnFadeIn"
+            android:layout_alignLeft="@+id/txt_fade_out"
+            android:layout_alignStart="@+id/txt_fade_out" />
+
+
+        <Button
+                android:id="@+id/btnFadeOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_below="@id/btnFadeIn"
+                android:text="Fade Out" />
+
+
+        <Button
+                android:id="@+id/btnCrossFade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_below="@id/btnFadeOut"
+                android:text="Cross Fade" />
+
+
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Cross Fade In"
+                android:id="@+id/txt_out"
+                android:visibility="gone"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignTop="@+id/txt_in"
+                android:layout_alignLeft="@+id/txt_in"
+                android:layout_alignStart="@+id/txt_in" />
+
+
+
+
+
+        <Button
+                android:id="@+id/btnBlink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_below="@id/btnCrossFade"
+                android:text="Blink" />
+
+
+
+        <Button
+                android:id="@+id/btnZoomIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_below="@id/btnBlink"
+                android:text="Zoom In" />
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Blink"
+                android:id="@+id/txt_blink"
+                android:layout_gravity="center_horizontal"
+            android:layout_alignBottom="@+id/btnBlink"
+            android:layout_alignLeft="@+id/txt_zoom_in"
+            android:layout_alignStart="@+id/txt_zoom_in" />
+
+        <Button
+                android:id="@+id/btnZoomOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_below="@id/btnZoomIn"
+                android:text="Zoom Out" />
+
+
+        <Button
+                android:id="@+id/btnRotate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_below="@id/btnZoomOut"
+                android:text="Rotate" />
+
+
+        <Button
+                android:id="@+id/btnMove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_below="@id/btnRotate"
+                android:text="Move" />
+
+
+        <Button
+                android:id="@+id/btnSlideUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_below="@id/btnMove"
+                android:text="Slide Up" />
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Fade Out"
+                android:id="@+id/txt_fade_out"
+                android:layout_gravity="center_horizontal"
+            android:layout_alignBottom="@+id/btnFadeOut"
+            android:layout_alignLeft="@+id/txt_in"
+            android:layout_alignStart="@+id/txt_in" />
+
+        <Button
+                android:id="@+id/btnSlideDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_below="@id/btnSlideUp"
+                android:text="Slide Down" />
+
+
+        <Button
+                android:id="@+id/btnBounce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_below="@id/btnSlideDown"
+                android:text="Bounce" />
+
+
+        <Button
+                android:id="@+id/btnSequential"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_below="@id/btnBounce"
+                android:text="Sequential Animation" />
+
+
+        <Button
+                android:id="@+id/btnTogether"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnSequential"
+                android:layout_margin="5dp"
+                android:text="Together Animation" />
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Cross Fade Out"
+                android:id="@+id/txt_in"
+                android:layout_gravity="center_horizontal"
+            android:layout_alignBottom="@+id/btnCrossFade"
+            android:layout_alignLeft="@+id/txt_blink"
+            android:layout_alignStart="@+id/txt_blink" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Zoom In"
+            android:id="@+id/txt_zoom_in"
+            android:layout_alignBottom="@+id/btnZoomIn"
+            android:layout_alignLeft="@+id/txt_zoom_out"
+            android:layout_alignStart="@+id/txt_zoom_out" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Zoom Out"
+            android:id="@+id/txt_zoom_out"
+            android:layout_alignBottom="@+id/btnZoomOut"
+            android:layout_toRightOf="@+id/btnSequential"
+            android:layout_toEndOf="@+id/btnSequential" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Rotate"
+            android:id="@+id/txt_rotate"
+            android:layout_above="@+id/btnMove"
+            android:layout_toRightOf="@+id/btnSequential"
+            android:layout_toEndOf="@+id/btnSequential" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Move"
+            android:id="@+id/txt_move"
+            android:layout_alignBottom="@+id/btnMove"
+            android:layout_alignLeft="@+id/txt_slide_up"
+            android:layout_alignStart="@+id/txt_slide_up" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Slide Up"
+            android:id="@+id/txt_slide_up"
+            android:layout_alignBottom="@+id/btnSlideUp"
+            android:layout_toRightOf="@+id/btnSequential"
+            android:layout_toEndOf="@+id/btnSequential" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Slide Down"
+            android:id="@+id/txt_slide_down"
+            android:layout_alignBottom="@+id/btnSlideDown"
+            android:layout_alignLeft="@+id/txt_slide_up"
+            android:layout_alignStart="@+id/txt_slide_up" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Bounce"
+            android:id="@+id/txt_bounce"
+            android:layout_alignBottom="@+id/btnBounce"
+            android:layout_alignLeft="@+id/txt_slide_down"
+            android:layout_alignStart="@+id/txt_slide_down" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Sequential"
+            android:id="@+id/txt_seq"
+            android:layout_alignBottom="@+id/btnSequential"
+            android:layout_alignLeft="@+id/txt_bounce"
+            android:layout_alignStart="@+id/txt_bounce" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Together"
+            android:id="@+id/txt_tog"
+            android:layout_alignBottom="@+id/btnTogether"
+            android:layout_toRightOf="@+id/btnSequential"
+            android:layout_toEndOf="@+id/btnSequential" />
+
+
+    </RelativeLayout>
+
+</ScrollView>

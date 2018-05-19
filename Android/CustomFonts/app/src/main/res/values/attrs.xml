@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomTextView">
+        <attr name="font_name">
+            <enum value="1" name="ambleBold"/>
+            <enum value="2" name="ambleLight"/>
+            <enum value="3" name="ambleRegular"/>
+            <enum value="4" name="openSansItalic"/>
+            <enum value="5" name="openSansRegular"/>
+        </attr>
+    </declare-styleable>
+
+
+</resources>
