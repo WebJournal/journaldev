@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.journaldev.androidbuttonstyling.MainActivity">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NORMAL BUTTON" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@color/colorPrimary"
+        android:text="BACKGROUND COLOR BUTTON"
+        android:textColor="@android:color/white" />
+
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:padding="8dp"
+        android:text="COLORED BUTTON" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:padding="8dp"
+        android:text="COLORED BUTTON STYLED"
+        android:theme="@style/PrimaryColoredButton" />
+
+    <Button
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:padding="8dp"
+        android:text="BORDERLESS BUTTON" />
+
+    <Button
+        android:theme="@style/FlatButton"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:padding="8dp"
+        android:text="BORDERLESS BUTTON STYLED" />
+
+
+</LinearLayout>
