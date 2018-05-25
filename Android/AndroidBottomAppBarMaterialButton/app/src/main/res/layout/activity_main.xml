@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.design.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:fabAttached="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabCradleVerticalOffset="12dp"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:src="@android:drawable/ic_dialog_email"
+        app:layout_anchor="@+id/bottom_appbar"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.button.MaterialButton
+            android:id="@+id/materialButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="18dp"
+            android:gravity="center_vertical"
+            android:layout_gravity="center"
+            app:icon="@android:drawable/ic_input_get"
+            app:iconTint="@android:color/holo_red_dark"
+            app:rippleColor="@color/colorAccent"
+            app:strokeColor="@android:color/holo_green_dark"
+            app:strokeWidth="3dp"
+            android:textColor="#fff"
+            android:text="Toggle FAB Position"
+            app:backgroundTint="@color/colorPrimary"/>
+
+    </FrameLayout>
+
+</android.support.design.widget.CoordinatorLayout>
