@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2018-05-29T07:46:35Z" name="Default suite" finished-at="2018-05-29T07:46:35Z" duration-ms="45">
+    <groups>
+    </groups>
+    <test started-at="2018-05-29T07:46:35Z" name="Default test" finished-at="2018-05-29T07:46:35Z" duration-ms="45">
+      <class name="com.journaldev.utils.TestUtils">
+        <test-method signature="test_add(java.lang.Integer, java.lang.Integer)[pri:1, instance:com.journaldev.utils.TestUtils@399c4be1]" started-at="2018-05-29T07:46:35Z" name="test_add" data-provider="dp" finished-at="2018-05-29T07:46:35Z" duration-ms="9" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_add -->
+        <test-method signature="test_add(java.lang.Integer, java.lang.Integer)[pri:1, instance:com.journaldev.utils.TestUtils@399c4be1]" started-at="2018-05-29T07:46:35Z" name="test_add" data-provider="dp" finished-at="2018-05-29T07:46:35Z" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_add -->
+        <test-method signature="test_subtract(java.lang.Integer, java.lang.Integer)[pri:2, instance:com.journaldev.utils.TestUtils@399c4be1]" started-at="2018-05-29T07:46:35Z" name="test_subtract" data-provider="dp" finished-at="2018-05-29T07:46:35Z" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_subtract -->
+        <test-method signature="test_subtract(java.lang.Integer, java.lang.Integer)[pri:2, instance:com.journaldev.utils.TestUtils@399c4be1]" started-at="2018-05-29T07:46:35Z" name="test_subtract" data-provider="dp" finished-at="2018-05-29T07:46:35Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_subtract -->
+        <test-method signature="test_setName(java.lang.String)[pri:3, instance:com.journaldev.utils.TestUtils@399c4be1]" started-at="2018-05-29T07:46:35Z" name="test_setName" data-provider="dpName" finished-at="2018-05-29T07:46:35Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Utils]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_setName -->
+        <test-method signature="test_setName(java.lang.String)[pri:3, instance:com.journaldev.utils.TestUtils@399c4be1]" started-at="2018-05-29T07:46:35Z" name="test_setName" data-provider="dpName" finished-at="2018-05-29T07:46:35Z" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[MyUtils]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_setName -->
+      </class> <!-- com.journaldev.utils.TestUtils -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
