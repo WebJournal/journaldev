@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default suite" guice-stage="DEVELOPMENT">
+	<parameter name="before_suite" value="My Before Suite Parameter"></parameter>
+	<parameter name="id" value="100"></parameter> <!-- Suite Level Parameters -->
+	<test thread-count="5" name="Default test" verbose="2">
+		<parameter name="arguments" value="Pankaj"></parameter>
+		<parameter name="name" value="JournalDev"></parameter> <!-- Test Level Parameters -->
+		<classes>
+			<class name="com.journaldev.parameters.TestParameters" />
+		</classes>
+	</test>
+</suite>
+         
