@@ -1,3 +1,4 @@
+package com.journaldev.java.string;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -7,7 +8,7 @@ import java.util.Set;
  * @author pankaj
  *
  */
-public class StringHelper {
+public class StringFindAllPermutations {
     public static Set<String> permutationFinder(String str) {
         Set<String> perm = new HashSet<String>();
         //Handling error scenarios
