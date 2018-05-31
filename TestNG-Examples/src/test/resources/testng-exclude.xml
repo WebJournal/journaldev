@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG Excludes Test Suite" guice-stage="DEVELOPMENT">
+	<test thread-count="5" name="TestNG Excludes Test" verbose="2">
+		<classes>
+			<class name="com.journaldev.xml.TestNGXMLTest">
+				<methods>
+					<exclude name="test_add"></exclude>
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>      

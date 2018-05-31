@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG Parameters suite" guice-stage="DEVELOPMENT">
+	<test thread-count="5" name="TestNG Packages Test" verbose="2">
+		<parameter name="name" value="JournalDev"></parameter> <!-- Test Level Parameters -->
+		<classes>
+			<class name="com.journaldev.xml.TestNGXMLTest" />
+		</classes>
+	</test>
+</suite>
+         

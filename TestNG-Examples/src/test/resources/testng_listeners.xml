@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNG Listeners Test Suite" guice-stage="DEVELOPMENT">
+	<listeners>
+		<listener class-name="com.journaldev.listeners.Test3SuiteListener" />
+		<listener class-name="com.journaldev.listeners.Test3TestListener" />
+	</listeners>
+	<test thread-count="5" name="TestNG Listeners Test" verbose="2">
+		<classes>
+			<class name="com.journaldev.xml.TestNGXMLTest" />
+		</classes>
+	</test>
+</suite>
+         
