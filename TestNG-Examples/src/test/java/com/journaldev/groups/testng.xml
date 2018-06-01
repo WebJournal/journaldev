@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNGXMLTest Test Suite">
+
+	<test name="TestNGXMLTest Test">
+		<groups>
+			<define name="include-groups">
+				<include name="sanity" />
+				<include name="integration" />
+			</define>
+			<define name="exclude-groups">
+				<include name="foo" />
+				<include name="bar" />
+			</define>
+			<run>
+				<include name="include-groups" />
+				<exclude name="exclude-groups" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.journaldev.groups.TestNGGroupsExample" />
+		</classes>
+	</test>
+</suite>
