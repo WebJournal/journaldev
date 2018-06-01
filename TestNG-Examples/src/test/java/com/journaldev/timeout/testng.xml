@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNGXMLTest Test Suite" time-out="300">
+	<test name="TestNGXMLTest Test 1" verbose="2" time-out="500">
+		<classes>
+			<class name="com.journaldev.timeout.TimeoutExample" />
+		</classes>
+	</test>
+</suite>
+         
