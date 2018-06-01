@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestNGXMLTest Test Suite" parallel="classes">
+	<test name="TestNGXMLTest Test 1" verbose="2" parallel="tests"
+		thread-count="10">
+		<classes>
+			<class name="com.journaldev.main.Test5" />
+		</classes>
+	</test>
+	<test name="TestNGXMLTest Test 2" verbose="2" parallel="classes"
+		thread-count="10">
+		<classes>
+			<class name="com.journaldev.utils.TestUtils" />
+			<class name="com.journaldev.main.Test5" />
+		</classes>
+	</test>
+	<test name="TestNGXMLTest Test 3" verbose="2" parallel="methods"
+		thread-count="10">
+		<classes>
+			<class name="com.journaldev.parallel.NewTest" />
+		</classes>
+	</test>
+</suite>
+         
