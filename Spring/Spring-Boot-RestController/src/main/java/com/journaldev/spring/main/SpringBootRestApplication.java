@@ -4,7 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-@SpringBootApplication(scanBasePackages = "com.journaldev.spring", exclude = {com.journaldev.spring.controller.EmployeeRestController.class })
+@SpringBootApplication(scanBasePackages = "com.journaldev.spring", exclude = {
+		org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration.class,
+		org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.class })
 public class SpringBootRestApplication {
 
 	public static void main(String[] args) {
