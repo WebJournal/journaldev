@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidProductFlavorsFree</string>
+    <string name="action_settings">Settings</string>
+    <string name="textViewLabel">Hello free</string>
+</resources>
