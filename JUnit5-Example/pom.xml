@@ -3,49 +3,57 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.journaldev.java</groupId>
+	<groupId>com.journaldev.junit</groupId>
 	<artifactId>JUnit5-Example</artifactId>
 	<version>1.0-SNAPSHOT</version>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-		<junit.version>4.12</junit.version>
-		<junit.jupiter.version>5.1.1</junit.jupiter.version>
-		<junit.vintage.version>${junit.version}.0</junit.vintage.version>
-		<junit.jupiter.version>5.1.1</junit.jupiter.version>
-		<junit.platform.version>1.1.1</junit.platform.version>
+		<java.version>10</java.version>
+		<junit.jupiter.engine.version>5.2.0</junit.jupiter.engine.version>
+		<junit.platform.runner.version>1.2.0</junit.platform.runner.version>
 	</properties>
-
-	<build>
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-				</configuration>
-			</plugin>
-			
-		</plugins>
-	</build>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
-			<version>${junit.jupiter.version}</version>
+			<version>${junit.jupiter.engine.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
 		<dependency>
 			<groupId>org.junit.platform</groupId>
 			<artifactId>junit-platform-runner</artifactId>
-			<version>${junit.platform.version}</version>
+			<version>${junit.platform.runner.version}</version>
 			<scope>test</scope>
-		</dependency>
-		
+		</dependency>	
 	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.22.0</version>
+            <dependencies>
+                <dependency>
+                    <groupId>org.junit.platform</groupId>
+                    <artifactId>junit-platform-surefire-provider</artifactId>
+                    <version>1.2.0</version>
+                </dependency>
+            </dependencies>
+        </plugin>
+		</plugins>
+	</build>
+
+
 
 </project>
