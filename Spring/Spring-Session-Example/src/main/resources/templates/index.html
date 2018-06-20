@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Session + JDBC Demo</title>
+</head>
+<body>
+ 
+<div>
+ 
+<form th:action="@{/messages}" method="post">
+    <textarea name="msg" cols="40" rows="4"></textarea>
+    <input type="submit" value="Save"/>
+</form>
+ 
+</div>
+ 
+<div>
+     
+<h2>Messages</h2>
+     
+<ul th:each="m : ${messages}">
+         
+  <li th:text="${m}">msg</li>
+ 
+</ul>
+ 
+</div>
+ 
+</body>
+</html>
