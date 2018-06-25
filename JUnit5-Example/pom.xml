@@ -56,6 +56,11 @@
                     <version>1.2.0</version>
                 </dependency>
             </dependencies>
+            <configuration>
+            	<additionalClasspathElements>
+            		<additionalClasspathElement>src/test/java/</additionalClasspathElement>
+            	</additionalClasspathElements>
+            </configuration>
         </plugin>
 		</plugins>
 	</build>
