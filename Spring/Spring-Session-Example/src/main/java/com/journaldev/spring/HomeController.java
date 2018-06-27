@@ -17,24 +17,33 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String home(Model model, HttpSession session) {
+		@SuppressWarnings("unchecked")
 		List<String> msgs = (List<String>) session.getAttribute("MY_MESSAGES");
-        if(msgs == null) {
-            msgs = new ArrayList<>();
-        }
-        model.addAttribute("messages", msgs);
-		
+
+		if (msgs == null) {
+			msgs = new ArrayList<>();
+		}
+		model.addAttribute("messages", msgs);
+
 		return "index";
 	}
-	
-	@PostMapping("/messages")
-    public String saveMessage(@RequestParam("msg") String msg, HttpServletRequest request) 
-    {
-        List<String> msgs = (List<String>) request.getSession().getAttribute("MY_MESSAGES");
-        if(msgs == null) {
-            msgs = new ArrayList<>();
-            request.getSession().setAttribute("MY_MESSAGES", msgs);
-        }
-        msgs.add(msg);
-        return "redirect:/";
-    }
+
+	@PostMapping("/saveMessage")
+	public String saveMessage(@RequestParam("msg") String msg, HttpServletRequest request) {
+		@SuppressWarnings("unchecked")
+		List<String> msgs = (List<String>) request.getSession().getAttribute("MY_MESSAGES");
+		if (msgs == null) {
+			msgs = new ArrayList<>();
+			request.getSession().setAttribute("MY_MESSAGES", msgs);
+		}
+		msgs.add(msg);
+		request.getSession().setAttribute("MY_MESSAGES", msgs);
+		return "redirect:/";
+	}
+
+	@PostMapping("/invalidate")
+	public String destroySession(HttpServletRequest request) {
+		request.getSession().invalidate();
+		return "redirect:/";
+	}
 }
