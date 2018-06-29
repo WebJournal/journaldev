@@ -158,4 +158,4 @@ This project contains all the code examples from JournalDev [Python Tutorials](h
 * [Python NetworkX](https://www.journaldev.com/19410/networkx-python-graph-library)
 * [Python Bokeh](https://www.journaldev.com/19527/bokeh-python-data-visualization)
 
-### * [Python Interview Questions](https://www.journaldev.com/15490/python-interview-questions)
+### [Python Interview Questions](https://www.journaldev.com/15490/python-interview-questions)
