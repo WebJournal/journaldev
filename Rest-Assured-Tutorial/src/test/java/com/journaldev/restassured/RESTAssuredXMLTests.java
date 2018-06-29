@@ -26,8 +26,8 @@ public class RESTAssuredXMLTests {
 		System.out.println("POST Response\n" + response.asString());
 		// tests
 		Assert.assertEquals(response.getStatusCode(),200);
-		response.then().body("empRequest.id", Matchers.is("1"));
-		response.then().body("empRequest.name", Matchers.is("PK"));
+		response.then().body("empResponse.id", Matchers.is("1"));
+		response.then().body("empResponse.name", Matchers.is("PK"));
 	}
 	
 	@Test
@@ -44,7 +44,7 @@ public class RESTAssuredXMLTests {
 		System.out.println("POST Error Response\n" + response.asString());
 		// tests
 		response.then().body("errorResponse.errorId", Matchers.is("2"));
-		response.then().body("empRequest.errorCode", Matchers.is("Wrong ID"));
+		response.then().body("errorResponse.errorCode", Matchers.is("Wrong ID"));
 		Assert.assertEquals(response.getStatusCode(),500);
 	}
 
