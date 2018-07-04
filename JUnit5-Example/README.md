@@ -15,3 +15,6 @@
 * [JUnit Nested Tests](https://www.journaldev.com/21731/junit-nested-tests)
 * [JUnit Assert](https://www.journaldev.com/21681/junit-assertions)
 * [JUnit Assumptions](https://www.journaldev.com/21692/junit-assumptions)
+* [JUnit Assert Exception](https://www.journaldev.com/21826/junit-assert-exception-expected)
+
+### [JUnit vs TestNG](https://www.journaldev.com/21768/junit-vs-testng)
