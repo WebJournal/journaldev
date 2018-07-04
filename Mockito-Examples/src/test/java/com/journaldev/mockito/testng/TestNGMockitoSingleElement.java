@@ -1,18 +1,18 @@
 package com.journaldev.mockito.testng;
 
-import static org.testng.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.testng.Assert.assertEquals;
 
 import java.util.ArrayList;
 
 import org.testng.annotations.Test;
 
 public class TestNGMockitoSingleElement {
-	
+
 	@SuppressWarnings("unchecked")
 	@Test
-	public void f() {
+	public void mock_concrete_class() {
 		ArrayList<String> mockedList = mock(ArrayList.class);
 
 		when(mockedList.get(0)).thenReturn("first-element");

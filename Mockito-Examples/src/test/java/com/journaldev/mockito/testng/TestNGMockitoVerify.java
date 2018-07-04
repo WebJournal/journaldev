@@ -9,8 +9,8 @@ import org.mockito.internal.verification.VerificationModeFactory;
 import org.testng.annotations.Test;
 
 public class TestNGMockitoVerify {
-  @Test
-  public void test_mockito_verify() {
+	@Test
+	public void test_mockito_verify() {
 
 		@SuppressWarnings("unchecked")
 		List<String> mockedList = Mockito.mock(List.class);
@@ -26,6 +26,6 @@ public class TestNGMockitoVerify {
 		verify(mockedList, VerificationModeFactory.times(2)).add("third-element");
 
 		verify(mockedList).clear();
-	
-  }
+
+	}
 }
