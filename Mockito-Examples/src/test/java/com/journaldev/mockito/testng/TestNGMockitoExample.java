@@ -1,9 +1,9 @@
 package com.journaldev.mockito.testng;
 
 import static org.mockito.Mockito.when;
+import static org.testng.Assert.assertEquals;
 
 import org.mockito.Mockito;
-import static org.testng.Assert.assertEquals;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -21,8 +21,8 @@ public class TestNGMockitoExample {
 
 		addService = Mockito.mock(AddService.class);
 		calcService = new CalcService(addService);
-		
-		int expected = i+j;
+
+		int expected = i + j;
 		when(addService.add(i, j)).thenReturn(expected);
 
 		int actual = calcService.calc(i, j);
