@@ -20,3 +20,5 @@
 * [TestNG Timeout](https://www.journaldev.com/21345/testng-timeout-example)
 
 ### [TestNG vs JUnit](https://www.journaldev.com/21768/junit-vs-testng)
+
+### [TestNG Mockito Example](https://www.journaldev.com/21822/testng-mockito-example)
