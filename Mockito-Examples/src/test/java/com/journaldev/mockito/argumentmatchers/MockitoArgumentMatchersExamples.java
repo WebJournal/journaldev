@@ -8,7 +8,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-public class MokitoArgumentMatchersExamples {
+public class MockitoArgumentMatchersExamples {
 
 	@Test
 	void test() {
