@@ -29,7 +29,9 @@ public class MockitoArgumentMatchersExamples {
 
 		// Arrays and Additional Matchers for rare cases
 		when(mockFoo.bar(any(byte[].class), aryEq(new String[] { "A", "B" }), gt(10))).thenReturn(11);
-
+		assertEquals(11, mockFoo.bar("abc".getBytes(), new String[] { "A", "B" }, 20));
+		assertEquals(11, mockFoo.bar("xyz".getBytes(), new String[] { "A", "B" }, 99));
+		
 		// argument matchers with verify
 		verify(mockFoo, atLeast(0)).bool(anyString(), anyInt(), any(Object.class));
 		verify(mockFoo, atLeast(0)).bool(eq("false"), anyInt(), any(Object.class));
