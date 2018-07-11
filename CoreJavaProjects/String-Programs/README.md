@@ -54,4 +54,5 @@
 * [Reverse a String in Java](https://www.journaldev.com/18310/reverse-a-string-in-java)
 * [Java switch case String](https://www.journaldev.com/588/java-switch-case-string)
 * [String Concatenation in Java](https://www.journaldev.com/542/string-concatenation-in-java)
+* [Longest Palindrome in a String](https://www.journaldev.com/530/longest-palindrome-string-java)
 
