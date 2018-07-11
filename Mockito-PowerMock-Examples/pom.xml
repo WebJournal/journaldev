@@ -1,0 +1,100 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.journaldev.mockito.powermock</groupId>
+	<artifactId>Mockito-PowerMock-Examples</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<testng.version>6.14.3</testng.version>
+		<junit4.version>4.12</junit4.version>
+		<mockito-core.version>2.19.0</mockito-core.version>
+		<powermock.version>2.0.0-beta.5</powermock.version>
+		<java.version>10</java.version>
+	</properties>
+
+	<dependencies>
+		<!-- TestNG -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- JUnit 4 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit4.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- Mockito 2 -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>${mockito-core.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- PowerMock TestNG Module -->
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-testng</artifactId>
+			<version>${powermock.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- PowerMock JUnit 4.4+ Module -->
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+			<version>${powermock.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- PowerMock Mockito2 API -->
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito2</artifactId>
+			<version>${powermock.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.22.0</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.surefire</groupId>
+						<artifactId>surefire-junit47</artifactId>
+						<version>2.22.0</version>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.maven.surefire</groupId>
+						<artifactId>surefire-testng</artifactId>
+						<version>2.22.0</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<additionalClasspathElements>
+						<additionalClasspathElement>src/test/java/</additionalClasspathElement>
+					</additionalClasspathElements>
+					<!-- TestNG Test Fails when executed from command line with message
+						"Cannot use a threadCount parameter less than 1" 
+						Works when threadCount is explicitly specified 
+						https://gist.github.com/juherr/6eb3e93e2db33979b7e90b63ddadc888-->
+					<threadCount>5</threadCount>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
