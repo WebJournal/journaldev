@@ -3,6 +3,8 @@ package com.journaldev.mockito.stubbingconsecutivecalls;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+import java.util.Iterator;
+
 import org.junit.jupiter.api.Test;
 
 class MockitoConsecutiveCallsStubbingExample {
@@ -26,6 +28,18 @@ class MockitoConsecutiveCallsStubbingExample {
 		assertEquals("EMPLOYEE", mockUU.update("Emp"));
 		assertEquals("EMP1", mockUU.update("Emp"));
 		assertEquals("EMP1", mockUU.update("Emp"));
+		
+		Iterator<Integer> mockIter = mock(Iterator.class);
+		when(mockIter.hasNext()).thenReturn(true, true, true, false);
+		int[] values = new int[] {1,2,3,4};
+		when(mockIter.next()).thenReturn(values[0], values[1], values[2], values[3]);
+		
+		int index = 0;
+		while(mockIter.hasNext()) {
+			assertTrue(values[index] == mockIter.next());
+			index++;
+		}
+		
 	}
 
 }
