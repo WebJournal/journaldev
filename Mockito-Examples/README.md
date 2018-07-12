@@ -1,22 +1,16 @@
-## Mockito 2
+## Project code for [Mockito Tutorials](https://www.journaldev.com/java/mockito) on JournalDev
 
-## This example is built using Eclipse IDE with Maven
+### Mockito Tutorials Articles
 
-1. Download Eclipse IDE Oxygen.3a (4.7.3a) Release
- 
-2. Clone the repository from 
-
-3. Import project in eclipse - Menu File –> Import –> Maven –> Existing Maven Projects
-
-4. Browse to your source code location
-
-5. Click Finish button to finish the importing
-
-## Run the example
-
-1. Open the CalcService1Test.java 
-
-2. Right click -> Run As -> JUnit Test
-
-## CalcService2Test.java
-In case of issue while running it, please select JUnit 4 runner from run configuration.
+* [Mockito Tutorial](https://www.journaldev.com/21816/mockito-tutorial)
+* [Mockito TestNG Example](https://www.journaldev.com/21822/testng-mockito-example)
+* [Mockito Mock](https://www.journaldev.com/21866/mockito-mock-examples)
+* [Mockito InjectMocks](https://www.journaldev.com/21887/mockito-injectmocks-mocks-dependency-injection)
+* [Mockito Stub Exception](https://www.journaldev.com/21831/mockito-stub-exception-junit-testng)
+* [Mockito Verify](https://www.journaldev.com/21855/mockito-verify)
+* [Mockito Spy](https://www.journaldev.com/21872/mockito-spy-partial-mock)
+* [Mockito Mock Void Method](https://www.journaldev.com/21834/mockito-mock-void-method)
+* [Mockito Mock Static Method](https://www.journaldev.com/21912/mockito-mock-static-method-powermock)
+* [Mockito Argument Matchers](https://www.journaldev.com/21876/mockito-argument-matchers-any-eq)
+* [Mockito Argument Captor](https://www.journaldev.com/21892/mockito-argumentcaptor-captor-annotation)
+* [Mockito Iterator](https://www.journaldev.com/21964/mockito-iterator-style-stubbing-consecutive-calls)
