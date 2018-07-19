@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void withMultiChoiceItems(View view) {
         final String[] items = {"Apple", "Banana", "Orange", "Grapes"};
-        final ArrayList<String> selectedList = new ArrayList<>();
+        final ArrayList<Integer> selectedList = new ArrayList<>();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setTitle("This is list choice dialog box");
@@ -87,9 +87,9 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which, boolean isChecked) {
                         if (isChecked) {
-                            selectedList.add(items[which]);
-                        } else if (selectedList.contains(items[which])) {
-                            selectedList.remove(which);
+                            selectedList.add(which);
+                        } else if (selectedList.contains(which)) {
+                            selectedList.remove(Integer.valueOf(which));
                         }
                     }
                 });
