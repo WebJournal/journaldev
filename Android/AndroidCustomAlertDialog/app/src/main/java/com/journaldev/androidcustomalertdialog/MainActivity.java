@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                         if (isChecked) {
                             selectedList.add(items[which]);
                         } else if (selectedList.contains(items[which])) {
-                            selectedList.remove(Integer.valueOf(items[which]));
+                            selectedList.remove(which);
                         }
                     }
                 });
