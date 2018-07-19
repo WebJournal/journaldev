@@ -97,7 +97,10 @@ public class MainActivity extends AppCompatActivity {
         builder.setPositiveButton("DONE", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Toast.makeText(getApplicationContext(), "Items selected are: " + Arrays.toString(selectedList.toArray()), Toast.LENGTH_SHORT).show();
+                ArrayList<String> selectedStrings = new ArrayList<>();
+                selectedStrings.addAll(Arrays.asList(items).subList(0, selectedList.size()));
+
+                Toast.makeText(getApplicationContext(), "Items selected are: " + Arrays.toString(selectedStrings.toArray()), Toast.LENGTH_SHORT).show();
             }
         });
 
