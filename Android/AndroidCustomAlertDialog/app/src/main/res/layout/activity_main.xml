@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnSimpleAlert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="simpleAlert"
+        android:text="SIMPLE ALERT DIALOG"/>
+
+    <Button
+        android:id="@+id/btnAlertWithItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="withItems"
+        android:text="WITH ITEMS"/>
+
+    <Button
+        android:id="@+id/btnAlertWithMultiChoiceItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="withMultiChoiceItems"
+        android:text="WITH MULTI CHOICE ITEMS"/>
+
+    <Button
+        android:id="@+id/btnAlertWithEditText"
+        android:layout_width="wrap_content"
+        android:onClick="withEditText"
+        android:layout_height="wrap_content"
+        android:text="WITH EDIT TEXT"/>
+
+    <Button
+        android:id="@+id/btnAlertWithImageView"
+        android:layout_width="wrap_content"
+        android:onClick="withImageView"
+        android:layout_height="wrap_content"
+        android:text="WITH IMAGE VIEW"/>
+
+    <Button
+        android:id="@+id/btnAlertWithSeekBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="withSeekBar"
+        android:text="WITH SEEK BAR"/>
+
+    <Button
+        android:id="@+id/btnAlertWithRatingBar"
+        android:layout_width="wrap_content"
+        android:onClick="withRatingBar"
+        android:layout_height="wrap_content"
+        android:text="WITH RATING BAR"/>
+
+</LinearLayout>
