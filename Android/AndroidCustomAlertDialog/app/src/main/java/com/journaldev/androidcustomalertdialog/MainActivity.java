@@ -98,7 +98,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 ArrayList<String> selectedStrings = new ArrayList<>();
-                selectedStrings.addAll(Arrays.asList(items).subList(0, selectedList.size()));
+
+                for (int j = 0; j < selectedList.size(); j++) {
+                    selectedStrings.add(items[selectedList.get(j)]);
+                }
 
                 Toast.makeText(getApplicationContext(), "Items selected are: " + Arrays.toString(selectedStrings.toArray()), Toast.LENGTH_SHORT).show();
             }
