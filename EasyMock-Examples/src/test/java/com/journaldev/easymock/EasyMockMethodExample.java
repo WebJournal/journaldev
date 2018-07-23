@@ -3,8 +3,10 @@ package com.journaldev.easymock;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.mock;
 import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.reset;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.testng.Assert.assertThrows;
 
 import java.util.ArrayList;
 
@@ -30,5 +32,16 @@ public class EasyMockMethodExample {
 
 		assertEquals(mockList.size(), 2);
 
+		//Iterator Style Mocking
+		reset(mockList);
+		expect(mockList.size()).andReturn(1).times(2)
+			.andReturn(2).times(1)
+			.andReturn(4);
+		replay(mockList);
+		
+		assertEquals(mockList.size(), 1);
+		assertEquals(mockList.size(), 1);
+		assertEquals(mockList.size(), 2);
+		assertEquals(mockList.size(), 4);
 	}
 }
