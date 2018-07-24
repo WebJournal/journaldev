@@ -16,6 +16,9 @@ public class EasyMockExceptionExample {
 		expect(mock.toUpperCase(null)).andThrow(new IllegalArgumentException("NULL is not a valid argument"));
 		replay(mock);
 		
-		assertThrows(IllegalArgumentException.class, () -> mock.toUpperCase(null));
+		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> mock.toUpperCase(null));
+		assertEquals("NULL is not a valid argument", exception.getMessage());
+		
+		verify(mock);
 	}
 }
