@@ -1,7 +1,6 @@
 package com.journaldev.easymock;
 
 import static org.easymock.EasyMock.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -15,12 +14,18 @@ public class EasyMockVoidMethodExample {
 		
 		mock.print(anyString());
 		expectLastCall().andAnswer(() -> {
-			System.out.println("Mock Argument = "+getCurrentArguments()[0]);
+			System.out.println("Mock Argument = "
+					+getCurrentArguments()[0]);
 			return null;
-		});
+		}).times(2);
+		
+		//mock void method without any logic
+		//expectLastCall().andVoid().times(2);
+		
 		replay(mock);
 		
 		mock.print("Java");
+		mock.print("Python");
 		verify(mock);
 	}
 }
