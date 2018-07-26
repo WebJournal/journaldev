@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.journaldev.androidjetpacknavigation.FirstFragment"
+        android:label="navigation_first_fragment"
+        tools:layout="@layout/navigation_first_fragment" >
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment"
+            app:enterAnim="@anim/nav_default_enter_anim" />
+        <argument
+            android:name="test_string"
+            android:defaultValue="hello world"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.journaldev.androidjetpacknavigation.SecondFragment"
+        android:label="navigation_second_fragment"
+        tools:layout="@layout/navigation_second_fragment" />
+</navigation>
