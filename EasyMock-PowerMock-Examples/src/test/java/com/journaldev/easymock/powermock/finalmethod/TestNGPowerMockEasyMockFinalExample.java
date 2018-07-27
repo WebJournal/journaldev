@@ -1,7 +1,6 @@
 package com.journaldev.easymock.powermock.finalmethod;
 
 import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
 import org.powermock.modules.testng.PowerMockTestCase;
 import org.testng.annotations.Test;
 
