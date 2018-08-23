@@ -35,13 +35,13 @@ print(x)
 class Emp:
     id = 0
 
-    # def __int__(self):
-    #     print('__int__ function called')
-    #     return self.id
-    #
-    # def __trunc__(self):
-    #     print('__trunc__ function called')
-    #     return self.id
+    def __int__(self):
+        print('__int__ function called')
+        return self.id
+
+    def __trunc__(self):
+        print('__trunc__ function called')
+        return self.id
 
 
 x = Emp()
