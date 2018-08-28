@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/jbeguna04/journaldev/master/LogoDesigns/logotype2.png"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/journaldev/journaldev/master/LogoDesigns/logotype2.png"></p>
 
 # JournalDev Projects
 
