@@ -1,3 +1,5 @@
+<p align="center"><img src="https://raw.githubusercontent.com/journaldev/journaldev/master/LogoDesigns/logotype2.png"></p>
+
 # JournalDev Projects
 
 GitHub Repository for all the projects on [JournalDev](https://www.journaldev.com)
