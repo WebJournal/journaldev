@@ -3,7 +3,7 @@ package com.journaldev.linkedlist.reverse;
 /**
  * A very simple linked list implementation
  * Not to use in application, created to show the linked list 
- * reverse algorithms, hence very minimal features
+ * operations, hence very minimal features
  * 
  * @author pankaj
  *
