@@ -14,11 +14,11 @@ public class MyLinkedList {
 
 	public static class Node {
 
-		Node next;
+		public Node next;
 
-		Object data;
+		public Object data;
 
-		Node(Object data) {
+		public Node(Object data) {
 			this.data = data;
 			next = null;
 		}
