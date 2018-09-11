@@ -1,4 +1,4 @@
-package com.journaldev.tree.height;
+package com.journaldev.tree;
 
 public class BinaryTree {
 

@@ -1,7 +1,7 @@
 package com.journaldev.tree.binarysearchtree.BSTOperations;
 
-import com.journaldev.tree.height.BinaryTree;
-import com.journaldev.tree.height.BinaryTree.TreeNode;
+import com.journaldev.tree.BinaryTree;
+import com.journaldev.tree.BinaryTree.TreeNode;
 
 public class SearchInsertRemoveFromTree {
 

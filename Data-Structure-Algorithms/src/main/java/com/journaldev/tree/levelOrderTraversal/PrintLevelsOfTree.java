@@ -1,10 +1,10 @@
 package com.journaldev.tree.levelOrderTraversal;
 
-import com.journaldev.tree.height.BinaryTree;
-import com.journaldev.tree.height.BinaryTree.TreeNode;
-
 import java.util.LinkedList;
 import java.util.Queue;
+
+import com.journaldev.tree.BinaryTree;
+import com.journaldev.tree.BinaryTree.TreeNode;
 
 
 public class PrintLevelsOfTree {

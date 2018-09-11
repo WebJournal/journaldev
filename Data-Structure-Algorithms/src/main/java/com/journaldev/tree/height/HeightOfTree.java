@@ -3,7 +3,8 @@ package com.journaldev.tree.height;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import com.journaldev.tree.height.BinaryTree.TreeNode;
+import com.journaldev.tree.BinaryTree;
+import com.journaldev.tree.BinaryTree.TreeNode;
 
 public class HeightOfTree {
 
