@@ -50,20 +50,20 @@ public class HuffmanCodeSolution {
     private static Map<Character, String> charPrefixHashMap = new HashMap<>();
     static HuffmanNode root;
 
-    private static void setPrefixCodes(HuffmanNode tree, StringBuilder prefix) {
+    private static void setPrefixCodes(HuffmanNode node, StringBuilder prefix) {
 
 
-        if (tree.left == null && tree.right == null && Character.isLetter(tree.data)) {
-            charPrefixHashMap.put(tree.data, prefix.toString());
+        if (node.left == null && node.right == null && Character.isLetter(node.data)) {
+            charPrefixHashMap.put(node.data, prefix.toString());
 
         } else {
             prefix.append('0');
-            setPrefixCodes(tree.left, prefix);
+            setPrefixCodes(node.left, prefix);
             prefix.deleteCharAt(prefix.length() - 1);
 
 
             prefix.append('1');
-            setPrefixCodes(tree.right, prefix);
+            setPrefixCodes(node.right, prefix);
             prefix.deleteCharAt(prefix.length() - 1);
         }
 
@@ -135,8 +135,8 @@ class HuffmanNode implements Comparable<HuffmanNode> {
     char data;
     HuffmanNode left, right;
 
-    public int compareTo(HuffmanNode tree) {
-        return frequency - tree.frequency;
+    public int compareTo(HuffmanNode node) {
+        return frequency - node.frequency;
     }
 }
 
