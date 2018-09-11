@@ -1,167 +1,161 @@
 package com.journaldev.linkedlist.loopDetection;
 
-
 import com.journaldev.linkedlist.MyLinkedList;
 import com.journaldev.linkedlist.MyLinkedList.Node;
 
 public class DetectLinkedListLoop {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        MyLinkedList myLinkedList = new MyLinkedList();
+		MyLinkedList myLinkedList = new MyLinkedList();
 
-        myLinkedList.head = new Node(1);
-        myLinkedList.head.next = new Node(2);
-        Node node = myLinkedList.head.next.next = new Node(3);
-        myLinkedList.head.next.next.next = new Node(4);
-        myLinkedList.head.next.next.next.next = new Node(5);
-        myLinkedList.head.next.next.next.next.next = node;
+		myLinkedList.head = new Node(1);
+		myLinkedList.head.next = new Node(2);
+		Node node = myLinkedList.head.next.next = new Node(3);
+		myLinkedList.head.next.next.next = new Node(4);
+		myLinkedList.head.next.next.next.next = new Node(5);
+		myLinkedList.head.next.next.next.next.next = node;
 
-        System.out.println("Has Loop? " + hasLoop(myLinkedList));
-        System.out.println("Start Node data: " + startNode(myLinkedList).data);
-        System.out.println("Length of loop: " + lengthOfLoop(myLinkedList));
+		System.out.println("Has Loop? " + hasLoop(myLinkedList));
+		System.out.println("Start Node data: " + startNode(myLinkedList).data);
+		System.out.println("Length of loop: " + lengthOfLoop(myLinkedList));
 
-        myLinkedList.head = removeLoop(myLinkedList);
-        System.out.println("Has Loop? " + hasLoop(myLinkedList));
-    }
+		myLinkedList.head = removeLoop(myLinkedList);
+		System.out.println("Has Loop? " + hasLoop(myLinkedList));
+	}
 
-    private static boolean hasLoop(MyLinkedList myLinkedList) {
+	private static boolean hasLoop(MyLinkedList myLinkedList) {
 
-        Node head = myLinkedList.head;
+		Node head = myLinkedList.head;
 
-        Node slow = head;
-        Node fast = head;
+		Node slow = head;
+		Node fast = head;
 
-        boolean loop = false;
+		boolean loop = false;
 
-        while (slow != null && fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
+		while (slow != null && fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
 
-            if (slow == fast) {
-                loop = true;
-                break;
-            }
-        }
+			if (slow == fast) {
+				loop = true;
+				break;
+			}
+		}
 
-        return loop;
-    }
+		return loop;
+	}
 
-    private static Node startNode(MyLinkedList myLinkedList) {
+	private static Node startNode(MyLinkedList myLinkedList) {
 
-        Node head = myLinkedList.head;
-        Node slow = head;
-        Node fast = head;
+		Node head = myLinkedList.head;
+		Node slow = head;
+		Node fast = head;
 
-        boolean loop = false;
+		boolean loop = false;
 
-        while (slow != null && fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
+		while (slow != null && fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
 
-            if (slow == fast) {
-                loop = true;
-                break;
-            }
-        }
+			if (slow == fast) {
+				loop = true;
+				break;
+			}
+		}
 
-        if (loop) {
+		if (loop) {
 
-            slow = head;
+			slow = head;
 
-            while (fast != slow) {
-                fast = fast.next;
-                slow = slow.next;
-            }
+			while (fast != slow) {
+				fast = fast.next;
+				slow = slow.next;
+			}
 
-            return fast;
+			return fast;
 
-        } else {
-            return new Node(Integer.MIN_VALUE);
-        }
-    }
+		} else {
+			return new Node(Integer.MIN_VALUE);
+		}
+	}
 
+	private static int lengthOfLoop(MyLinkedList myLinkedList) {
+		Node head = myLinkedList.head;
+		Node slow = head;
+		Node fast = head;
 
-    private static int lengthOfLoop(MyLinkedList myLinkedList) {
-        Node head = myLinkedList.head;
-        Node slow = head;
-        Node fast = head;
+		boolean loop = false;
 
-        boolean loop = false;
+		while (slow != null && fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
 
-        while (slow != null && fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
+			if (slow == fast) {
+				loop = true;
+				break;
+			}
+		}
 
-            if (slow == fast) {
-                loop = true;
-                break;
-            }
-        }
+		if (loop) {
 
-        if (loop) {
+			int length = 0;
+			slow = head;
 
-            int length = 0;
-            slow = head;
+			while (fast != slow) {
+				fast = fast.next;
+				slow = slow.next;
+			}
 
-            while (fast != slow) {
-                fast = fast.next;
-                slow = slow.next;
-            }
+			do {
+				fast = fast.next;
+				length++;
+			} while (fast != slow);
 
-            do {
-                fast = fast.next;
-                length++;
-            } while (fast != slow);
+			return length;
 
+		}
 
-            return length;
+		return 0;
+	}
 
-        }
+	private static Node removeLoop(MyLinkedList myLinkedList) {
+		Node head = myLinkedList.head;
+		Node slow = head;
+		Node fast = head;
 
-        return 0;
-    }
+		boolean loop = false;
 
+		while (slow != null && fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
 
-    private static Node removeLoop(MyLinkedList myLinkedList) {
-        Node head = myLinkedList.head;
-        Node slow = head;
-        Node fast = head;
+			if (slow == fast) {
+				loop = true;
+				break;
+			}
+		}
 
-        boolean loop = false;
+		if (loop) {
 
-        while (slow != null && fast != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
+			slow = head;
 
-            if (slow == fast) {
-                loop = true;
-                break;
-            }
-        }
+			while (fast != slow) {
+				fast = fast.next;
+				slow = slow.next;
+			}
 
-        if (loop) {
+			while (fast.next != slow) {
+				fast = fast.next;
+			}
 
+			fast.next = null;
 
-            slow = head;
+			return head;
 
-            while (fast != slow) {
-                fast = fast.next;
-                slow = slow.next;
-            }
+		}
 
-            while (fast.next != slow) {
-                fast = fast.next;
-            }
-
-            fast.next = null;
-
-
-            return head;
-
-        }
-
-        return head;
-    }
+		return head;
+	}
 
 }
