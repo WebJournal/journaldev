@@ -1,8 +1,8 @@
 package com.journaldev.linkedlist.loopDetection;
 
 
-import com.journaldev.linkedlist.reverse.MyLinkedList;
-import com.journaldev.linkedlist.reverse.MyLinkedList.Node;
+import com.journaldev.linkedlist.MyLinkedList;
+import com.journaldev.linkedlist.MyLinkedList.Node;
 
 public class DetectLinkedListLoop {
 

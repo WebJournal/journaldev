@@ -1,6 +1,7 @@
 package com.journaldev.linkedlist.reverse;
 
-import com.journaldev.linkedlist.reverse.MyLinkedList.Node;
+import com.journaldev.linkedlist.MyLinkedList;
+import com.journaldev.linkedlist.MyLinkedList.Node;
 
 public class ReverseLinkedList {
 
@@ -11,7 +12,12 @@ public class ReverseLinkedList {
 		myLinkedList.head.next.next = new Node(3);
 
 		printLinkedList(myLinkedList);
+		// recursive reverse
 		myLinkedList.head = recursiveReverse(myLinkedList.head);
+		printLinkedList(myLinkedList);
+		
+		//iterative reverse
+		reverseLinkedList(myLinkedList);
 		printLinkedList(myLinkedList);
 
 	}

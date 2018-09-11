@@ -1,4 +1,4 @@
-package com.journaldev.linkedlist.reverse;
+package com.journaldev.linkedlist;
 
 /**
  * A very simple linked list implementation
