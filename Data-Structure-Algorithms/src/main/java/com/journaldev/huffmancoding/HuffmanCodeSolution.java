@@ -53,18 +53,20 @@ public class HuffmanCodeSolution {
     private static void setPrefixCodes(HuffmanNode node, StringBuilder prefix) {
 
 
-        if (node.left == null && node.right == null && Character.isLetter(node.data)) {
-            charPrefixHashMap.put(node.data, prefix.toString());
+        if (node != null) {
+            if (node.left == null && node.right == null && Character.isLetter(node.data)) {
+                charPrefixHashMap.put(node.data, prefix.toString());
 
-        } else {
-            prefix.append('0');
-            setPrefixCodes(node.left, prefix);
-            prefix.deleteCharAt(prefix.length() - 1);
+            } else {
+                prefix.append('0');
+                setPrefixCodes(node.left, prefix);
+                prefix.deleteCharAt(prefix.length() - 1);
 
 
-            prefix.append('1');
-            setPrefixCodes(node.right, prefix);
-            prefix.deleteCharAt(prefix.length() - 1);
+                prefix.append('1');
+                setPrefixCodes(node.right, prefix);
+                prefix.deleteCharAt(prefix.length() - 1);
+            }
         }
 
 
