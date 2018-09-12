@@ -45,7 +45,7 @@ class HuffmanTree {
     }
 
     private static Map<Character, String> charPrefixHashMap = new HashMap<>();
-    static HuffmanNode root;
+    private static HuffmanNode root;
 
     private static void setPrefixCodes(HuffmanNode node, StringBuilder prefix) {
 
