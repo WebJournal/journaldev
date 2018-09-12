@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/ic_cross">
+
+    <target
+        android:name="@string/cross"
+        android:animation="@animator/cross2tick_path" />
+
+    <target
+        android:name="@string/cross"
+        android:animation="@animator/cross2tick_color" />
+
+    <target
+        android:name="@string/groupTickCross"
+        android:animation="@animator/cross2tick_rotate" />
+
+
+</animated-vector>

@@ -1,0 +1,90 @@
+<animated-vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt">
+    <aapt:attr name="android:drawable">
+        <vector
+            android:name="vector"
+            android:width="148dp"
+            android:height="148dp"
+            android:viewportWidth="48"
+            android:viewportHeight="48">
+            <group android:name="journaldev">
+                <group
+                    android:name="group_j"
+                    android:pivotX="24"
+                    android:pivotY="24"
+                    android:rotation="270">
+                    <path
+                        android:name="journal"
+                        android:pathData="M 25 10 L 12 10 M 25 10 L 25 30 M 25 30 C 20 35 15 30 12 25"
+                        android:strokeColor="#000000"
+                        android:strokeWidth="1"/>
+                </group>
+            </group>
+            <group
+                android:name="group_d"
+                android:pivotX="24"
+                android:pivotY="24"
+                android:translateX="10"
+                android:scaleX="0.5"
+                android:scaleY="0.5">
+                <path
+                    android:name="dev"
+                    android:pathData="M 30 10 L 30 30 M 30 10 C 45 15 45 25 30 30"
+                    android:strokeColor="#000000"
+                    android:strokeWidth="1"/>
+            </group>
+        </vector>
+    </aapt:attr>
+    <target android:name="group_d">
+        <aapt:attr name="android:animation">
+            <set>
+                <objectAnimator
+                    android:propertyName="translateX"
+                    android:duration="400"
+                    android:valueFrom="10"
+                    android:valueTo="0"
+                    android:valueType="floatType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="scaleX"
+                    android:duration="600"
+                    android:valueFrom="0.5"
+                    android:valueTo="1"
+                    android:valueType="floatType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+                <objectAnimator
+                    android:propertyName="scaleY"
+                    android:duration="600"
+                    android:valueFrom="0.5"
+                    android:valueTo="1"
+                    android:valueType="floatType"
+                    android:interpolator="@android:interpolator/fast_out_slow_in"/>
+            </set>
+        </aapt:attr>
+    </target>
+    <target android:name="group_j">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="rotation"
+                android:startOffset="100"
+                android:duration="500"
+                android:valueFrom="270"
+                android:valueTo="0"
+                android:valueType="floatType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </aapt:attr>
+    </target>
+    <target android:name="journal">
+        <aapt:attr name="android:animation">
+            <objectAnimator
+                android:propertyName="strokeColor"
+                android:startOffset="600"
+                android:duration="200"
+                android:valueFrom="#000000"
+                android:valueTo="#cc0000"
+                android:valueType="colorType"
+                android:interpolator="@android:interpolator/fast_out_slow_in"/>
+        </aapt:attr>
+    </target>
+</animated-vector>
