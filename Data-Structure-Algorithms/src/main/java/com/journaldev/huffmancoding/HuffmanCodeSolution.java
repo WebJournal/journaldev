@@ -4,23 +4,22 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-public class HuffmanCodeSolution {
+class HuffmanTree {
 
 
-    private static HuffmanNode buildTree(int[] charFrequencies) {
+    private static HuffmanNode buildTree() {
 
         PriorityQueue<HuffmanNode> priorityQueue = new PriorityQueue<>();
-        for (int i = 0; i < charFrequencies.length; i++) {
-
+        for (Map.Entry<Character, Integer> entry : charFreqHashMap.entrySet()) {
 
             HuffmanNode huffmanNode = new HuffmanNode();
-            huffmanNode.data = (char) i;
-            huffmanNode.frequency = charFrequencies[i];
+            huffmanNode.data = entry.getKey();
+            huffmanNode.frequency = entry.getValue();
             huffmanNode.left = null;
             huffmanNode.right = null;
             priorityQueue.offer(huffmanNode);
         }
-        assert priorityQueue.size() > 0;
+
 
         while (priorityQueue.size() > 1) {
 
@@ -34,10 +33,8 @@ public class HuffmanCodeSolution {
             HuffmanNode sum = new HuffmanNode();
 
             sum.frequency = x.frequency + y.frequency;
-            sum.data = '-';
-
+            sum.data = Character.MIN_VALUE;
             sum.left = x;
-
             sum.right = y;
             root = sum;
 
@@ -54,7 +51,7 @@ public class HuffmanCodeSolution {
 
 
         if (node != null) {
-            if (node.left == null && node.right == null && Character.isLetter(node.data)) {
+            if (node.left == null && node.right == null) {
                 charPrefixHashMap.put(node.data, prefix.toString());
 
             } else {
@@ -72,61 +69,70 @@ public class HuffmanCodeSolution {
 
     }
 
-    public static void main(String[] args) {
+    private static HashMap<Character, Integer> charFreqHashMap = new HashMap<>();
 
+    String encoding(String test) {
 
-        String test = "ABACA";
-        String s = encoding(test);
-        decode(s);
+        if (test != null) {
+            for (char c : test.toCharArray()) {
 
-    }
+                if (charFreqHashMap.containsKey(c)) {
+                    Integer integer = charFreqHashMap.get(c) + 1;
+                    charFreqHashMap.put(c, integer);
+                } else {
+                    charFreqHashMap.put(c, 1);
+                }
 
-    private static String encoding(String test) {
-        int[] charFrequencies = new int[256];
-        for (char c : test.toCharArray())
-            charFrequencies[c]++;
+            }
+            root = buildTree();
 
-        root = buildTree(charFrequencies);
+            setPrefixCodes(root, new StringBuilder());
+            StringBuilder s = new StringBuilder();
 
-        setPrefixCodes(root, new StringBuilder());
-        StringBuilder s = new StringBuilder();
+            for (int i = 0; i < test.length(); i++) {
+                char c = test.charAt(i);
+                s.append(charPrefixHashMap.get(c));
+            }
 
-        for (int i = 0; i < test.length(); i++) {
-            char c = test.charAt(i);
-            s.append(charPrefixHashMap.get(c));
+            return s.toString();
         }
-
-        return s.toString();
+        return null;
     }
 
-    private static void decode(String s) {
+    void decode(String s) {
 
-        StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilder = null;
+        if (s != null) {
 
-        HuffmanNode temp = root;
+            stringBuilder = new StringBuilder();
+            HuffmanNode temp = root;
 
+
+            for (int i = 0; i < s.length(); i++) {
+                int j = Integer.parseInt(String.valueOf(s.charAt(i)));
+
+                if (j == 0) {
+                    temp = temp.left;
+                    if (temp.left == null && temp.right == null) {
+                        stringBuilder.append(temp.data);
+                        temp = root;
+                    }
+                }
+                if (j == 1) {
+                    temp = temp.right;
+                    if (temp.left == null && temp.right == null) {
+                        stringBuilder.append(temp.data);
+                        temp = root;
+                    }
+                }
+            }
+        }
         System.out.println("Encoded: " + s);
-
-        for (int i = 0; i < s.length(); i++) {
-            int j = Integer.parseInt(String.valueOf(s.charAt(i)));
-
-            if (j == 0) {
-                temp = temp.left;
-                if (temp.left == null && temp.right == null) {
-                    stringBuilder.append(temp.data);
-                    temp = root;
-                }
-            }
-            if (j == 1) {
-                temp = temp.right;
-                if (temp.left == null && temp.right == null) {
-                    stringBuilder.append(temp.data);
-                    temp = root;
-                }
-            }
+        if (stringBuilder != null) {
+            System.out.println("Decoded string is " + stringBuilder.toString());
+        } else {
+            System.out.println("Decoded string is " + s);
         }
-
-        System.out.println("Decoded string is " + stringBuilder.toString());
 
 
     }
@@ -139,6 +145,19 @@ class HuffmanNode implements Comparable<HuffmanNode> {
 
     public int compareTo(HuffmanNode node) {
         return frequency - node.frequency;
+    }
+}
+
+class HuffmanCodingSolution {
+    public static void main(String[] args) {
+
+
+        HuffmanTree huffmanTree = new HuffmanTree();
+
+        String test = "ABCD1&1";
+        String s = huffmanTree.encoding(test);
+        huffmanTree.decode(s);
+
     }
 }
 
