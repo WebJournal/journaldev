@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/inName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name" />
+
+        <EditText
+            android:id="@+id/inAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Age"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/inSkill"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Skill" />
+
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD" />
+
+
+        <TextView
+            android:id="@+id/textViewEmployees"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Result:" />
+
+
+        <Button
+            android:id="@+id/btnRead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="READ" />
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UPDATE" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtFilterByAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Result:" />
+
+        <Button
+            android:id="@+id/btnFilterByAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EMPLOYEE OVER 25" />
+
+
+        <TextView
+            android:id="@+id/txtFilterBySkill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Result:" />
+
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DELETE BY NAME" />
+
+        <Button
+            android:id="@+id/btnDeleteWithSkill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DELETE ALL WITH SKILL" />
+
+    </LinearLayout>
+
+</LinearLayout>
