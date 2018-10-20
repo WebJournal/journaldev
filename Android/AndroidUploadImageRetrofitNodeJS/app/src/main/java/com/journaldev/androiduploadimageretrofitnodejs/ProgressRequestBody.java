@@ -2,7 +2,6 @@ package com.journaldev.androiduploadimageretrofitnodejs;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,7 +13,6 @@ import okio.BufferedSink;
 
 public class ProgressRequestBody extends RequestBody {
     private File mFile;
-    private String mPath;
     private UploadCallbacks mListener;
 
     private static final int DEFAULT_BUFFER_SIZE = 2048;
