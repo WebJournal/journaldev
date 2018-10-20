@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:dpv="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,10 +18,11 @@
 
         <TextView
             android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
 
         <ImageView
@@ -30,6 +32,7 @@
             android:layout_centerInParent="true"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop" />
+
 
     </RelativeLayout>
 
@@ -43,13 +46,20 @@
         app:srcCompat="@android:drawable/ic_menu_camera" />
 
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabUpload"
+    <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_margin="16dp"
-        app:srcCompat="@android:drawable/ic_menu_upload" />
+        android:layout_gravity="bottom|center_horizontal">
 
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fabUpload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:srcCompat="@drawable/ic_file_upload" />
+
+
+    </FrameLayout>
 
 </android.support.design.widget.CoordinatorLayout>

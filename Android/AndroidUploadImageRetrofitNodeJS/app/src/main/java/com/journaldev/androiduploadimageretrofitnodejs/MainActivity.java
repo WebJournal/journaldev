@@ -19,18 +19,18 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,8 +47,9 @@ import retrofit2.Retrofit;
 import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static android.view.View.GONE;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, ProgressRequestBody.UploadCallbacks {
 
 
     ApiService apiService;
@@ -61,6 +62,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     FloatingActionButton fabCamera, fabUpload;
     Bitmap mBitmap;
     TextView textView;
+    byte[] byteArray;
+    FrameLayout frameLayout;
 
 
     @Override
@@ -71,8 +74,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fabCamera = findViewById(R.id.fab);
         fabUpload = findViewById(R.id.fabUpload);
         textView = findViewById(R.id.textView);
+        frameLayout = findViewById(R.id.frameLayout);
+
+
         fabCamera.setOnClickListener(this);
         fabUpload.setOnClickListener(this);
+
 
         askPermissions();
         initRetrofitClient();
@@ -97,7 +104,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initRetrofitClient() {
         OkHttpClient client = new OkHttpClient.Builder().build();
-
         apiService = new Retrofit.Builder().baseUrl("http://192.168.88.65:3000").client(client).build().create(ApiService.class);
     }
 
@@ -169,13 +175,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 String filePath = getImageFilePath(data);
                 if (filePath != null) {
+                    frameLayout.setVisibility(GONE);
                     mBitmap = BitmapFactory.decodeFile(filePath);
+                    getByteArrayInBackground();
                     imageView.setImageBitmap(mBitmap);
+
                 }
             }
 
         }
 
+    }
+
+    private void getByteArrayInBackground() {
+
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                mBitmap.compress(Bitmap.CompressFormat.PNG, 0, bos);
+                byteArray = bos.toByteArray();
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        frameLayout.setVisibility(View.VISIBLE);
+                    }
+                });
+
+
+            }
+        };
+        thread.start();
     }
 
 
@@ -286,55 +317,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void multipartImageUpload() {
         try {
-            File filesDir = getApplicationContext().getFilesDir();
-            File file = new File(filesDir, "image" + ".png");
 
-            OutputStream os;
-            try {
-                os = new FileOutputStream(file);
-                mBitmap.compress(Bitmap.CompressFormat.PNG, 100, os);
-                os.flush();
-                os.close();
-            } catch (Exception e) {
-                Log.e(getClass().getSimpleName(), "Error writing bitmap", e);
-            }
-
-            ByteArrayOutputStream bos = new ByteArrayOutputStream();
-            mBitmap.compress(Bitmap.CompressFormat.PNG, 0, bos);
-            byte[] bitmapdata = bos.toByteArray();
+            if (byteArray != null) {
+                File filesDir = getApplicationContext().getFilesDir();
+                File file = new File(filesDir, "image" + ".png");
 
 
-            FileOutputStream fos = new FileOutputStream(file);
-            fos.write(bitmapdata);
-            fos.flush();
-            fos.close();
+                FileOutputStream fos = new FileOutputStream(file);
+                fos.write(byteArray);
+                fos.flush();
+                fos.close();
 
 
-            RequestBody reqFile = RequestBody.create(MediaType.parse("image/*"), file);
-            MultipartBody.Part body = MultipartBody.Part.createFormData("upload", file.getName(), reqFile);
-            RequestBody name = RequestBody.create(MediaType.parse("text/plain"), "upload");
+                ProgressRequestBody fileBody = new ProgressRequestBody(file, this);
+                MultipartBody.Part body = MultipartBody.Part.createFormData("upload", file.getName(), fileBody);
+                RequestBody name = RequestBody.create(MediaType.parse("text/plain"), "upload");
 
-            Call<ResponseBody> req = apiService.postImage(body, name);
-            req.enqueue(new Callback<ResponseBody>() {
-                @Override
-                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-
-                    if (response.code() == 200) {
-                        textView.setText("Uploaded Successfully!");
-                        textView.setTextColor(Color.BLUE);
+                Call<ResponseBody> req = apiService.postImage(body, name);
+                req.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                        Toast.makeText(getApplicationContext(), response.code() + " ", Toast.LENGTH_SHORT).show();
                     }
 
-                    Toast.makeText(getApplicationContext(), response.code() + " ", Toast.LENGTH_SHORT).show();
-                }
-
-                @Override
-                public void onFailure(Call<ResponseBody> call, Throwable t) {
-                    textView.setText("Uploaded Failed!");
-                    textView.setTextColor(Color.RED);
-                    Toast.makeText(getApplicationContext(), "Request failed", Toast.LENGTH_SHORT).show();
-                    t.printStackTrace();
-                }
-            });
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        textView.setText("Uploaded Failed!");
+                        textView.setTextColor(Color.RED);
+                        Toast.makeText(getApplicationContext(), "Request failed", Toast.LENGTH_SHORT).show();
+                        t.printStackTrace();
+                    }
+                });
+            }
 
 
         } catch (FileNotFoundException e) {
@@ -359,5 +373,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onProgressUpdate(int percentage) {
+        textView.setText(percentage + "%");
+    }
+
+    @Override
+    public void onError() {
+        textView.setText("Uploaded Failed!");
+        textView.setTextColor(Color.RED);
+    }
+
+    @Override
+    public void onFinish() {
+        textView.setText("Uploaded Successfully");
+        textView.setTextColor(Color.BLUE);
+    }
+
+    @Override
+    public void uploadStart() {
+        textView.setText("0%");
+        Toast.makeText(getApplicationContext(), "Upload started", Toast.LENGTH_SHORT).show();
     }
 }
