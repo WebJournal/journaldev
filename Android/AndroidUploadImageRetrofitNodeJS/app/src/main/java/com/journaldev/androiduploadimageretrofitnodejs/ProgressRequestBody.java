@@ -57,17 +57,10 @@ public class ProgressRequestBody extends RequestBody {
         try {
             int read;
             Handler handler = new Handler(Looper.getMainLooper());
-            int num = 0;
             while ((read = in.read(buffer)) != -1) {
-
-                int progress = (int) (100 * uploaded / fileLength);
-                if (progress > num + 1) {
-                    handler.post(new ProgressUpdater(uploaded, fileLength));
-                    num = progress;
-                }
-
                 uploaded += read;
                 sink.write(buffer, 0, read);
+                handler.post(new ProgressUpdater(uploaded, fileLength));
             }
         } finally {
             in.close();

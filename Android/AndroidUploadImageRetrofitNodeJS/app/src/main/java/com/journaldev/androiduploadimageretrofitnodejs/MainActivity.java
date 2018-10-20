@@ -82,7 +82,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         askPermissions();
-        initRetrofitClient();
 
 
     }
@@ -104,7 +103,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initRetrofitClient() {
         OkHttpClient client = new OkHttpClient.Builder().build();
-        apiService = new Retrofit.Builder().baseUrl("http://192.168.88.65:3000").client(client).build().create(ApiService.class);
+
+        //change the ip to yours.
+        apiService = new Retrofit.Builder().baseUrl("http://172.20.10.3:3000").client(client).build().create(ApiService.class);
     }
 
 
@@ -316,6 +317,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void multipartImageUpload() {
+
+        initRetrofitClient();
+
+
         try {
 
             if (byteArray != null) {
@@ -328,6 +333,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 fos.flush();
                 fos.close();
 
+                textView.setTextColor(Color.BLUE);
 
                 ProgressRequestBody fileBody = new ProgressRequestBody(file, this);
                 MultipartBody.Part body = MultipartBody.Part.createFormData("upload", file.getName(), fileBody);
@@ -389,7 +395,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onFinish() {
         textView.setText("Uploaded Successfully");
-        textView.setTextColor(Color.BLUE);
     }
 
     @Override
