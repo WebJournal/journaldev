@@ -18,12 +18,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-
-
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        binding.recyclerView.setLayoutManager(linearLayoutManager);
-
         populateData();
     }
 
@@ -35,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         dataModelList.add(new DataModel("Android Nougat", "7.0"));
         dataModelList.add(new DataModel("Android Marshmallow", "6.0"));
 
-        binding.recyclerView.setAdapter(new MyRecyclerViewAdapter(dataModelList, this));
+        MyRecyclerViewAdapter myRecyclerViewAdapter = new MyRecyclerViewAdapter(dataModelList, this);
+        binding.setMyAdapter(myRecyclerViewAdapter);
     }
 }
