@@ -34,7 +34,6 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         DataModel dataModel = dataModelList.get(position);
-        holder.itemRowBinding.setModel(dataModel);
         holder.bind(dataModel);
         holder.itemRowBinding.setItemClickListener(this);
     }

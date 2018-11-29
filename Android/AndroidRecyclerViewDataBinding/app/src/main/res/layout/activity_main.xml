@@ -4,6 +4,7 @@
 
 
     <data>
+
         <variable
             name="myAdapter"
             type="com.journaldev.androidrecyclerviewdatabinding.MyRecyclerViewAdapter" />
