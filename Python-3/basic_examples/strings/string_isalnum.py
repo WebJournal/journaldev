@@ -13,3 +13,6 @@ print(s.isalnum())
 
 s = '10.50'
 print(s.isalnum())
+
+s = 'çåøÉ'
+print(s.isalnum())
