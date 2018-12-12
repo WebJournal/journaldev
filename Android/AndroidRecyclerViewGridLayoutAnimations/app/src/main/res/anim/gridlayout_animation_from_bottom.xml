@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gridLayoutAnimation xmlns:android="http://schemas.android.com/apk/res/android"
+    android:animation="@anim/down_to_up"
+    android:animationOrder="normal"
+    android:columnDelay="15%"
+    android:direction="top_to_bottom|left_to_right"
+    android:rowDelay="15%"
+    android:startOffset="700" />
