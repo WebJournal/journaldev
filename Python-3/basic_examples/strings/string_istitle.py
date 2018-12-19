@@ -32,6 +32,6 @@ for codepoint in range(2 ** 16):
     if ch.istitle():
         print(u'{:04x}: {} ({})'.format(codepoint, ch, unicodedata.name(ch, 'UNNAMED')))
         count = count + 1
-print(f'Total Number of Space Unicode Characters = {count}')
+print(f'Total Number of Title Unicode Characters = {count}')
 
 
