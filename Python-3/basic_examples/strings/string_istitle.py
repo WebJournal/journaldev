@@ -16,6 +16,9 @@ print(s.istitle())
 s = ''
 print(s.istitle())
 
+s = '2019'
+print(s.istitle())
+
 # special characters
 s = 'Â Ɓig Ȼat'
 print(s.istitle())
