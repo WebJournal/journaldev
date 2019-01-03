@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.jaxws.journaldev.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.jaxws.journaldev.com" xmlns:intf="http://service.jaxws.journaldev.com" xmlns:tns1="http://beans.jaxws.journaldev.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.jaxws.journaldev.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://beans.jaxws.journaldev.com"/>
+   <element name="addPerson">
+    <complexType>
+     <sequence>
+      <element name="p" type="tns1:Person"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addPersonResponse">
+    <complexType>
+     <sequence>
+      <element name="addPersonReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deletePerson">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deletePersonResponse">
+    <complexType>
+     <sequence>
+      <element name="deletePersonReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPerson">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPersonResponse">
+    <complexType>
+     <sequence>
+      <element name="getPersonReturn" type="tns1:Person"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllPersons">
+    <complexType/>
+   </element>
+   <element name="getAllPersonsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getAllPersonsReturn" type="tns1:Person"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://beans.jaxws.journaldev.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Person">
+    <sequence>
+     <element name="age" type="xsd:int"/>
+     <element name="id" type="xsd:int"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="addPersonResponse">
+
+      <wsdl:part element="impl:addPersonResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllPersonsResponse">
+
+      <wsdl:part element="impl:getAllPersonsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deletePersonResponse">
+
+      <wsdl:part element="impl:deletePersonResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addPersonRequest">
+
+      <wsdl:part element="impl:addPerson" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPersonResponse">
+
+      <wsdl:part element="impl:getPersonResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPersonRequest">
+
+      <wsdl:part element="impl:getPerson" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deletePersonRequest">
+
+      <wsdl:part element="impl:deletePerson" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllPersonsRequest">
+
+      <wsdl:part element="impl:getAllPersons" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="PersonServiceImpl">
+
+      <wsdl:operation name="addPerson">
+
+         <wsdl:input message="impl:addPersonRequest" name="addPersonRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addPersonResponse" name="addPersonResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deletePerson">
+
+         <wsdl:input message="impl:deletePersonRequest" name="deletePersonRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deletePersonResponse" name="deletePersonResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPerson">
+
+         <wsdl:input message="impl:getPersonRequest" name="getPersonRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPersonResponse" name="getPersonResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllPersons">
+
+         <wsdl:input message="impl:getAllPersonsRequest" name="getAllPersonsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllPersonsResponse" name="getAllPersonsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="PersonServiceImplSoapBinding" type="impl:PersonServiceImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="addPerson">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addPersonRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addPersonResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="deletePerson">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deletePersonRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deletePersonResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPerson">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPersonRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPersonResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllPersons">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllPersonsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllPersonsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="PersonServiceImplService">
+
+      <wsdl:port binding="impl:PersonServiceImplSoapBinding" name="PersonServiceImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/SOAPExample/services/PersonServiceImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

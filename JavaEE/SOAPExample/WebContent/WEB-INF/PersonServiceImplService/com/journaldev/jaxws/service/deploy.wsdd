@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from PersonServiceImplService WSDL service -->
+
+  <service name="PersonServiceImpl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.jaxws.journaldev.com"/>
+      <parameter name="wsdlServiceElement" value="PersonServiceImplService"/>
+      <parameter name="schemaQualified" value="http://service.jaxws.journaldev.com,http://beans.jaxws.journaldev.com"/>
+      <parameter name="wsdlServicePort" value="PersonServiceImpl"/>
+      <parameter name="className" value="com.journaldev.jaxws.service.PersonServiceImpl"/>
+      <parameter name="wsdlPortType" value="PersonServiceImpl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://service.jaxws.journaldev.com" xmlns:retNS="http://service.jaxws.journaldev.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addPerson" qname="operNS:addPerson" returnQName="retNS:addPersonReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://service.jaxws.journaldev.com" xmlns:tns="http://beans.jaxws.journaldev.com" qname="pns:p" type="tns:Person"/>
+      </operation>
+      <operation xmlns:operNS="http://service.jaxws.journaldev.com" xmlns:retNS="http://service.jaxws.journaldev.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="deletePerson" qname="operNS:deletePerson" returnQName="retNS:deletePersonReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://service.jaxws.journaldev.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://service.jaxws.journaldev.com" xmlns:retNS="http://service.jaxws.journaldev.com" xmlns:rtns="http://beans.jaxws.journaldev.com" name="getPerson" qname="operNS:getPerson" returnQName="retNS:getPersonReturn" returnType="rtns:Person" soapAction="">
+        <parameter xmlns:pns="http://service.jaxws.journaldev.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://service.jaxws.journaldev.com" xmlns:retNS="http://service.jaxws.journaldev.com" xmlns:rtns="http://beans.jaxws.journaldev.com" name="getAllPersons" qname="operNS:getAllPersons" returnQName="retNS:getAllPersonsReturn" returnType="rtns:Person" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="deletePerson getPerson getAllPersons addPerson"/>
+
+      <typeMapping xmlns:ns="http://beans.jaxws.journaldev.com" qname="ns:Person" type="java:com.journaldev.jaxws.beans.Person" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>
