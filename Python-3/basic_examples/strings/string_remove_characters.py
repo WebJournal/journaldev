@@ -22,3 +22,6 @@ s = 'ab\ncd\nef'
 print(s.replace('\n', ''))
 print(s.translate({ord('\n'): None}))
 
+# remove specific number of times
+s = 'abababab'
+print(s.replace('a', 'A', 2))
