@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_margin="16dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnAccelerometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="accelerometerSensorOnClick"
+        android:text="Accelerometer" />
+
+
+    <Button
+        android:id="@+id/btnProximity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="proximitySensorOnClick"
+        android:text="Proximity Sensor" />
+
+
+    <Button
+        android:id="@+id/btnGyro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="gyroscopeSensorOnClick"
+        android:text="Gyroscope" />
+
+
+    <Button
+        android:id="@+id/btnLightSensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="lightSensorOnClick"
+        android:text="Light Sensor" />
+
+
+    <Button
+        android:id="@+id/btnStepCounterOnClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="stepCounterOnClick"
+        android:text="Step Counter Sensor" />
+
+    <Button
+        android:id="@+id/btnAmbientTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="ambientTempSensorOnClick"
+        android:text="Ambient Temperature Sensor" />
+
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Values would be entered here..." />
+
+</LinearLayout>
