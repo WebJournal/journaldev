@@ -1,10 +1,7 @@
 package com.journaldev.androidmvvmbasics.model;
 
-import android.databinding.BaseObservable;
-import android.support.annotation.NonNull;
 
-
-public class User extends BaseObservable {
+public class User {
     private String email;
     private String password;
 
@@ -13,7 +10,7 @@ public class User extends BaseObservable {
         this.password = password;
     }
 
-    public void setEmail(@NonNull String email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
