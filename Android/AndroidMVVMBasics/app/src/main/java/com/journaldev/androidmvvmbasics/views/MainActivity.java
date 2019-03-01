@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.journaldev.androidmvvmbasics.R;
 import com.journaldev.androidmvvmbasics.databinding.ActivityMainBinding;
+import com.journaldev.androidmvvmbasics.model.User;
 import com.journaldev.androidmvvmbasics.viewmodels.LoginViewModel;
 
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivityMainBinding activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         activityMainBinding.setViewModel(new LoginViewModel());
+
         activityMainBinding.executePendingBindings();
 
     }

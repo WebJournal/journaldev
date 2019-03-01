@@ -2,6 +2,9 @@ package com.journaldev.androidmvvmbasics.viewmodels;
 
 import android.databinding.BaseObservable;
 import android.databinding.Bindable;
+import android.text.TextUtils;
+import android.util.Patterns;
+
 import com.android.databinding.library.baseAdapters.BR;
 import com.journaldev.androidmvvmbasics.model.User;
 
@@ -13,7 +16,7 @@ public class LoginViewModel extends BaseObservable {
     private String errorMessage = "Email or Password not valid";
 
     @Bindable
-    public String toastMessage = null;
+    private String toastMessage = null;
 
 
     public String getToastMessage() {
@@ -27,22 +30,39 @@ public class LoginViewModel extends BaseObservable {
         notifyPropertyChanged(BR.toastMessage);
     }
 
+
+    public void setUserEmail(String email) {
+        user.setEmail(email);
+        notifyPropertyChanged(BR.userEmail);
+    }
+
+    @Bindable
+    public String getUserEmail() {
+        return user.getEmail();
+    }
+
+    @Bindable
+    public String getUserPassword() {
+        return user.getPassword();
+    }
+
+    public void setUserPassword(String password) {
+        user.setPassword(password);
+        notifyPropertyChanged(BR.userPassword);
+    }
+
     public LoginViewModel() {
-        user = new User("", "");
-    }
-
-    public void afterEmailTextChanged(CharSequence s) {
-        user.setEmail(s.toString());
-    }
-
-    public void afterPasswordTextChanged(CharSequence s) {
-        user.setPassword(s.toString());
+        user = new User("","");
     }
 
     public void onLoginClicked() {
-        if (user.isInputDataValid())
+        if (isInputDataValid())
             setToastMessage(successMessage);
         else
             setToastMessage(errorMessage);
+    }
+
+    public boolean isInputDataValid() {
+        return !TextUtils.isEmpty(getUserEmail()) && Patterns.EMAIL_ADDRESS.matcher(getUserEmail()).matches() && getUserPassword().length() > 5;
     }
 }

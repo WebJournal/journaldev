@@ -25,19 +25,20 @@
                 android:id="@+id/inEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:afterTextChanged="@{(editable)->viewModel.afterEmailTextChanged(editable)}"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:text="@={viewModel.userEmail}" />
+
 
             <EditText
                 android:id="@+id/inPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:afterTextChanged="@{(editable)->viewModel.afterPasswordTextChanged(editable)}"
                 android:hint="Password"
                 android:inputType="textPassword"
-                android:padding="8dp" />
+                android:padding="8dp"
+                android:text="@={viewModel.userPassword}" />
 
 
             <Button

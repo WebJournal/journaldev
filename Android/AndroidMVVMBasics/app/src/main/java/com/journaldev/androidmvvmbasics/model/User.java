@@ -1,39 +1,35 @@
 package com.journaldev.androidmvvmbasics.model;
 
+import android.databinding.BaseObservable;
 import android.support.annotation.NonNull;
-import android.text.TextUtils;
-import android.util.Patterns;
 
-public class User {
-    @NonNull
-    private String mEmail;
-    @NonNull
-    private String mPassword;
 
-    public User(@NonNull final String email, @NonNull final String password) {
-        mEmail = email;
-        mPassword = password;
+public class User extends BaseObservable {
+    private String email;
+    private String password;
+
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
     }
 
-    @NonNull
+    public void setEmail(@NonNull String email) {
+        this.email = email;
+    }
+
+
     public String getEmail() {
-        return mEmail;
+        return email;
     }
 
-    public void setEmail(@NonNull final String email) {
-        mEmail = email;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    @NonNull
+
     public String getPassword() {
-        return mPassword;
+        return password;
     }
 
-    public void setPassword(@NonNull final String password) {
-        mPassword = password;
-    }
 
-    public boolean isInputDataValid() {
-        return !TextUtils.isEmpty(getEmail()) && Patterns.EMAIL_ADDRESS.matcher(getEmail()).matches() && getPassword().length() > 5;
-    }
 }
