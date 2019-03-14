@@ -35,6 +35,18 @@
 * [Java Delete Directory](https://www.journaldev.com/833/java-delete-directory-folder)
 * [Java Rename File](https://www.journaldev.com/836/java-rename-file-jave-move-file)
 * [Java Get File Size](https://www.journaldev.com/839/java-get-file-size)
+* [Java Get File Extension](https://www.journaldev.com/842/java-get-file-extension)
+* [Java FileNameFilter](https://www.journaldev.com/845/java-filenamefilter-example)
+* [Java File Path - Absolute and Canonical](https://www.journaldev.com/848/java-file-path-absolute-canonical)
+* [Java File Separator, Path Separator](https://www.journaldev.com/851/java-file-separator-separatorchar-pathseparator-pathseparatorchar)
+* [Java Set File Permissions](https://www.journaldev.com/855/java-set-file-permissions-posixfilepermission)
+* [Java Copy File](https://www.journaldev.com/861/java-copy-file)
+* [Java Open File](https://www.journaldev.com/864/java-open-file)
+* [Java Read Text File](https://www.journaldev.com/867/java-read-text-file)
+* [Java Read File to String](https://www.journaldev.com/875/java-read-file-to-string)
+* [Java Write to File](https://www.journaldev.com/878/java-write-to-file)
+* [Java Append to File](https://www.journaldev.com/881/java-append-to-file)
+
 
 ## Miscellaneous Articles
 
