@@ -33,4 +33,10 @@
         android:layout_height="wrap_content"
         android:text="Notification With Group Conversation" />
 
+    <Button
+        android:id="@+id/btnNotificationSemantic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification Semantic Action" />
+
 </LinearLayout>

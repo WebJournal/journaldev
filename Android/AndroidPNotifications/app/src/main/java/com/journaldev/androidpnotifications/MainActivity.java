@@ -1,22 +1,23 @@
 package com.journaldev.androidpnotifications;
 
-import android.app.Notification;
-
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.Person;
-
+import android.app.RemoteInput;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Icon;
 import android.net.Uri;
-import android.support.v4.app.NotificationManagerCompat;
+import androidx.core.app.NotificationCompat;
 
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.Person;
+import androidx.core.graphics.drawable.IconCompat;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.Date;
 
@@ -24,8 +25,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     NotificationManager notificationManager;
-    Notification.Builder builder;
+    NotificationCompat.Builder builder;
     NotificationChannel channel;
+
+    CharSequence charSequence = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +40,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnNotificationIcon = findViewById(R.id.btnNotificationIcon);
         Button btnNotificationImage = findViewById(R.id.btnNotificationImage);
         Button btnNotificationWithGroupConvo = findViewById(R.id.btnNotificationWithGroupConvo);
+        Button btnNotificationSemantic = findViewById(R.id.btnNotificationSemantic);
+
+        charSequence = btnNotificationIcon.getText();
+
 
         btnSimpleNotification.setOnClickListener(this);
         btnNotificationIcon.setOnClickListener(this);
         btnNotificationImage.setOnClickListener(this);
         btnNotificationWithGroupConvo.setOnClickListener(this);
+        btnNotificationSemantic.setOnClickListener(this);
 
         notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         CharSequence name = "My Notification";
@@ -51,8 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         channel = new NotificationChannel("1", name, importance);
         channel.setDescription(description);
 
-        builder =
-                new Notification.Builder(MainActivity.this, channel.getId())
+        builder = new NotificationCompat.Builder(MainActivity.this, channel.getId())
                         .setSmallIcon(R.mipmap.ic_launcher);
 
 
@@ -79,6 +86,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 notificationWithGroupConvo();
                 break;
 
+            case R.id.btnNotificationSemantic:
+                notificationSemantic();
+                break;
+
         }
     }
 
@@ -88,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setImportant(true)
                 .build();
 
-        new Notification.MessagingStyle(jd)
+        new NotificationCompat.MessagingStyle(jd)
                 .addMessage("Check me out", new Date().getTime(), jd)
                 .setBuilder(builder);
 
@@ -99,11 +110,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void notificationWithIcon() {
         Person anupam = new Person.Builder()
                 .setName("Anupam")
-                .setIcon(Icon.createWithResource(this, R.drawable.sample_photo))
+                .setIcon(IconCompat.createWithResource(this, R.drawable.sample_photo))
                 .setImportant(true)
                 .build();
 
-        new Notification.MessagingStyle(anupam)
+        new NotificationCompat.MessagingStyle(anupam)
                 .addMessage("Check out my latest article!", new Date().getTime(), anupam)
                 .setBuilder(builder);
 
@@ -121,11 +132,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Uri uri = Uri.parse("android.resource://com.journaldev.androidpnotifications/drawable/"+R.drawable.sample_bg);
 
-        Notification.MessagingStyle.Message message = new Notification.MessagingStyle.Message("Check out my latest article!", new Date().getTime(), bot);
+        NotificationCompat.MessagingStyle.Message message = new NotificationCompat.MessagingStyle.Message("Check out my latest article!", new Date().getTime(), bot);
         message.setData("image/*",uri);
 
 
-        new Notification.MessagingStyle(bot)
+        new NotificationCompat.MessagingStyle(bot)
                 .addMessage(message)
                 .setGroupConversation(true)
                 .setBuilder(builder);
@@ -143,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Person anupam = new Person.Builder()
                 .setName("Anupam")
-                .setIcon(Icon.createWithResource(this, R.drawable.sample_photo))
+                .setIcon(IconCompat.createWithResource(this, R.drawable.sample_photo))
                 .setImportant(true)
                 .build();
 
@@ -156,11 +167,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Uri uri = Uri.parse("android.resource://com.journaldev.androidpnotifications/drawable/"+R.drawable.sample_bg);
 
-        Notification.MessagingStyle.Message message = new Notification.MessagingStyle.Message("", new Date().getTime(), bot);
+        NotificationCompat.MessagingStyle.Message message = new NotificationCompat.MessagingStyle.Message("", new Date().getTime(), bot);
         message.setData("image/*",uri);
 
 
-        new Notification.MessagingStyle(bot)
+
+
+
+        new NotificationCompat.MessagingStyle(bot)
                 .addMessage("Hi. How are you?", new Date().getTime(), anupam)
                 .addMessage(message)
                 .addMessage("Does this image look good?", new Date().getTime(), bot)
@@ -174,4 +188,76 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    private void notificationSemantic()
+    {
+
+        Person jd = new Person.Builder()
+                .setName("JournalDev")
+                .build();
+
+        Person anupam = new Person.Builder()
+                .setName("Anupam")
+                .setIcon(IconCompat.createWithResource(this, R.drawable.sample_photo))
+                .setImportant(true)
+                .build();
+
+
+        Person bot = new Person.Builder()
+                .setName("Bot")
+                .setBot(true)
+                .build();
+
+
+        Uri uri = Uri.parse("android.resource://com.journaldev.androidpnotifications/drawable/"+R.drawable.sample_bg);
+
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("hi","Notifications were read");
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+
+
+        NotificationCompat.MessagingStyle.Message message = new NotificationCompat.MessagingStyle.Message("", new Date().getTime(), bot);
+        message.setData("image/*",uri);
+
+        NotificationCompat.Action replyAction =
+                new NotificationCompat.Action.Builder(
+                        R.drawable.sample_bg,
+                        "MARK READ",
+                        pendingIntent)
+                        .setSemanticAction(NotificationCompat.Action.SEMANTIC_ACTION_MARK_AS_READ)
+                        .build();
+
+
+
+
+        NotificationCompat.Builder separateBuilder = builder;
+        separateBuilder.addAction(replyAction);
+
+        new NotificationCompat.MessagingStyle(bot)
+                .addMessage("Hi. How are you?", new Date().getTime(), anupam)
+                .addMessage(message)
+                .addMessage("Does this image look good?", new Date().getTime(), bot)
+                .addMessage("Looks good!", new Date().getTime(), jd)
+                .setGroupConversation(true)
+                .setConversationTitle("Sample Conversation")
+                .setBuilder(separateBuilder);
+
+
+        notificationManager.notify(5, separateBuilder.build());
+
+    }
+
+
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if(getIntent()!=null && getIntent().getExtras()!=null)
+        {
+            String value = getIntent().getStringExtra("hi");
+            Toast.makeText(getApplicationContext(),value,Toast.LENGTH_LONG).show();
+        }
+    }
 }
