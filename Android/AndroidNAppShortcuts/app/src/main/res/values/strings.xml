@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">AndroidNAppShortcuts</string>
+    <string name="title_activity_second">SecondActivity</string>
+
+
+    <string name="shortcut2_short">Second</string>
+    <string name="shortcut2_long">Second Screen</string>
+
+    <string name="shortcut1_short">Main</string>
+    <string name="shortcut1_long">Main Screen</string>
+    <string name="disabled_msg">Currently Disabled</string>
+
+    <string name="dShortcutLong">Dynamic Shortcut 1</string>
+    <string name="dShortcut1Short">Dynamic 1</string>
+</resources>

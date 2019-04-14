@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:shortcutId="main_activity"
+        android:shortcutLongLabel="@string/shortcut1_long"
+        android:shortcutShortLabel="@string/shortcut1_short">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.journaldev.androidnappshortcuts.MainActivity"
+            android:targetPackage="com.journaldev.androidnappshortcuts"/>
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_important_devices_black_24dp"
+        android:shortcutDisabledMessage="@string/disabled_msg"
+        android:shortcutId="SecondActivity"
+        android:shortcutLongLabel="@string/shortcut2_long"
+        android:shortcutShortLabel="@string/shortcut2_short">
+
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.journaldev.androidnappshortcuts.MainActivity"
+            android:targetPackage="com.journaldev.androidnappshortcuts" />
+
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.journaldev.androidnappshortcuts.StaticShortcutActivity"
+            android:targetPackage="com.journaldev.androidnappshortcuts">
+
+            <extra
+                android:name="key"
+                android:value="Static Shortcut 2 Extras Message" />
+
+        </intent>
+    </shortcut>
+
+
+</shortcuts>
