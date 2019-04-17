@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:id="@+id/linearLayout">
+
+
+
+                <EditText android:id="@+id/editName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Username"
+                    android:textColor="#FF192133"
+                    android:textColorHint="#A0192133"
+                    android:fontFamily="sans-serif-light"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true" />
+
+                <EditText android:id="@+id/editPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="#FF192133"
+                    android:textColorHint="#A0192133"
+                    android:fontFamily="sans-serif-light"
+                    android:hint="Password"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true" />
+
+                <EditText android:id="@+id/editEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:textColor="#FF192133"
+                    android:visibility="gone"
+                    android:textColorHint="#A0192133"
+                    android:fontFamily="sans-serif-light"
+                    android:hint="Email"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true" />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnSignIn"
+                android:text="SIGN IN"
+                android:textStyle="bold"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnRegister"
+                android:text="REGISTER"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+</ScrollView>
+
