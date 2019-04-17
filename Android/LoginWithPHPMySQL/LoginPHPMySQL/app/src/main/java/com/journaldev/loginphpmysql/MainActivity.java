@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     EditText editEmail, editPassword, editName;
     Button btnSignIn, btnRegister;
 
+    //10.0.3.2 for your Genymotion Emulator
+    //10.0.2.2 for your AVD Emulator
     String URL= "http://10.0.2.2/test_android/index.php";
 
     JSONParser jsonParser=new JSONParser();
