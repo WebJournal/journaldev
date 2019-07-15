@@ -1,0 +1,2 @@
+com.journaldev.serviceproviders.EmailServiceProvider
+com.journaldev.serviceproviders.PushNotificationServiceProvider
