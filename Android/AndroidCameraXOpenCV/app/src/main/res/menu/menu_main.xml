@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/black_white"
+        android:title="RGB to Gray"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/hsv"
+        android:title="RGB to HSV"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/lab"
+        android:title="RGB to Lab"
+        app:showAsAction="never" />
+</menu>
