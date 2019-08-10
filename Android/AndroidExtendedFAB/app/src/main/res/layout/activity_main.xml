@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:text="Default"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/extFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="CLEAR"
+        app:icon="@android:drawable/ic_delete"/>
+
+    <TextView
+        android:text="With Padding.."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/extFab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="CLEAR"
+        app:iconPadding="40dp"
+        app:icon="@android:drawable/ic_delete"/>
+
+
+    <TextView
+        android:text="Without Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/extFab3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="CLEAR" />
+
+    <TextView
+        android:text="Without Icon, With Text Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/extFab4"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="CLEAR" />
+
+    <TextView
+        android:text="Ripple, Icon Tint, Background Tint, Text Color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/extFab6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:icon="@android:drawable/ic_delete"
+        app:iconTint="@android:color/holo_red_dark"
+        app:rippleColor="@android:color/holo_red_light"
+        android:textColor="@android:color/holo_red_dark"
+        app:backgroundTint="@android:color/holo_orange_light"
+        android:text="CLEAR" />
+
+    <TextView
+        android:text="Strokes, Icon Size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/extFab7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:icon="@android:drawable/ic_delete"
+        app:iconTint="@android:color/holo_red_dark"
+        app:rippleColor="@android:color/holo_red_light"
+        android:textColor="@android:color/holo_red_dark"
+        app:strokeColor="@android:color/holo_red_dark"
+        app:iconSize="32dp"
+        app:strokeWidth="4dp"
+        app:backgroundTint="@android:color/white"
+        android:text="CLEAR" />
+
+
+</LinearLayout>
