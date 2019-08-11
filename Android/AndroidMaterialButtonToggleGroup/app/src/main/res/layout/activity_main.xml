@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:checkedButton="@id/btnAndroid"
+        app:singleSelection="true">
+
+        <Button
+            android:id="@+id/btnAndroid"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android" />
+
+        <Button
+            android:id="@+id/btniOS"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="iOS" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:checkedButton="@id/btnA"
+        app:singleSelection="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnA"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android"
+            app:icon="@drawable/ic_android" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnS"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sunny"
+            app:icon="@drawable/ic_wb_sunny" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleGroup3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:singleSelection="false">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/IconOnlyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_signal_wifi_off"
+            app:iconTint="@android:color/holo_red_light" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/IconOnlyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:icon="@drawable/ic_signal_wifi_3_bar_lock" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/IconOnlyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_wifi" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shapes...." />
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleGroup4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:singleSelection="false">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/IconOnlyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_signal_wifi_off"
+            app:strokeWidth="2dp"
+            app:shapeAppearance="@style/Cut" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/IconOnlyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:strokeWidth="2dp"
+            app:icon="@drawable/ic_signal_wifi_3_bar_lock" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/IconOnlyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_wifi"
+            app:strokeWidth="2dp"
+            app:shapeAppearance="@style/Cut" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleGroup5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:singleSelection="false">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/IconOnlyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_signal_wifi_off"
+            app:shapeAppearance="@style/Rounded"
+            app:strokeColor="@android:color/black"
+            app:strokeWidth="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/IconOnlyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_signal_wifi_3_bar_lock"
+            app:strokeColor="@android:color/black"
+            app:strokeWidth="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/IconOnlyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_wifi"
+            app:shapeAppearance="@style/Rounded"
+            app:strokeColor="@android:color/black"
+            app:strokeWidth="4dp" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Typography...." />
+
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleGroup6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:singleSelection="false">
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Java"
+            android:textAppearance="@style/CustomFont"
+            app:strokeColor="@android:color/black" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Python"
+            android:textAppearance="@style/CustomFont"
+            app:strokeColor="@android:color/black" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C++"
+            android:textAppearance="@style/CustomFont"
+            app:strokeColor="@android:color/black" />
+
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+</LinearLayout>
