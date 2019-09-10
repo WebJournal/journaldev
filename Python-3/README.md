@@ -1,6 +1,6 @@
 # Python Tutorials
 
-This project contains all the code examples from JournalDev [Python Tutorials](https://www.journaldev.com/python)
+This project contains all the code examples from JournalDev [Python Tutorials](https://www.journaldev.com/python-tutorial)
 
 ## Python Tutorials Articles
 
