@@ -24,7 +24,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.9.6</version>
+			<version>2.9.10.3</version>
 		</dependency>
 		<!-- JAXB for XML Response, needed to explicitly define from Java 9 onwards -->
 		<dependency>
