@@ -8,7 +8,7 @@
 
 	<properties>
 		<testng.version>6.14.3</testng.version>
-		<junit4.version>4.12</junit4.version>
+		<junit4.version>4.13.1</junit4.version>
 		<mockito-core.version>2.19.0</mockito-core.version>
 		<powermock.version>2.0.0-beta.5</powermock.version>
 		<java.version>10</java.version>
