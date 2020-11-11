@@ -24,7 +24,10 @@ import com.google.ar.sceneform.rendering.ShapeFactory;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
 
+import java.util.Arrays;
 import java.util.Objects;
+
+import static java.lang.Math.pow;
 
 public class MainActivity extends AppCompatActivity implements Scene.OnUpdateListener {
 
@@ -32,11 +35,18 @@ public class MainActivity extends AppCompatActivity implements Scene.OnUpdateLis
     private static final double MIN_OPENGL_VERSION = 3.0;
     private static final String TAG = MainActivity.class.getSimpleName();
 
+    //private final SnackbarHelper messageSnackbarHelper = new SnackbarHelper();
+    private final float[] modelMatrix = new float[16];
+    private float[] modelMatrixAnt = new float[16];
+    int aux = 1;
+    float distance;
+
     private ArFragment arFragment;
     private AnchorNode currentAnchorNode;
     private TextView tvDistance;
     ModelRenderable cubeRenderable;
     private Anchor currentAnchor = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,14 +134,37 @@ public class MainActivity extends AppCompatActivity implements Scene.OnUpdateLis
     @Override
     public void onUpdate(FrameTime frameTime) {
         Frame frame = arFragment.getArSceneView().getArFrame();
-
         Log.d("API123", "onUpdateframe... current anchor node " + (currentAnchorNode == null));
-
 
         if (currentAnchorNode != null) {
             Pose objectPose = currentAnchor.getPose();
             Pose cameraPose = frame.getCamera().getPose();
-
+            ///////////////////////////////
+            objectPose.toMatrix(modelMatrix, 0);
+            if (!areSame(modelMatrix,modelMatrixAnt)) {
+                if (aux == 1) {
+                    //1rst Anchor --- Save current modelMatrix as modelMatrixAnt
+                    //Log.i("key2", "modelMatrix = " + Arrays.toString(modelMatrixAnt));
+                    System.arraycopy(modelMatrix, 0, modelMatrixAnt, 0, 16);
+                    Log.i("key1", "modelMatrix = " + Arrays.toString(modelMatrix));
+                    Log.i("key3", "pose = " + objectPose.toString());
+                    Log.i("key2", aux + "st Anchor" );
+                    //Log.i("key3", "pose1 =" + pose1.toString());
+                    //Log.i("key6", modelMatrix[13] + "modelMatrix[13]" );
+                    aux=aux+1;
+                } else if (aux == 2) {
+                    //2nd Anchor --- Calculate+Show distance on screen
+                    Log.i("key2", aux + "º Anchor" );
+                    distance = distance2Points(modelMatrix, modelMatrixAnt);
+                    //distance = 10;
+                    String distanceString = String.valueOf(distance);
+                    Log.i("key4", "distance = " + distanceString);
+                    tvDistance.setText("Distance: " + distanceString + " m.");
+                    //aux=0;
+                }
+            }
+            /*
+            ///////////////////////////////////
             float dx = objectPose.tx() - cameraPose.tx();
             float dy = objectPose.ty() - cameraPose.ty();
             float dz = objectPose.tz() - cameraPose.tz();
@@ -139,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements Scene.OnUpdateLis
             ///Compute the straight-line distance.
             float distanceMeters = (float) Math.sqrt(dx * dx + dy * dy + dz * dz);
             tvDistance.setText("Distance from camera: " + distanceMeters + " metres");
-
+            */
 
             /*float[] distance_vector = currentAnchor.getPose().inverse()
                     .compose(cameraPose).getTranslation();
@@ -147,5 +180,26 @@ public class MainActivity extends AppCompatActivity implements Scene.OnUpdateLis
             for (int i = 0; i < 3; ++i)
                 totalDistanceSquared += distance_vector[i] * distance_vector[i];*/
         }
+    }
+    //Calculate distancia between 2 points on same frame
+    private float distance2Points(float[] array1, float[] array2) {
+        float distx1 = array1[13];
+        float disty1 = array1[14];
+        float distz1 = array1[15];
+        float distx2 = array2[13];
+        float disty2 = array2[14];
+        float distz2 = array2[15];
+
+        float distance = (float) Math.sqrt(pow(distx1 - distx2, 2) + pow(disty1 - disty2, 2) + pow(distz1 - distz2, 2));
+        return distance;
+    }
+
+    //Compare Matrix
+    static boolean areSame(float A[], float B[]) {
+        int i;
+        for (i = 0; i < 16; i++)
+            if (A[i] != B[i])
+                return false;
+        return true;
     }
 }
