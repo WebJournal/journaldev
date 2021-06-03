@@ -21,7 +21,7 @@
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-client</artifactId>
-			<version>3.0.13.Final</version>
+			<version>4.5.7.Final</version>
 		</dependency>
 	</dependencies>
 
