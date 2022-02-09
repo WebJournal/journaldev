@@ -10,7 +10,7 @@
 	<name>EmployeeRegistration-StrutsBridge</name>
 
 	<properties>
-		<struts2.version>2.3.16.3</struts2.version>
+		<struts2.version>2.5.26</struts2.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<deployFolder>D:/Apache Pluto/pluto-2.0.3/webapps</deployFolder>
 	</properties>
