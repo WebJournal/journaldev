@@ -17,7 +17,7 @@
 
 		<!-- Hibernate / JPA -->
 		<!-- <hibernate.version>4.3.5.Final</hibernate.version> -->
-		<hibernate.version>3.6.9.Final</hibernate.version>
+		<hibernate.version>5.4.24.Final</hibernate.version>
 
 		<!-- Logging -->
 		<logback.version>1.0.13</logback.version>
