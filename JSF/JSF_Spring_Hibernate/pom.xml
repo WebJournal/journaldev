@@ -14,7 +14,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<!-- Spring -->
-		<spring-framework.version>4.0.3.RELEASE</spring-framework.version>
+		<spring-framework.version>5.2.22.RELEASE</spring-framework.version>
 		<aspectj.version>1.7.4</aspectj.version>
 
 		<!-- Hibernate / JPA -->
